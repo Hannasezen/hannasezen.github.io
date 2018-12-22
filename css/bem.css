@@ -484,11 +484,11 @@ input {
 	max-width: 110px;
 }
 
-@media screen and (min-width: 1024px) {
+/*@media screen and (min-width: 1024px) {
 	.promo-background {
 		height: 100vh;
 	}
-}
+}*/
 
 @media screen and (max-width: 768px) {
 
