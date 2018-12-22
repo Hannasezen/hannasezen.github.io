@@ -146,6 +146,7 @@ input {
 	background-position: center top;
 	max-width: 1440px;
 	margin: 0 auto;
+	height: 100vh;
 }
 
 /* styles for header block */
