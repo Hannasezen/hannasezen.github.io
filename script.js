@@ -1,16 +1,17 @@
 'use strict';
 
 //variables
-let listButton = document.querySelector('#list');
-let pizzaCards = document.querySelector('#pizzaCards');
-let sorts = document.querySelector('#sorts');
-let filters = document.querySelector('#filters');
-let newPizza = document.getElementById('newpizza');
-let cartQuantity = document.querySelector('.cart__quantity');
+let doc = document;
+let listButton = doc.querySelector('#list');
+let pizzaCards = doc.querySelector('#pizzaCards');
+let sorts = doc.querySelector('#sorts');
+let filters = doc.querySelector('#filters');
+let newPizza = doc.getElementById('newpizza');
+let cartQuantity = doc.querySelector('.cart__quantity');
 let resultArray = []; //array for sorting
 let filteredArray = []; // array for filter
-let closeCartCross = document.querySelector('#close__cross');
-let cartList = document.querySelector('#cart__list');
+let closeCartCross = doc.querySelector('#close__cross');
+let cartList = doc.querySelector('#cart__list');
 let pizzas = [
   {
     img: './img/mashrooms.jpg',
@@ -129,9 +130,9 @@ if(window.localStorage.getItem('cart')) {
 window.onload = loadPizzas();
 
 // sort buttons
-let sortPrice = document.querySelector('#byPrice');
-let sortCallory = document.querySelector('#byCallory');
-let sortName = document.querySelector('#byName');
+let sortPrice = doc.querySelector('#byPrice');
+let sortCallory = doc.querySelector('#byCallory');
+let sortName = doc.querySelector('#byName');
 
 // user events
 newPizza.addEventListener('submit', createNewPizza);
@@ -148,7 +149,7 @@ closeCartCross.addEventListener('click', emptyCart);
 function loadPizzas (arr) {
   arr = arr || pizzas;
   for (let i = 0; i < arr.length; i++) {
-    let li = document.createElement('li');
+    let li = doc.createElement('li');
     li.classList.add('pizza');
 /*
     let cardImg = document.createElement('div');
@@ -276,7 +277,7 @@ function toggleView() {
 }
 
 function removeClassRotate () {
-  if(!(document.body.classList.contains('list'))) {
+  if(!(doc.body.classList.contains('list'))) {
     event.currentTarget.classList.toggle('rotate');
   }
 }
