@@ -102,6 +102,10 @@ body {
   text-align: left;
 }
 
+#filters li {
+  display: inline-block;
+}
+
 #newpizza input {
   width: 100%;
   padding: 5px;
@@ -242,6 +246,7 @@ li.rotate {
   max-height: 150px;
   background: rgba(255, 255, 255, 0.8);
   overflow: hidden;
+  transition: transform 0s;
 }
 
 .list .card__img {
