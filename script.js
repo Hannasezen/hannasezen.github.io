@@ -1,7 +1,7 @@
 'use strict';
 
 //variables
-let doc = document;
+const doc = document;
 let listButton = doc.querySelector('#list');
 let pizzaCards = doc.querySelector('#pizzaCards');
 let sorts = doc.querySelector('#sorts');
@@ -119,8 +119,30 @@ let pizzas = [
     price: 154
   }
 ];
-let cards = pizzaCards.querySelectorAll('li.pizza');
-let myCart = [];
+let addings = {
+  "грибы": {
+    price: 20,
+    callory: 45
+  },
+  "оливки": {
+    price: 19,
+    callory: 17
+  },
+  "помидоры": {
+    price: 8,
+    callory: 7
+  },
+  "отстрый соус": {
+    price: 15,
+    callory: 0
+  },
+  "майонез": {
+    price: 12,
+    callory: 27
+  }
+}
+let cards = doc.querySelectorAll('li.pizza'); //collection of pizzas on the screen
+let myCart = []; // array for pizzas in cart
 if(window.localStorage.getItem('cart')) {
   myCart = JSON.parse(localStorage.getItem('cart'));
   cartQuantity.innerHTML = JSON.parse(localStorage.getItem('cart')).length;
@@ -151,83 +173,39 @@ function loadPizzas (arr) {
   for (let i = 0; i < arr.length; i++) {
     let li = doc.createElement('li');
     li.classList.add('pizza');
-/*
-    let cardImg = document.createElement('div');
-    cardImg.classList.add('card__img');
 
-    let img = document.createElement('img');
-    img.src = arr[i].img;
-
-    cardImg.appendChild(img);
-
-    let cardText = document.createElement('div');
-    cardText.classList.add('card__text');
-
-    let cardDescription = document.createElement('div');
-    cardDescription.classList.add('card__description');
-
-    let cardName = document.createElement('div');
-    cardName.classList.add('card__name');
-    cardName.innerHTML = arr[i].name;
-    cardDescription.appendChild(cardName);
-
-    let cardIngredients = document.createElement('ul');
-    cardIngredients.classList.add('card__ingredients');
-    cardIngredients.innerHTML = "Состав пиццы:";
-    
+    let str = '';
     for (let j = 0; j < arr[i].ingredients.length; j++) {
-      let cardIngredient = document.createElement('li');
-      cardIngredient.innerHTML = arr[i].ingredients[j];
-      let ingredient = document.createElement('input');
-      ingredient.setAttribute("type", "checkbox");
-      ingredient.setAttribute("checked", "true");
-      ingredient.classList.add('ingredient');
-      cardIngredient.appendChild(ingredient);      
-      cardIngredients.appendChild(cardIngredient);
+      str += `<li><input type="checkbox" checked="true" value="${arr[i].ingredients[j]}"
+       class="ingredient">${arr[i].ingredients[j]}</input></li>`;
     }
-    cardDescription.appendChild(cardIngredients);
 
-    let cardCallory = document.createElement('div');
-    cardCallory.classList.add('card__callory');
-    cardCallory.innerHTML = `${arr[i].callory} кКал`;
-    cardDescription.appendChild(cardCallory);
-
-    cardText.appendChild(cardDescription);
-
-    let cardPrice = document.createElement('div');
-    cardPrice.classList.add('card__price');
-    let price = document.createElement('span');
-    price.classList.add('price');
-    price.innerHTML = arr[i].price;
-    cardPrice.innerHTML = 'цена ';
-    cardPrice.appendChild(price);
-    cardText.appendChild(cardPrice);
-
-    li.appendChild(cardImg);
-    li.appendChild(cardText);
-*/
-    var str = '';
-    for (let j = 0; j < arr[i].ingredients.length; j++) {
-      str += `<li><input type="checkbox" checked="true" value="${arr[i].ingredients[j]}" class="ingredient">${arr[i].ingredients[j]}</input></li>`
+    let addingsStr = '';
+    for (let adding in addings) {
+      addingsStr += `<option value="${adding}">${adding}, ${addings[adding].callory} кКал, ${addings[adding].price} грн</option>`;
     }
 
     li.innerHTML = `<div class="card__img">
-                      <img src='${arr[i].img}'></img> 
+                      <img src='${arr[i].img}'></img>
                     </div>
                     <div class="card__text">
                       <div class="card__description">
                         <div class="card__name">"${arr[i].name}"</div>
                         <ul class="card__ingredients"><h3>Ингредиенты: </h3>${str}</ul>
+                        <select name="addings" id="addings">${addingsStr}</select>
                         <div class="card__callory"><span class="callory-number">${arr[i].callory}</span> кКал</div>
                       </div>
-                      <div class="card__price"><span class="price">${arr[i].price}</span> грн</div>
-                      <button class="card__btn" title="Добавить в корзину">Заказать</button>
+                      <div class="">
+                        <div class="card__price"><span class="price">${arr[i].price}</span> грн</div>
+                        <button class="card__btn" title="Добавить в корзину">Заказать</button>
+                      </div>
                     </div>`
                     
     pizzaCards.appendChild(li);
 
     li.addEventListener('click', removeClassRotate);
     li.addEventListener('click', changeIngredientsList, true);
+    li.addEventListener('click', addAddings, true);
     li.addEventListener('click', buyPizza, true);
   }
 }
@@ -265,7 +243,6 @@ function filterPizzas() {
   }  
 }
 
-
 function toggleView() {    
   let listPizzas = pizzaCards.getElementsByTagName('li');
   for (let i = 0; i < listPizzas.length; i++) {
@@ -273,7 +250,7 @@ function toggleView() {
       listPizzas[i].classList.remove('rotate');
     }
   };
-  document.body.classList.toggle('list');
+  doc.body.classList.toggle('list');
 }
 
 function removeClassRotate () {
@@ -297,6 +274,12 @@ function changeIngredientsList () {
   }
 }
 
+function addAddings () {
+  if(event.target.id === 'addings') {
+    event.stopPropagation();
+    let addingLi = doc.createElement('')
+  }  
+}
 
 function buyPizza() {
   if(event.target.classList.contains('card__btn')) {
@@ -350,6 +333,7 @@ function createNewPizza() {
 
 function emptyCart() {
   event.preventDefault();
-  localStorage.removeItem('cart');
+  myCart = [];
+  window.localStorage.setItem('cart', '');
   cartQuantity.innerHTML = '0';
 }
