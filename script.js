@@ -8,6 +8,7 @@ let filters = document.querySelector('#filters');
 let newPizza = document.getElementById('newpizza');
 let cartQuantity = document.querySelector('.cart__quantity');
 let resultArray = []; //array for sorting
+let filteredArray = []; // array for filter
 let closeCartCross = document.querySelector('#close__cross');
 let cartList = document.querySelector('#cart__list');
 let pizzas = [
