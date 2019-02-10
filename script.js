@@ -4,6 +4,7 @@
 let listButton = document.querySelector('#list');
 let pizzaCards = document.querySelector('#pizzaCards');
 let sorts = document.querySelector('#sorts');
+let filters = document.querySelector('#filters');
 let newPizza = document.getElementById('newpizza');
 let cartQuantity = document.querySelector('.cart__quantity');
 let resultArray = []; //array for sorting
@@ -69,14 +70,14 @@ let pizzas = [
   {
     img: './img/chiken.jpg',
     name: 'Куриная пицца',
-    ingredients: ['основа', 'соус', 'куриное филе', 'ананасы', 'сыр'],
+    ingredients: ['основа', 'соус', 'курица', 'ананасы', 'сыр'],
     callory: 451,
     price: 136
   },
   {
     img: './img/family.jpg',
     name: 'Семейная пицца',
-    ingredients: ['основа', 'соус', 'огурцы', 'салями', 'куриное филе', 'сыр'],
+    ingredients: ['основа', 'соус', 'огурцы', 'салями', 'курица', 'сыр'],
     callory: 623,
     price: 189
   },
@@ -137,6 +138,8 @@ newPizza.addEventListener('submit', createNewPizza);
 listButton.addEventListener('click', toggleView);
 // for sort results on the page
 sorts.addEventListener('click', sortPizzas);
+//for filter pizzas
+filters.addEventListener('click', filterPizzas);
 // for clear the cart
 closeCartCross.addEventListener('click', emptyCart);
 
@@ -245,6 +248,21 @@ function sortPizzas() {
     loadPizzas(resultArray);
   }  
 }
+
+function filterPizzas() {
+  if(event.target.nodeName === "INPUT") {   
+    filteredArray = pizzas.filter(item => item.ingredients.some(ing => ing === event.target.value))
+    pizzaCards.innerHTML = '';
+    let radios = filters.querySelectorAll('input[type="radio"]');
+    for (let i = 0; i < radios.length; i++) {
+      if (radios[i].value !== event.target.value) {
+        radios[i].checked = false;
+      }
+    }
+    loadPizzas(filteredArray);    
+  }  
+}
+
 
 function toggleView() {    
   let listPizzas = pizzaCards.getElementsByTagName('li');
