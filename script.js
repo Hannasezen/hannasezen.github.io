@@ -211,7 +211,7 @@ function loadPizzas (arr) {
     }
 
     li.innerHTML = `<div class="card__img">
-                      <img src='${arr[i].img}'></img>
+                      <img src='${arr[i].img}'></img> 
                     </div>
                     <div class="card__text">
                       <div class="card__description">
