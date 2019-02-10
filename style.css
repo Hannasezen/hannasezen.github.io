@@ -171,7 +171,7 @@ body {
   margin-bottom: 5%;
   border-radius: 10px;
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.6), -5px -5px 20px rgba(0, 0, 0, 0.6);
-  transition: all ease 0.5s;
+  transition: transform ease 0.5s;
   transform-style: preserve-3d;
 }
 
@@ -180,7 +180,7 @@ li.rotate {
 }
 
 .card__img {
-  height: 350px;
+  height: 380px;
   border-radius: 10px;
   overflow: hidden;
 }
@@ -223,6 +223,11 @@ li.rotate {
   margin-bottom: 10px;
 }
 
+.card__ingredients li {
+  display: inline-block;
+  margin-right: 5px;
+}
+
 .card__callory {
   margin-bottom: 10px;
 }
@@ -231,6 +236,11 @@ li.rotate {
   padding: 1%;
   margin-bottom: 20px;
   font-size: 2em;
+}
+
+.card__btn {
+  width: 100%;
+  margin: 5px auto;
 }
 
 /* styles for list view */
@@ -251,6 +261,8 @@ li.rotate {
 
 .list .card__img {
   width: 30%;
+  height: 150px;
+  border-radius: 0;
 }
 
 .list .card__text {
