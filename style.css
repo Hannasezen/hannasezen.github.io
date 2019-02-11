@@ -34,7 +34,7 @@ button:hover {
   background-color: rgba(128, 8, 8, 0.904);
 }
 
-input {
+select, input {
   outline: none;
 }
 
@@ -71,6 +71,7 @@ body {
   float: left;
   position: fixed;
   height: 100vh;
+  min-width: 200px;
 }
 
 #aside button {
@@ -210,7 +211,7 @@ li.rotate {
   display: flex;
   flex-basis: 338px;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .card__name {
@@ -253,7 +254,7 @@ li.rotate {
   flex-direction: row;
   align-items: center;
   width: 100%;
-  max-height: 150px;
+  max-height: 200px;
   background: rgba(255, 255, 255, 0.8);
   overflow: hidden;
   transition: transform 0s;
@@ -261,7 +262,7 @@ li.rotate {
 
 .list .card__img {
   width: 30%;
-  height: 150px;
+  height: 200px;
   border-radius: 0;
 }
 
@@ -277,6 +278,10 @@ li.rotate {
 .list .card__ingredients li {
   display: inline-block;
   margin-right: 10px;
+}
+
+.list .addings {
+  width: 45%;
 }
 
 @media screen and (max-width: 920px) {

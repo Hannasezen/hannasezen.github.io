@@ -120,6 +120,10 @@ let pizzas = [
   }
 ];
 let addings = {
+  "добавка": {
+    price: '',
+    callory: ''
+  },
   "грибы": {
     price: 20,
     callory: 45
@@ -176,8 +180,11 @@ function loadPizzas (arr) {
 
     let str = '';
     for (let j = 0; j < arr[i].ingredients.length; j++) {
-      str += `<li><input type="checkbox" checked="true" value="${arr[i].ingredients[j]}"
-       class="ingredient">${arr[i].ingredients[j]}</input></li>`;
+      str += `<li>
+                <input type="checkbox" checked="true" value="${arr[i].ingredients[j]}"
+                  class="ingredient" id="${arr[i].ingredients[j]}"></input>
+                  <label for="${arr[i].ingredients[j]}">${arr[i].ingredients[j]}</label>
+              </li>`;
     }
 
     let addingsStr = '';
@@ -192,7 +199,9 @@ function loadPizzas (arr) {
                       <div class="card__description">
                         <div class="card__name">"${arr[i].name}"</div>
                         <ul class="card__ingredients"><h3>Ингредиенты: </h3>${str}</ul>
-                        <select name="addings" id="addings">${addingsStr}</select>
+                        <div class="card__addings">
+                          <select name="addings" class="addings">${addingsStr}</select>
+                        </div>                          
                         <div class="card__callory"><span class="callory-number">${arr[i].callory}</span> кКал</div>
                       </div>
                       <div class="">
@@ -204,8 +213,16 @@ function loadPizzas (arr) {
     pizzaCards.appendChild(li);
 
     li.addEventListener('click', removeClassRotate);
+    li.addEventListener('click', function() {
+      if (event.target.nodeName === "INPUT"
+          || event.target.nodeName === "LABEL"
+          || event.target.nodeName === "SELECT"
+          ) {
+        event.stopPropagation();
+      }
+    }, true)
     li.addEventListener('click', changeIngredientsList, true);
-    li.addEventListener('click', addAddings, true);
+    li.addEventListener('change', addAddings, true);
     li.addEventListener('click', buyPizza, true);
   }
 }
@@ -261,7 +278,6 @@ function removeClassRotate () {
 
 function changeIngredientsList () {
   if (event.target.classList.contains('ingredient')) {
-    event.stopImmediatePropagation();
     if (event.target.checked === false) {
       this.getElementsByClassName('price')[0].innerHTML -= 10;
       this.getElementsByClassName('callory-number')[0].innerHTML -= 30;
@@ -269,15 +285,31 @@ function changeIngredientsList () {
     } else {
       this.getElementsByClassName('price')[0].innerHTML -= -10;
       this.getElementsByClassName('callory-number')[0].innerHTML -= -30;
-    }    
-    
+    }      
   }
 }
 
 function addAddings () {
-  if(event.target.id === 'addings') {
-    event.stopPropagation();
-    let addingLi = doc.createElement('')
+  if(event.target.classList.contains('addings')) {
+    let selectQuantity = this.querySelectorAll('.addings');
+    if (selectQuantity.length < 6) {
+      let select = doc.createElement('select');
+      select.setAttribute('name', 'addings');
+      select.setAttribute('class', 'addings');
+      for (let adding in addings) {
+        let option = doc.createElement('option');
+        option.setAttribute('value', adding);
+        option.innerHTML = `${adding}, ${addings[adding].callory} кКал, ${addings[adding].price} грн`
+        select.appendChild(option);
+      }
+      this.querySelector('.card__addings').appendChild(select);
+    }
+    let selectedOption = Object.keys(addings).find(adding => adding === event.target.value);
+    console.log(selectedOption);
+    this.querySelector('span.price').innerHTML -= -10;
+    this.querySelector('span.callory-number').innerHTML -= -30;
+    console.log(event.target.value);
+
   }  
 }
 
@@ -309,7 +341,7 @@ function createNewPizza() {
   let ingr = event.target.querySelectorAll('.newingredient');
   for (let i = 0; i < ingr.length; i++) {
     if (ingr[i].value !== '') {
-      ingredients.push(ingr[i].value);
+      ingredients.push(ingr[i].value.toLowerCase());
     }
   }
   if (name !== '') {
