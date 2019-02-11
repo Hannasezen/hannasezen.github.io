@@ -369,3 +369,4 @@ function emptyCart() {
   window.localStorage.setItem('cart', '');
   cartQuantity.innerHTML = '0';
 }
+ 
