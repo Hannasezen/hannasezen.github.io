@@ -45,8 +45,10 @@ h3 {
 }
 
 body {
-  position: relative;
+  display: flex;
+  flex-direction: row;
   font-family: Arial, sans-serif;
+  font-size: 14px;
   text-align: center;
   background: linear-gradient(rgba(0, 0, 0, 0) 60%, rgba(218, 34, 34, 0.2) 60% ),
     linear-gradient(90deg, rgba(0, 0, 0, 0) 60%, rgba(218, 34, 34, 0.2) 60% );
@@ -68,8 +70,6 @@ body {
 #aside {
   width: 25%;
   padding-top: 10px;
-  float: left;
-  position: fixed;
   height: 100vh;
   min-width: 200px;
 }
@@ -117,7 +117,6 @@ body {
 /* mian section styles */
 #main {
   width: 75%;
-  float: right;
   position: relative;
 }
 
@@ -313,6 +312,10 @@ li.rotate {
 }
 
 @media screen and (max-width: 600px) {
+  body {
+    font-size: 12px;
+  }
+
   #aside {
     width: 30%;
   }
