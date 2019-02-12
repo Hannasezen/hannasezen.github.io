@@ -119,32 +119,7 @@ let pizzas = [
     price: 154
   }
 ];
-let addings = {
-  "добавка": {
-    price: '',
-    callory: ''
-  },
-  "грибы": {
-    price: 20,
-    callory: 45
-  },
-  "оливки": {
-    price: 19,
-    callory: 17
-  },
-  "помидоры": {
-    price: 8,
-    callory: 7
-  },
-  "отстрый соус": {
-    price: 15,
-    callory: 0
-  },
-  "майонез": {
-    price: 12,
-    callory: 27
-  }
-}
+let addings = ["грибы", "оливки", "помидоры", "отстрый соус", "майонез"];
 let cards = doc.querySelectorAll('li.pizza'); //collection of pizzas on the screen
 let myCart = []; // array for pizzas in cart
 if(window.localStorage.getItem('cart')) {
@@ -191,8 +166,8 @@ function loadPizzas (arr) {
     }
 
     let addingsStr = '';
-    for (let adding in addings) {
-      addingsStr += `<option value="${adding}">${adding}, ${addings[adding].callory} кКал, ${addings[adding].price} грн</option>`;
+    for (let adding of addings) {
+      addingsStr += `<option value="${adding}">${adding}</option>`;
     }
 
     li.innerHTML = `<div class="card__img">
@@ -320,12 +295,16 @@ function buyPizza(event) {
       console.log(ingredients.sort().join(''));
       myCart.find(item => item.name === name && item.ingredients.sort().join('') === ingredients.sort().join('')).quantity += 1;
     } else {
-      myCart.push({
-        name: name,
-        price: this.querySelector('.card__price').innerText,
-        ingredients: ingredients.filter(item => item !== ''),
-        quantity: 1
-      });       
+      if (ingredients.length > 0) {
+        myCart.push({
+          name: name,
+          price: this.querySelector('.card__price').innerText,
+          ingredients: ingredients.filter(item => item !== ''),
+          quantity: 1
+        });
+      } else {
+        alert('Выберите ингредиенты для вашей пиццы');
+      }        
     };
     let cartJSON = JSON.stringify(myCart);
       localStorage.setItem('cart', cartJSON);
@@ -376,7 +355,18 @@ function renderCart() {
   for (let item of myCart) {
     let li = doc.createElement('li');
     li.classList.add('cart__item');
-    li.innerHTML = `<p>${item.name}</p> <p>${item.price}</p> <p>${item.quantity}</p>`;
+    li.innerHTML = `<div class="item__text">
+                      <div class="item__name">${item.name}</div>
+                      <div class="item__igredients">(${item.ingredients})</div>                      
+                    </div>
+                    <div class="item__controls">
+                      <div class="item__price">${item.price}</div>
+                      <div class="item__quantity">${item.quantity} шт</div>
+                      <div class="item__buttons">
+                        <button class="inc">+</button>
+                        <button class="dec">-</button>
+                      </div>
+                    </div>`;
     cartOpen.appendChild(li);
   }
 }
