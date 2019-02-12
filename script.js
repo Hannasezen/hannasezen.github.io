@@ -390,7 +390,9 @@ function changeQuantity(event) {
   if (event.target.classList.contains('inc')) {
     this.querySelector('.item__quantity').innerHTML -= -1;
   } else if (event.target.classList.contains('dec')) {
-    this.querySelector('.item__quantity').innerHTML -= 1;
+    if(parseInt(this.querySelector('.item__quantity').innerHTML) > 0) {
+      this.querySelector('.item__quantity').innerHTML -= 1;
+    }
   }
 }
  
