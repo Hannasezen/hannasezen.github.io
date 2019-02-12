@@ -150,6 +150,8 @@ filters.addEventListener('click', filterPizzas);
 closeCartCross.addEventListener('click', emptyCart);
 //for open the cart
 cartSmall.addEventListener('click', openCart);
+//close the cart
+cartOpen.addEventListener('click', openCart);
 
 function loadPizzas (arr) {
   arr = arr || pizzas;
@@ -361,7 +363,7 @@ function renderCart() {
                     </div>
                     <div class="item__controls">
                       <div class="item__price">${item.price}</div>
-                      <div class="item__quantity">${item.quantity} шт</div>
+                      <div class="item__quantity">${item.quantity}</div>
                       <div class="item__buttons">
                         <button class="inc">+</button>
                         <button class="dec">-</button>
@@ -369,12 +371,26 @@ function renderCart() {
                     </div>`;
     cartList.appendChild(li);
   }
+  let cartItems = doc.querySelectorAll('.cart__item');
+  for (let i = 0; i < cartItems.length; i++) {
+    cartItems[i].addEventListener('click', changeQuantity, true);
+  }
 }
 
 function emptyCart(event) {
-  event.preventDefault();
+  event.stopPropagation();
   myCart = [];
   window.localStorage.setItem('cart', '');
   cartQuantity.innerHTML = '0';
+  cartOpen.classList.remove('open');
+}
+
+function changeQuantity(event) {
+  event.stopPropagation();
+  if (event.target.classList.contains('inc')) {
+    this.querySelector('.item__quantity').innerHTML -= -1;
+  } else if (event.target.classList.contains('dec')) {
+    this.querySelector('.item__quantity').innerHTML -= 1;
+  }
 }
  
