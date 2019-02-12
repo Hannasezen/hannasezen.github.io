@@ -285,25 +285,14 @@ function changeIngredientsList (event) {
 }
 
 function addAddings (event) {
-  if(event.target.classList.contains('addings')) {
-    let selectQuantity = this.querySelectorAll('.addings');
-    if (selectQuantity.length < 6) {
-      let select = doc.createElement('select');
-      select.setAttribute('name', 'addings');
-      select.setAttribute('class', 'addings');
-      for (let adding in addings) {
-        let option = doc.createElement('option');
-        option.setAttribute('value', adding);
-        option.innerHTML = `${adding}, ${addings[adding].callory} кКал, ${addings[adding].price} грн`
-        select.appendChild(option);
-      }
-      this.querySelector('.card__addings').appendChild(select);
-    }
-    let selectedOption = Object.keys(addings).find(adding => adding === event.target.value);
-    console.log(selectedOption);
+  if(event.target.classList.contains('addings')) {     
     this.querySelector('span.price').innerHTML -= -10;
     this.querySelector('span.callory-number').innerHTML -= -30;
-    console.log(event.target.value);
+    let li = doc.createElement('li');
+    li.innerHTML = `<input type="checkbox" checked="true" value="${event.target.value}"
+                      class="ingredient" id="${event.target.value}"></input>
+                    <label for="${event.target.value}">${event.target.value}</label>`
+    this.querySelector(".card__ingredients").appendChild(li)
 
   }  
 }
