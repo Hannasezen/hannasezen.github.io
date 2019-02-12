@@ -12,6 +12,7 @@ let filteredArray = []; // array for filter
 let closeCartCross = doc.querySelector('#close__cross');
 let cartSmall = doc.querySelector('#cart');
 let cartOpen = doc.querySelector('#cart-open');
+let cartList = doc.querySelector('#cart__list');
 let pizzas = [
   {
     img: './img/mashrooms.jpg',
@@ -292,7 +293,6 @@ function buyPizza(event) {
       }         
     }
     if(myCart.find(item => item.name === name && item.ingredients.sort().join('') === ingredients.sort().join('')))  {
-      console.log(ingredients.sort().join(''));
       myCart.find(item => item.name === name && item.ingredients.sort().join('') === ingredients.sort().join('')).quantity += 1;
     } else {
       if (ingredients.length > 0) {
@@ -351,13 +351,13 @@ function openCart() {
 }
 
 function renderCart() {
-  cartOpen.innerHTML = '';
+  cartList.innerHTML = '';
   for (let item of myCart) {
     let li = doc.createElement('li');
     li.classList.add('cart__item');
     li.innerHTML = `<div class="item__text">
                       <div class="item__name">${item.name}</div>
-                      <div class="item__igredients">(${item.ingredients})</div>                      
+                      <div class="item__igredients">(${item.ingredients.join(', ')})</div>                      
                     </div>
                     <div class="item__controls">
                       <div class="item__price">${item.price}</div>
@@ -367,7 +367,7 @@ function renderCart() {
                         <button class="dec">-</button>
                       </div>
                     </div>`;
-    cartOpen.appendChild(li);
+    cartList.appendChild(li);
   }
 }
 
