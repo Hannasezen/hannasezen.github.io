@@ -208,7 +208,7 @@ function loadPizzas (arr) {
     pizzaCards.appendChild(li);
 
     li.addEventListener('click', removeClassRotate);
-    li.addEventListener('click', function() {
+    li.addEventListener('click', function(event) {
       if (event.target.nodeName === "INPUT"
           || event.target.nodeName === "LABEL"
           || event.target.nodeName === "SELECT"
@@ -225,7 +225,7 @@ function loadPizzas (arr) {
 let storageObj = JSON.stringify(pizzas);
 localStorage.setItem('pizzas', storageObj)
 
-function sortPizzas() {
+function sortPizzas(event) {
   if (event.target.nodeName === "BUTTON") {
     resultArray = pizzas.sort((a, b) => {
       let prop = event.target.id.slice(2).toLowerCase();
@@ -241,7 +241,7 @@ function sortPizzas() {
   }  
 }
 
-function filterPizzas() {
+function filterPizzas(event) {
   if(event.target.nodeName === "INPUT") {   
     filteredArray = pizzas.filter(item => item.ingredients.some(ing => ing === event.target.value))
     pizzaCards.innerHTML = '';
@@ -255,7 +255,7 @@ function filterPizzas() {
   }  
 }
 
-function toggleView() {    
+function toggleView(event) {    
   let listPizzas = pizzaCards.getElementsByTagName('li');
   for (let i = 0; i < listPizzas.length; i++) {
     if (listPizzas[i].classList.contains('rotate')) {
@@ -265,13 +265,13 @@ function toggleView() {
   doc.body.classList.toggle('list');
 }
 
-function removeClassRotate () {
+function removeClassRotate (event) {
   if(!(doc.body.classList.contains('list'))) {
     event.currentTarget.classList.toggle('rotate');
   }
 }
 
-function changeIngredientsList () {
+function changeIngredientsList (event) {
   if (event.target.classList.contains('ingredient')) {
     if (event.target.checked === false) {
       this.getElementsByClassName('price')[0].innerHTML -= 10;
@@ -284,7 +284,7 @@ function changeIngredientsList () {
   }
 }
 
-function addAddings () {
+function addAddings (event) {
   if(event.target.classList.contains('addings')) {
     let selectQuantity = this.querySelectorAll('.addings');
     if (selectQuantity.length < 6) {
@@ -308,7 +308,7 @@ function addAddings () {
   }  
 }
 
-function buyPizza() {
+function buyPizza(event) {
   if(event.target.classList.contains('card__btn')) {
     event.stopImmediatePropagation();
     let ingredients = [];
@@ -329,7 +329,7 @@ function buyPizza() {
   }
 }
 
-function createNewPizza() {
+function createNewPizza(event) {
   event.preventDefault();
   let name = this.newtitle.value;
   let ingredients = [];
@@ -358,7 +358,7 @@ function createNewPizza() {
   }  
 }
 
-function emptyCart() {
+function emptyCart(event) {
   event.preventDefault();
   myCart = [];
   window.localStorage.setItem('cart', '');
