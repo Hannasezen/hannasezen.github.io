@@ -1,6 +1,5 @@
 'use strict';
 
-//variables
 const doc = document;
 let listButton = doc.querySelector('#list');
 let pizzaCards = doc.querySelector('#pizzaCards');
@@ -11,7 +10,8 @@ let cartQuantity = doc.querySelector('.cart__quantity');
 let resultArray = []; //array for sorting
 let filteredArray = []; // array for filter
 let closeCartCross = doc.querySelector('#close__cross');
-let cartList = doc.querySelector('#cart__list');
+let cartSmall = doc.querySelector('#cart');
+let cartOpen = doc.querySelector('#cart-open');
 let pizzas = [
   {
     img: './img/mashrooms.jpg',
@@ -165,7 +165,8 @@ sorts.addEventListener('click', sortPizzas);
 filters.addEventListener('click', filterPizzas);
 // for clear the cart
 closeCartCross.addEventListener('click', emptyCart);
-
+//for open the cart
+cartSmall.addEventListener('click', openCart);
 
 function loadPizzas (arr) {
   arr = arr || pizzas;
@@ -300,22 +301,31 @@ function addAddings (event) {
 function buyPizza(event) {
   if(event.target.classList.contains('card__btn')) {
     event.stopImmediatePropagation();
-    let ingredients = [];
-    let p = this.querySelectorAll('.ingredient');
-    for (let i = 0; i < p.length; i++) {
-      if(p[i].checked === true) {
-        ingredients[i] = p[i].value;
-      }      
-    }
-    myCart.push({
-      name: this.querySelector('.card__name').innerText.replace(/\'|\"/g, ''),
-      price: this.querySelector('.card__price').innerText,
-      ingredients: ingredients.filter(item => item !== '')
-    });    
+    let name = this.querySelector('.card__name').innerText.replace(/\'|\"/g, '');
+    if(myCart.find(item => item.name === name)) {
+      myCart.find(item => item.name === name).quantity += 1;
+    } else {
+      let ingredients = [];
+      let p = this.querySelectorAll('.ingredient');
+      for (let i = 0; i < p.length; i++) {
+        if(p[i].checked === true) {
+          ingredients[i] = p[i].value;
+        }      
+      }
+      myCart.push({
+        name: name,
+        price: this.querySelector('.card__price').innerText,
+        ingredients: ingredients.filter(item => item !== ''),
+        quantity: 1
+      });       
+    };
     let cartJSON = JSON.stringify(myCart);
-    localStorage.setItem('cart', cartJSON);
-    cartQuantity.innerHTML = JSON.parse(localStorage.getItem('cart')).length;
-  }
+      localStorage.setItem('cart', cartJSON);
+      cartQuantity.innerHTML = myCart.length;
+    if(cartOpen.classList.contains('open')) {
+      renderCart();
+    }
+  }   
 }
 
 function createNewPizza(event) {
@@ -345,6 +355,21 @@ function createNewPizza(event) {
   } else {
     alert('Введите название новой пиццы');
   }  
+}
+
+function openCart() {
+  renderCart();
+  cartOpen.classList.toggle('open');
+}
+
+function renderCart() {
+  cartOpen.innerHTML = '';
+  for (let item of myCart) {
+    let li = doc.createElement('li');
+    li.classList.add('cart__item');
+    li.innerHTML = `<p>${item.name}</p> <p>${item.price}</p> <p>${item.quantity}</p>`;
+    cartOpen.appendChild(li);
+  }
 }
 
 function emptyCart(event) {
