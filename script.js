@@ -155,11 +155,6 @@ if(window.localStorage.getItem('cart')) {
 // loading results on the page
 window.onload = loadPizzas();
 
-// sort buttons
-let sortPrice = doc.querySelector('#byPrice');
-let sortCallory = doc.querySelector('#byCallory');
-let sortName = doc.querySelector('#byName');
-
 // user events
 newPizza.addEventListener('submit', createNewPizza);
 // change pages view
