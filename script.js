@@ -151,6 +151,13 @@ if(window.localStorage.getItem('cart')) {
   myCart = JSON.parse(localStorage.getItem('cart'));
   cartQuantity.innerHTML = JSON.parse(localStorage.getItem('cart')).length;
 }
+// generate id for pizzas
+function* generator () {
+  for (let i = 16; i < 1000; i++) {
+    yield i;
+  }
+}
+let gen = generator();
 
 // loading results on the page
 window.onload = loadPizzas();
@@ -223,8 +230,8 @@ function loadPizzas (arr) {
   }
 }
 
-let storageObj = JSON.stringify(pizzas);
-localStorage.setItem('pizzas', storageObj)
+let storagePizzas = JSON.stringify(pizzas);
+localStorage.setItem('pizzas', storagePizzas)
 
 function sortPizzas(event) {
   if (event.target.nodeName === "BUTTON") {
@@ -302,16 +309,17 @@ function buyPizza(event) {
   if(event.target.classList.contains('card__btn')) {
     event.stopImmediatePropagation();
     let name = this.querySelector('.card__name').innerText.replace(/\'|\"/g, '');
-    if(myCart.find(item => item.name === name)) {
-      myCart.find(item => item.name === name).quantity += 1;
+    let ingredients = [];
+    let p = this.querySelectorAll('.ingredient');
+    for (let i = 0; i < p.length; i++) {
+      if(p[i].checked === true) {
+        ingredients[i] = p[i].value;
+      }         
+    }
+    if(myCart.find(item => item.name === name && item.ingredients.sort().join('') === ingredients.sort().join('')))  {
+      console.log(ingredients.sort().join(''));
+      myCart.find(item => item.name === name && item.ingredients.sort().join('') === ingredients.sort().join('')).quantity += 1;
     } else {
-      let ingredients = [];
-      let p = this.querySelectorAll('.ingredient');
-      for (let i = 0; i < p.length; i++) {
-        if(p[i].checked === true) {
-          ingredients[i] = p[i].value;
-        }      
-      }
       myCart.push({
         name: name,
         price: this.querySelector('.card__price').innerText,
@@ -341,6 +349,7 @@ function createNewPizza(event) {
   if (name !== '') {
     pizzas.push({
       name,
+      id: gen.next().value,
       img: "./img/sea.jpg",
       ingredients,
       price: 0,
