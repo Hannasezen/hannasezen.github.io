@@ -134,6 +134,7 @@ body {
   padding: 5px;
   border-radius: 5px;
   background: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
 }
 
 .cart__img {
@@ -191,24 +192,12 @@ body {
   margin-bottom: 5px;
 }
 
-.item__ingredients {
-
-}
-
 .item__controls {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   width: 30%;
-}
-
-.item__price {
-
-}
-
-.item__quantity {
-
 }
 
 .item__buttons {
