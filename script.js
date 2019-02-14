@@ -401,6 +401,7 @@ function changeQuantity(event) {
     }
   }
   renderCart();
+  cartQuantity.innerHTML = myCart.length;
   saveCartToStorage();
 }
  
