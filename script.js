@@ -337,8 +337,8 @@ function createNewPizza(event) {
       id: gen.next().value,
       img: "./img/sea.jpg",
       ingredients,
-      price: 0,
-      callory: 0
+      price: ingredients.length * 10,
+      callory: ingredients.length * 30
     });
     this.newtitle.value = '';
     for (let i = 0; i < ingr.length; i++) {
