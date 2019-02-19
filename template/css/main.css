@@ -120,7 +120,7 @@ input, button {
 .burger-menu {
   display: none;
   cursor: pointer;
-  padding: 28px 20px;
+  padding: 28px 0 28px 20px;
   border-left: 1px solid rgb(229, 229, 229);
 }
 
@@ -915,7 +915,7 @@ input, button {
 
 .item-info {
   display: flex;
-  padding: 60px 60px 158px 60px;
+  padding: 60px 0 158px 0;
 }
 
 .item__images {
@@ -932,8 +932,10 @@ input, button {
 }
 
 .item__description {
+  display: flex;
+  flex-direction: column;
   width: 50%;
-  padding: 20px 50px 0 50px;
+  padding: 20px 0 0 50px;
 }
 
 .description__title {
@@ -1008,11 +1010,6 @@ input, button {
     height: 70px;
   }
 
-  .card {
-    max-width: 204px;
-    min-width: 204px;
-  }
-
   .wrapper {
     max-width: 768px;
   }
@@ -1074,6 +1071,11 @@ input, button {
   }
 
   /* tablet adaptive for START page */
+
+  .arrivals__cards .card {
+    max-width: 204px;
+    min-width: 204px;
+  }
 
   .start__promos .promo {
     flex-basis: 66.7%;
@@ -1137,7 +1139,8 @@ input, button {
   }
   
   .catalog__cards .card {
-    
+    max-width: 204px;
+    min-width: 204px;
     min-height: 482px;
     margin-top: 0;
   }
@@ -1216,7 +1219,7 @@ input, button {
   
   .item-info {
     flex-direction: column;
-    padding: 30px 39px 140px 39px;
+    padding: 30px 0 140px 0;
   }
 
   .item__images,
@@ -1233,13 +1236,28 @@ input, button {
     flex-direction: column;
   }
 
+  .description__btn {
+    order: 6;
+  }
+
   .item__description {
     text-align: center;
-    padding: 22px 23% 0 23%;
+    padding: 22px 0 0 0;
   }
 
   .description__title {
     font-size: 20px;
+    order: 1;
+  }
+
+  .description__price {
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    order: 2;
+  }
+
+  .description__text {
+    order: 3;
   }
 
   .description__text,
@@ -1253,10 +1271,12 @@ input, button {
 
   .description__sizes {
     margin-bottom: 30px;
+    order: 4;
   }
 
   .description__colors {
     margin-bottom: 98px;
+    order: 5;
   }
 
   .nav__item {
@@ -1338,6 +1358,11 @@ input, button {
 /* styles for mobile */
 @media screen and (max-width: 767px) {
 
+  .btn {
+    width: 220px;
+    height: 62px;
+  }
+
   .wrapper {
     max-width: 375px;
   }
@@ -1358,7 +1383,7 @@ input, button {
   }
 
   .wrap-logo {
-    padding: 0 20px;
+    padding-right: 20px;
     align-items: center;
     flex-grow: 1;
   }
@@ -1548,4 +1573,19 @@ input, button {
     padding: 20px 0;
     font-size: 14px;
   }
+
+  /* mobile styles for ITEM page */
+
+  .item-info {
+    padding: 14px 0 99px 0;
+  }
+
+  .description__colors {
+    margin-bottom: 50px;
+  }
+
+  .promos-wrap {
+    display: none;
+  }
+  
 }
