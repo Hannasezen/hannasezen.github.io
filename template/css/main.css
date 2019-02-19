@@ -280,8 +280,8 @@ input, button {
 
 .promo__text {
   position: absolute;
-  top: 17%;
-  right: 15%;
+  top: 65px;
+  right: 79px;
   text-align: center;
 }
 
@@ -296,7 +296,7 @@ input, button {
 .promo__category {
   font-family: 'CrimsonItalic';
   font-size: 16px;
-  color: rgb(117, 117, 117);
+  font-weight: normal;
   text-transform: capitalize;
 }
 
@@ -582,6 +582,7 @@ input, button {
 
 .filters {
   width: 100%;
+  white-space: nowrap;
 }
 
 .filters-mobile__wrapper {
@@ -593,6 +594,7 @@ input, button {
 .filter-mobile {
   display: flex;
   align-items: center;
+  white-space: nowrap;
 }
 
 .filter-mobile__list {
@@ -1117,6 +1119,7 @@ input, button {
     position: absolute;
     background-color: rgb(255, 255, 255);
     z-index: 10;
+    max-width: 768px;
   }
 
   .filters__list.open {
@@ -1167,6 +1170,11 @@ input, button {
   .special-price__title {
     font-size: 20px;
     letter-spacing: 0.6px;
+  }
+
+  .promo__text {
+    top: 36px;
+    right: 62px;
   }
 
   /* tablet styles for FILTERS in catalog */
@@ -1437,6 +1445,11 @@ input, button {
     margin-left: 0;
   }
 
+  .promo__text {
+    top: 38px;
+    right: 43px;
+  }
+
   /* mobile styles for START page */
 
   .start__promos .promo-small {
@@ -1586,6 +1599,56 @@ input, button {
 
   .promos-wrap {
     display: none;
+  }
+
+  .promo__text {
+    top: 38px;
+    right: 43px;
+  }
+
+  /* mobile adaptive for CATALOG page */
+
+  .catalog__cards .card {
+    max-width: 158px;
+    min-width: 158px;
+    min-height: 366px;
+    max-height: 366px;
+  }
+
+  .catalog__cards .card:nth-child(1n + 9) {
+    display: none;
+  }
+
+  .catalog__cards .card__img {
+    max-height: 223px;
+    max-width: 158px;
+    margin-bottom: 33px;
+  }
+
+  .catalog__cards .card:first-child {
+    margin-bottom: 253px;
+  }
+
+  .card__desc {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+
+  .special-price {
+    top: 395px;
+  }
+
+  .special-price__title {
+    font-size: 18px;
+    letter-spacing: 0.5px;
+  }
+
+  .special-price__text {
+    font-size: 14px;
+  }
+
+  .filters__list {
+    max-width: 375px;
   }
   
 }
