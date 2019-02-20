@@ -1608,6 +1608,10 @@ input, button {
 
   /* mobile adaptive for CATALOG page */
 
+  .catalog__main {
+    padding-bottom: 100px;
+  }
+
   .catalog__cards .card {
     max-width: 158px;
     min-width: 158px;
