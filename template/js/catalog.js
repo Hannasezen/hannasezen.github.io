@@ -1,5 +1,5 @@
 
-// open/close filters in catalog
+// open/close filters menu in catalog
 
 doc.querySelector('#catalog-filters').addEventListener('click', function() {
   doc.querySelector('#filters-cross').classList.toggle('open');

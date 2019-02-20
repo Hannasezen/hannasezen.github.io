@@ -71,17 +71,17 @@
     <div class="item-info-wrapper">
       <div class="item-info container">
         <div class="item__images">
-          <div class="item__images-big">
+          <div id="item-big-img" class="item__images-big">
             <img src="./img/item-photo-1.jpg" alt="product item photo">
           </div>
-          <div class="item__images-small">
-            <div>
+          <div id="item-small-images" class="item__images-small">
+            <div class="image-small">
               <img src="./img/item-photo-1-small.jpg" alt="product item photo">
             </div>
-            <div>
+            <div class="image-small">
               <img src="./img/item-photo-2-small.jpg" alt="product item photo">
             </div>
-            <div>
+            <div class="image-small">
               <img src="./img/item-photo-3-small.jpg" alt="product item photo">
             </div>          
           </div>
@@ -90,24 +90,26 @@
           <div class="description__title">Dark classic fit suit</div>
           <div class="description__text">Featuring fine Italian wool, this elegant suit has pick-stitch edging, cascade buttons at the cuffs</div>
           <div class="description__price">£180.60</div>
-          <div class="description__menu description__sizes">
-            <div class="menu__param">Size:</div>
-            <ul class="menu__variants">
-              <li>UK 52</li>
-              <li>UK 54</li>
-              <li>UK 56</li>
-            </ul>
-          </div>
-          <div class="description__menu description__colors">
-            <div class="menu__param">Color:</div>
-            <ul class="menu__variants">
-                <li>Black</li>
-                <li>Blue</li>
-            </ul>
-          </div>
-          <div class="description__btn">
-            <button class="btn">Add to bag</button>
-          </div>        
+          <form class="description__form" id="description__form" action="submit">
+            <div class="description__menu description__sizes">
+              <div class="menu__param">Size:</div>
+              <div class="menu__variants">
+                <input id="52" type="radio" name="size" value="UK52"><label for="52">UK 52</label>
+                <input id="54" type="radio" name="size" value="UK54"><label for="54">UK 54</label>
+                <input id="56" type="radio" name="size" value="UK56"><label for="56">UK 56</label>
+              </div>
+            </div>
+            <div class="description__menu description__colors">
+              <div class="menu__param">Color:</div>
+              <div class="menu__variants">
+                <input id="black" type="radio" name="color" id="black"><label for="black">Black</label>
+                <input id="blaue" type="radio" name="color" id="blaue"><label for="blaue">Blue</label>
+              </div>
+            </div>
+            <div class="description__btn">
+              <button class="btn">Add to bag</button>
+            </div> 
+          </form>                 
         </div>
       </div>
     </div>
@@ -224,5 +226,6 @@
     </footer>
   </div>
   <script src="./js/common.js"></script>
+  <script src="./js/item.js"></script>
 </body>
 </html>
