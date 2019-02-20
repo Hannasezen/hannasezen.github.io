@@ -335,7 +335,6 @@ input, button {
 .card {
   font-family: 'Roboto';
   letter-spacing: 0.4px;
-  min-width: 240px;
 }
 
 
@@ -672,10 +671,6 @@ input, button {
   padding-bottom: 98px;
 }
 
-.catalog__cards .card__img {
-  margin-bottom: 49px;
-}
-
 .catalog__cards .card:first-child {
   margin-bottom: 248px;
 }
@@ -818,12 +813,9 @@ input, button {
   min-width: 240px;
 }
 
-.bag__cards .bag__card:nth-child(1n + 3) {
-  margin-top: 91px;
-}
-
 .bag-card__desc {
   padding: 8px 24px;
+  height: 431px;
 }
 
 .bag-card__title {
@@ -875,7 +867,7 @@ input, button {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px 91px 60px 91px;
+  padding: 30px 0 60px 0;
 }
 
 .bag__empty {
@@ -1142,9 +1134,6 @@ input, button {
   }
   
   .catalog__cards .card {
-    max-width: 204px;
-    min-width: 204px;
-    min-height: 482px;
     margin-top: 0;
   }
 
@@ -1155,10 +1144,11 @@ input, button {
   .catalog__cards .card__img {
     max-height: 289px;
     max-width: 204px;
-    margin-bottom: 44px;
   }
 
   .catalog__cards .card__text {
+    min-height: 193px;
+    padding-top: 43px;
     max-width: 175px;
   }
 
@@ -1314,10 +1304,18 @@ input, button {
     font-size: 20px;
   }
 
+  .bag__cards {
+    padding-bottom: 0;
+  }
+
   .bag-card__img {
     min-width: 145px;
     width: 145px;
     height: 204px;
+  }
+
+  .bag-card__desc {
+    height: 301px;
   }
 
   .bag-card__title {
@@ -1612,13 +1610,6 @@ input, button {
     padding-bottom: 100px;
   }
 
-  .catalog__cards .card {
-    max-width: 158px;
-    min-width: 158px;
-    min-height: 366px;
-    max-height: 366px;
-  }
-
   .catalog__cards .card:nth-child(1n + 9) {
     display: none;
   }
@@ -1626,11 +1617,16 @@ input, button {
   .catalog__cards .card__img {
     max-height: 223px;
     max-width: 158px;
-    margin-bottom: 33px;
   }
 
   .catalog__cards .card:first-child {
     margin-bottom: 253px;
+  }
+
+  .catalog__cards .card__text {
+    min-height: 143px;
+    padding-top: 33px;
+    max-width: 158px;
   }
 
   .card__desc {
@@ -1653,6 +1649,27 @@ input, button {
 
   .filters__list {
     max-width: 375px;
+  }
+
+  /* mobile styles for SHOPPING BAG page */
+
+  .bag__card {
+    width: 100%;
+    height: 265px;
+  }
+
+  .delivery-message,
+  .bag__empty,
+  .total-cost_text {
+    font-size: 10px;
+  }
+
+  .total-cost__pound {
+    font-size: 14px;
+  }
+
+  .bag__btn {
+    width: 140px;
   }
   
 }
