@@ -61,8 +61,8 @@
         </div>      
       </div>
     </header>
-    <div class="slider">
-      <div class="slider__arrows">
+    <div class="slider" id="slider">
+      <div class="slider__arrows" id="control-arrows">
         <button class="arrow__left">
           <img src="./img/arrow_left.png" alt="slider left arrow">
         </button>
@@ -70,9 +70,15 @@
           <img src="./img/arrow_right.png" alt="slider right arrow">
         </button>
       </div>
-      <div class="slider__points"></div>
-      <div class="slider__wrap">
-        <a href="#" class="slider__img first">
+      <div class="slider__points">
+        <ul class="points__wrap" id="control-points">
+          <li class="slider__point active"></li>
+          <li class="slider__point"></li>
+          <li class="slider__point"></li>
+        </ul>        
+      </div>
+      <div class="slider__wrap" id="slider-wrap">
+        <a href="#" class="slider__img active">
           <picture>
             <source srcset="./img/slide_375_1.jpg" media="(max-width: 767px)">
             <source srcset="./img/slide_768_1.jpg" media="(max-width: 1023px)">
@@ -91,13 +97,6 @@
             <source srcset="./img/slide_375_3.jpg" media="(max-width: 767px)">
             <source srcset="./img/slide_768_3.jpg" media="(max-width: 1023px)">
             <img src="./img/slide_1300_3.jpg" alt="slide photo">
-          </picture>
-        </a>
-        <a href="#" class="slider__img">
-          <picture>
-            <source srcset="./img/slide_375_4.jpg" media="(max-width: 767px)">
-            <source srcset="./img/slide_768_4.jpg" media="(max-width: 1023px)">
-            <img src="./img/slide_1300_4.jpg" alt="slide photo">
           </picture>
         </a>
       </div>      
@@ -259,5 +258,6 @@
     </footer>
   </div>
   <script src="./js/common.js"></script>
+  <script src="./js/slider.js"></script>
 </body>
 </html>
