@@ -406,7 +406,8 @@ a:hover {
   padding: 5px 6px;
   font-family: 'Roboto';
   font-size: 12px;
-  letter-spacing: 0.4px;  
+  letter-spacing: 0.4px;
+  white-space: nowrap; 
   background-color: rgb(244, 244, 244);
 }
 
