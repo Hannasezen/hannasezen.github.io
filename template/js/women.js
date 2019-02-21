@@ -1,7 +1,7 @@
-function renderItems () {
-  let cards = doc.querySelector('#arrivals-cards');
+function renderItemsWomen () {
+  let cards = doc.querySelector('#catalog-cards');
   for (let item of items) {
-    if (item.new === true) {
+    if (item.category === 'women') {
       let card = doc.createElement('div');
         card.classList.add('card');
         card.innerHTML = `
@@ -18,4 +18,4 @@ function renderItems () {
       }
     } 
 }
-renderItems();
+renderItemsWomen();

@@ -1,4 +1,3 @@
-
 // open/close filters menu in catalog
 
 doc.querySelector('#catalog-filters').addEventListener('click', function() {

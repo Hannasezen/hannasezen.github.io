@@ -840,11 +840,18 @@ a:hover {
 
 .catalog__cards {
   margin: 0 auto;
-  padding-bottom: 98px;
 }
 
 .catalog__cards .card:first-child {
-  margin-bottom: 248px;
+  margin-bottom: 142px;
+}
+
+.catalog__cards .card__img {
+  margin-bottom: 49px;
+}
+
+.catalog__cards .card__text {
+  min-height: 200px;
 }
 
 .catalog__category {
@@ -1036,6 +1043,7 @@ a:hover {
 }
 
 .item__images {
+  justify-content: center;
   width: 50%;
 }
 
@@ -1269,12 +1277,11 @@ a:hover {
 
   .catalog__main {    
     margin: auto;
-    padding-top: 0;
+    padding-top: 39px;
   }
 
   .catalog__cards {
-    justify-content: space-around;    
-    padding-top: 39px;
+    justify-content: space-around;
     padding-bottom: 0;
   }
   
@@ -1509,7 +1516,7 @@ a:hover {
   }
 
   .item__images-big {
-    min-width: 516px;
+    min-width: 590px;
     min-height: 345px;
   }
 
@@ -1784,6 +1791,7 @@ a:hover {
 
   .catalog__main {
     padding-bottom: 100px;
+    padding-top: 20px;
   }
 
   .catalog__cards .card {
