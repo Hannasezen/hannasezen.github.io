@@ -177,17 +177,26 @@ a:hover {
   margin-bottom: 3px;
 }
 
+.wrap-menu {
+  position: relative;
+}
+
 .header__nav {
   flex-grow: 1;
 }
 
 .nav__links {
+  max-width: 85%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
   font-size: 13px;
   text-transform: capitalize;
+}
+
+.nav__link {
+  line-height: 2;
 }
 
 .nav__link:last-child {
@@ -224,7 +233,23 @@ a:hover {
 .search {
   width: 118px;
   margin-left: 110px;
-  position: relative;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: white;
+  box-shadow: -10px 0 50px 20px white;
+}
+
+.search.open-search {
+  width: 250px;
+}
+
+.open-search .search__input {
+  width: 100%;
+}
+
+.open-search.search:after {
+  width: 250px;
 }
 
 .search:after {
@@ -683,6 +708,7 @@ a:hover {
 }
 
 .filters {
+  position: relative;
   width: 100%;
   white-space: nowrap;
 }
@@ -696,6 +722,8 @@ a:hover {
 .filter-mobile {
   display: flex;
   align-items: center;
+  position: relative;
+  overflow: hidden;
   white-space: nowrap;
 }
 
@@ -707,7 +735,7 @@ a:hover {
 }
 
 .filter-mobile__item {
-  margin-right: 3px;
+  margin-right: 10px;
 }
 
 .filters-cross {
@@ -717,7 +745,7 @@ a:hover {
   cursor: pointer;
 }
 
-.filters-cross.open {
+.open-filters .filters-cross {
   visibility: visible;
 }
 
@@ -1216,14 +1244,23 @@ a:hover {
   .filters__list {
     display: none;
     position: absolute;
+    left: 0;
+    right: 0;
     background-color: rgb(255, 255, 255);
-    z-index: 2;
+    z-index: 3;
   }
 
-  .filters__list.open {
+  .open-filters .filters__list {
     display: flex;
     box-shadow: 10px 10px 20px 0 rgb(0, 0, 0, 0.3);
   }
+  .dropdown-arrow {
+    position: absolute;
+    right: 0;
+    padding: 15px;
+    background: white;
+    box-shadow: -10px 0 50px 20px white;
+  }  
 
   .dropdown-arrow.close {
     display: none;
@@ -1463,11 +1500,11 @@ a:hover {
   }
 
   .search__input {
-    display: none;
+    width: 0;
   }
 
   .search::after {
-    display: none;
+    width: 0;
   }
 
   .item__images-big {
@@ -1536,7 +1573,7 @@ a:hover {
     box-shadow: 10px 10px 20px 0 rgb(0, 0, 0, 0.3);
   }
 
-  .wrap-menu.open {
+  .wrap-menu.open-menu  {
     display: block;
   }
 
@@ -1545,8 +1582,12 @@ a:hover {
   }
 
   .nav__link {
-    margin-bottom: 35px;
+    margin-bottom: 20px;
     font-size: 24px;
+  }
+
+  .nav__link:last-child {
+    margin-bottom: 80px;
   }
 
   .search::after {
@@ -1554,6 +1595,7 @@ a:hover {
   }
 
   .search {
+    position: relative;
     width: 167px;
     margin-left: 0;
   }
