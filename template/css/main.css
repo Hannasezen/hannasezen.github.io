@@ -490,12 +490,12 @@ a:hover {
 .promos {
   display: flex;
   flex-direction: row;
+  box-shadow: 0 1px 0 0 rgb(229, 229, 229);
 }
 
 .promo {
   width: 50%;
   position: relative;
-  box-shadow: 1px 1px 0 0 rgb(229, 229, 229), 0 -1px 0 0 rgb(229, 229, 229);
 }
 
 .promo__text {
@@ -595,6 +595,7 @@ a:hover {
   height: 80px;
   z-index: 20;
   background: rgb(255, 255, 255);
+  box-shadow: 0 1px 0 0 rgb(229, 229, 229);
 }
 
 .points__wrap {
@@ -712,14 +713,14 @@ a:hover {
 }
 
 .filters-cross {
-  display: none;
+  visibility: hidden;
   flex-grow: 1;
   text-align: right;
   cursor: pointer;
 }
 
 .filters-cross.open {
-  display: block;
+  visibility: visible;
 }
 
 .filters__list {
@@ -802,6 +803,8 @@ a:hover {
 ---------------------------------------------------------------------- */
 
 .catalog__main {
+  width: 96%;
+  margin: auto;
   position: relative;
   padding-top: 60px;
   padding-bottom: 156px;
@@ -1020,8 +1023,6 @@ a:hover {
 
 .image-small {
   width: 33.3%;
-  max-width: 197px;
-  max-height: 130px;
 }
 
 .image-small img {
@@ -1116,11 +1117,6 @@ a:hover {
     width: 260px;
     height: 70px;
   }
-
-  .container {
-    max-width: 690px;
-  }
-
   .header__logo {
     font-size: 26px;
   }
@@ -1168,9 +1164,14 @@ a:hover {
   .promo__title {
     font-size: 22px;
   }
-  
-  .footer {
-    max-width: 690px;
+
+  .pages__nav {
+    margin: 0;
+  }
+
+  .pages__nav,
+  .customer__nav {
+    width: 50%;
   }
 
   /* tablet adaptive for START page */
@@ -1182,7 +1183,6 @@ a:hover {
 
   .start__promos .promo {
     flex-basis: 66.7%;
-    box-shadow: 0 1px 0 0 rgb(229, 229, 229);
   }
 
   .start__promos .promo-hide {
@@ -1192,7 +1192,6 @@ a:hover {
   .start__promos .promo-small {
     display: block;
     flex-basis: 33.3%;
-    box-shadow: 0px 1px 0 0 rgb(229, 229, 229);
   }
 
   .arrivals {
@@ -1207,6 +1206,7 @@ a:hover {
 
   .arrivals__cards {
     margin-bottom: 89px;
+    justify-content: space-around;
   }
 
   .arrivals__cards .card:nth-child(1n + 4) {
@@ -1220,29 +1220,30 @@ a:hover {
     position: absolute;
     background-color: rgb(255, 255, 255);
     z-index: 10;
-    max-width: 768px;
   }
 
   .filters__list.open {
     display: flex;
+    box-shadow: 10px 10px 20px 0 rgb(0, 0, 0, 0.3);
   }
 
   .dropdown-arrow.close {
     display: none;
   }
 
-  .catalog__main {
-    max-width: 690px;
+  .catalog__main {    
     margin: auto;
     padding-top: 0;
   }
 
   .catalog__cards {
+    justify-content: space-around;    
     padding-top: 39px;
     padding-bottom: 0;
   }
   
   .catalog__cards .card {
+    width: 33.3%;
     margin-top: 0;
   }
 
@@ -1251,6 +1252,7 @@ a:hover {
   }
 
   .catalog__cards .card__img {
+    margin: auto;
     max-height: 289px;
     max-width: 204px;
   }
@@ -1340,6 +1342,7 @@ a:hover {
 
   .image-small {
     width: 100%;
+    flex-grow: 1;
   }
 
   .item__images-small {
@@ -1489,10 +1492,6 @@ a:hover {
     height: 62px;
   }
 
-  .container {
-    max-width: 335px;
-  }
-
   .header {
     padding: 0;
     position: relative;
@@ -1531,10 +1530,12 @@ a:hover {
     display: none;
     flex-direction: column;
     position: absolute;
+    left: 0;
     z-index: 10;
     background: rgb(255, 255, 255);
     width: 100%;
     padding: 35px 20px 45px 20px;
+    box-shadow: 10px 10px 20px 0 rgb(0, 0, 0, 0.3);
   }
 
   .wrap-menu.open {
@@ -1688,6 +1689,7 @@ a:hover {
   }
 
   .footer__nav {
+    width: 70%;
     order: 1;
     padding: 20px 0;
     font-size: 10px
@@ -1743,6 +1745,10 @@ a:hover {
     padding-bottom: 100px;
   }
 
+  .catalog__cards .card {
+    width: 50%;
+  }
+
   .catalog__cards .card:nth-child(1n + 9) {
     display: none;
   }
@@ -1778,10 +1784,6 @@ a:hover {
 
   .special-price__text {
     font-size: 14px;
-  }
-
-  .filters__list {
-    max-width: 375px;
   }
 
   /* mobile styles for SHOPPING BAG page */
