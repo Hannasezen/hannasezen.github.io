@@ -8,20 +8,13 @@ doc.querySelector('#catalog-filters').addEventListener('click', function() {
 let filters = doc.querySelectorAll('.filters__item');
 for (let filter of filters) {
   filter.addEventListener('click', function(event) {
-    if (event.target.nodeName === 'LI') {
-      if(event.target.querySelectorAll('a')[0].classList.contains('not-selected')) {
-        filter.classList.remove('selected');
-      } else {
-        filter.classList.add('selected');
-        filter.querySelectorAll('.filter__subcategory')[0].innerHTML = event.target.querySelectorAll('a')[0].innerText; 
-      }           
-    } else if (event.target.nodeName === 'A') {
+    if (event.target.nodeName === 'LABEL') {
       if(event.target.classList.contains('not-selected')) {
         filter.classList.remove('selected');
       } else {
         filter.classList.add('selected');
-        filter.querySelectorAll('.filter__subcategory')[0].innerHTML = event.target.innerText;
-      } 
+        filter.querySelectorAll('.filter__subcategory')[0].innerHTML = event.target.innerText; 
+      }           
     }
   })
 }

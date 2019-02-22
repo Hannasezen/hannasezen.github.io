@@ -112,20 +112,29 @@
                 <h4 class="filter__subcategory"></h4>
               </div>
             <img class="filters__dropdown-arrow" src="./img/dropdown_arrow.png" alt="">
-            <ul class="catalog__select">
-              <li class="select__item">
-                <a href="#">
-                  <input type="radio" id="fashion-not-selected" name="fashion">
-                  <label for="fashion-not-selected" class="not-selected">Not selected</label>
-                </a>
-              </li>
-              <li class="select__item"><a href="#">Nail the 90s</a></li>
-              <li class="select__item"><a href="#">Casual style</a></li>
-              <li class="select__item"><a href="#">New Look</a></li>
-              <li class="select__item"><a href="#">Sport</a></li>
-              <li class="select__item"><a href="#">Vintage</a></li>
-              <li class="select__item"><a href="#">Classical style</a></li>
-            </ul>
+            <div class="catalog__select">
+      
+                  <input type="radio" id="fashion-not-selected" name="fashion" checked>
+                  <label class="select__item not-selected" for="fashion-not-selected">Not selected</label>
+
+                  <input type="radio" id="fashion-nail-the-90s" name="fashion">
+                  <label class="select__item" for="fashion-nail-the-90s">Nail the 90s</label>
+
+                  <input type="radio" id="casual-style" name="fashion">
+                  <label class="select__item" for="casual-style">Casual style</label>
+
+                  <input type="radio" id="new-look" name="fashion">
+                  <label class="select__item" for="new-look">New Look</label>
+
+                  <input type="radio" id="sport" name="fashion">
+                  <label class="select__item" for="sport">Sport</label>
+
+                  <input type="radio" id="vintage" name="fashion">
+                  <label class="select__item" for="vintage">Vintage</label>
+
+                  <input type="radio" id="classical-style" name="fashion">
+                  <label class="select__item" for="classical-style">Classical style</label>
+            </div>
           </li>
           <li class="filters__item">
             <div class="filter__params">
