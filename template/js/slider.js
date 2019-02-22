@@ -24,7 +24,6 @@
       item.classList.remove('active');
     }    
   }
-  // 0 i++ 1 i++ 2 
 
   function moveSlide() {
     let index = (Array.from(slides)).indexOf(activeSlide);
@@ -40,26 +39,5 @@
     }
   }
 
-  let interval = setInterval(moveSlide, 3000);
-
-  
-
-  /*function move (i) {
-    removeClass(activeSlide);
-    removeClass(activePoint);
-    slides[i].classList.add('active');
-    points[i].classList.add('active');
-    ++i;
-    if (i === 3) {
-      i = 0;
-    }*/
-
-  /*slider.addEventListener('click', function() {
-    if (event.target.classList.contains('slider__point')) {
-      clearInterval(interval);
-      i = (Array.from(points)).indexOf(event.target);
-      setInterval(move, 3000);
-    }
-  })*/
-  
+  let interval = setInterval(moveSlide, 10000);
 //})()
