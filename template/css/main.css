@@ -801,6 +801,28 @@ a:hover {
   right: 60px;
 }
 
+.filter__subcategory {
+  display: none;
+}
+
+.filters__item.selected {
+  padding: 13px 20px;
+}
+
+.selected .filter__category {
+  font-family: 'RobotoBold';
+  font-size: 12px;
+}
+
+.selected .filter__subcategory {
+  display: block;
+  color: rgb(241, 74, 88);
+}
+
+
+
+
+
 .catalog__select {
   display: none;
   width: 100%;
