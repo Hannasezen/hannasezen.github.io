@@ -1,10 +1,14 @@
 //;(() => {
   let slides = document.querySelectorAll('.slider__img');
   let points = document.querySelectorAll('.slider__point');
-  let slider = document.querySelector('#slider')
+  let slider = document.querySelector('#slider');
 
   function removeClass(elem) {
     elem.classList.remove('active');
+  }
+
+  function moveSlide() {
+
   }
 
   
