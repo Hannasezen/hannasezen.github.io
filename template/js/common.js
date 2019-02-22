@@ -58,11 +58,17 @@ let items = [
 ];
 
 // for open/close headers search form
-doc.getElementById('search').addEventListener('click', search);
+let form = doc.getElementById('search');
+let searchInput = form.querySelector('#search__input');
+form.addEventListener('click', search);
 function search(event) {
   event.preventDefault();
   this.classList.toggle('open-search');
-  this.querySelector('#search__input').focus();
+  searchInput.focus();
+  if ((event.target.nodeName === 'IMG' || event.target.nodeName === 'BUTTON') && searchInput.value !== '') {
+    console.log('send form');
+    searchInput.value = '';
+  }
 }
 
 // header menu on mobile version open/close
