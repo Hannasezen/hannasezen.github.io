@@ -135,7 +135,7 @@ function slectFilters(event) {
     } else {
 
       doc.querySelector('#catalog-cards').innerHTML = '';
-      _.assign(filteredItems, _.filter(items, item => _.includes(item[param], event.target.innerHTML.toLowerCase())));
+      filteredItems = _.filter( items, item => _.includes( item[param], event.target.innerHTML.toLowerCase() ) );
       renderItems(filteredItems);
 
       this.classList.add('selected');
