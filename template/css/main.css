@@ -841,7 +841,7 @@ a:hover {
   display: none;
 }
 
-input:checked+label {
+input:checked + label {
   color: rgb(241, 74, 88);
 }
 
@@ -1372,6 +1372,10 @@ input:checked+label {
   }
 
   .filters__item:first-child {
+    padding-left: 20px;
+  }
+
+  .filters__item.selected:first-child {
     padding-left: 20px;
   }
 
