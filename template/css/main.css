@@ -823,10 +823,6 @@ a:hover {
   color: rgb(241, 74, 88);
 }
 
-
-
-
-
 .catalog__select {
   display: none;
   width: 100%;
@@ -1298,6 +1294,7 @@ input:checked + label {
     display: flex;
     box-shadow: 10px 10px 20px 0 rgb(0, 0, 0, 0.3);
   }
+
   .dropdown-arrow {
     position: absolute;
     right: 0;
@@ -1308,6 +1305,14 @@ input:checked + label {
 
   .dropdown-arrow.close {
     display: none;
+  }
+
+  .filter__category {
+    font-size: 16px !important;
+  }
+
+  .filter__subcategory {
+    display: none !important;
   }
 
   .catalog__main {    

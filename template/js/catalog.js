@@ -115,30 +115,17 @@ doc.querySelector('#catalog-filters').addEventListener('click', function() {
 let filters = doc.querySelectorAll('.filters__item');
 for (let filter of filters) {
   filter.addEventListener('click', function(event) {
-    console.log(event.target);
+    let selector = '#' + makeIdFromTitle(filter.querySelectorAll('.filter__category')[0].innerText);
     if (event.target.nodeName === 'LABEL') {
       if(event.target.classList.contains('not-selected')) {
         filter.classList.remove('selected');
+        doc.querySelector(selector).innerText = filter.querySelectorAll('.filter__category')[0].innerText;
+          doc.querySelector(selector).classList.remove('text-red');
       } else {
-        //for desktop
-        if (window.innerWidth >= 1023) {
-          filter.classList.add('selected');
-          filter.querySelectorAll('.filter__subcategory')[0].innerHTML = event.target.innerText;
-        } 
-        //for tablet
-        else {
-          let selector = '#' + makeIdFromTitle(filter.querySelectorAll('.filter__category')[0].innerText);
-          if(event.target.innerText !== 'Not selected') {            
-            doc.querySelector(selector).innerText = event.target.innerText;
-            doc.querySelector(selector).classList.add('text-red')
-          } else {
-            if(event.target.classList.contains('not-selected')) {
-              filter.classList.remove('selected');
-
-            }
-          }
-        }
-
+        filter.classList.add('selected');
+        filter.querySelectorAll('.filter__subcategory')[0].innerHTML = event.target.innerText;        
+        doc.querySelector(selector).innerText = event.target.innerText;
+        doc.querySelector(selector).classList.add('text-red');
       }           
     }
   })
