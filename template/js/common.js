@@ -10,18 +10,19 @@ let items = [
     img: './img/arrival_1.png',
     description: '',
     price: 55.00,
-    sizes: ['UK18', 'UK20', 'UK22'],
-    colors: ['blue', 'golden'],
+    size: ['uk 18', 'uk 20', 'uk 22'],
+    color: ['blue', 'golden'],
     new: true,
-    category: 'women'
+    category: 'women',
+    fashion: 'sport'
   },
   {
     title: 'Boyfriend T-Shirt with Bohemian Print',
     img: './img/arrival_2.png',
     description: '',
     price: 34.25,
-    sizes: ['UK50', 'UK52'],
-    colors: ['black', 'red'],
+    size: ['uk 50', 'uk 52'],
+    color: ['black', 'red'],
     new: true,
     category: 'men'
   },
@@ -30,8 +31,8 @@ let items = [
     img: './img/arrival_3.png',
     description: '',
     price: 140.50,
-    sizes: ['UK20', 'UK22L'],
-    colors: ['golden', 'red'],
+    size: ['uk 20', 'uk 22l'],
+    color: ['golden', 'red'],
     new: true,
     category: 'women'
   },
@@ -40,8 +41,8 @@ let items = [
     img: './img/arrival_4.png',
     description: '',
     price: 12.75,
-    sizes: ['UK18', 'UK22S'],
-    colors: ['green', 'blue'],
+    size: ['uk 18', 'uk 22s'],
+    color: ['green', 'blue'],
     new: true,
     category: 'women'
   },
@@ -50,8 +51,8 @@ let items = [
     img: './img/arrival_4.png',
     description: '',
     price: 76.25,
-    sizes: ['UK18', 'UK22S'],
-    colors: ['green', 'blue'],
+    size: ['uk 18', 'uk 22s'],
+    color: ['green', 'blue'],
     new: false,
     category: 'women'
   }
@@ -72,9 +73,10 @@ function search(event) {
 }
 
 // header menu on mobile version open/close
-
 doc.querySelector('#burger-btn').addEventListener('click', function () {
   this.classList.toggle('active');
   doc.querySelector('#burger-menu').classList.toggle('open-menu');
 })
+
+
 

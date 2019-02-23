@@ -1,3 +1,4 @@
+//rendering product cards
 function renderItems () {
   let cards = doc.querySelector('#arrivals-cards');
   for (let item of items) {

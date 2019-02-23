@@ -48,14 +48,16 @@ let filtersData = {
     '£100 - £299': {min: 100.00, max: 299.99},
     'From £300': {min: 300.00, max: 5999.99}
   }
-}
+};
+
+let filteredItems = {};
 
 function makeIdFromTitle (title) {
   let res = title.toLowerCase().replace(/\W/g, '');
   return res;
 }
 
-(function renderFilters () {
+function renderFilters () {
   for (let key in filtersData) {
     let li = doc.createElement('li');
     li.classList.add('filters__item');
@@ -104,7 +106,8 @@ function makeIdFromTitle (title) {
     li.appendChild(catalogSelect);
     doc.querySelector('#filters-list').appendChild(li);
   }
-})();
+};
+window.onload = renderFilters();
 
 // open/close filters menu in catalog
 doc.querySelector('#catalog-filters').addEventListener('click', function() {
@@ -114,20 +117,52 @@ doc.querySelector('#catalog-filters').addEventListener('click', function() {
 // filters data
 let filters = doc.querySelectorAll('.filters__item');
 for (let filter of filters) {
-  filter.addEventListener('click', function(event) {
-    let selector = '#' + makeIdFromTitle(filter.querySelectorAll('.filter__category')[0].innerText);
-    if (event.target.nodeName === 'LABEL') {
-      if(event.target.classList.contains('not-selected')) {
-        filter.classList.remove('selected');
-        doc.querySelector(selector).innerText = filter.querySelectorAll('.filter__category')[0].innerText;
-          doc.querySelector(selector).classList.remove('text-red');
-      } else {
-        filter.classList.add('selected');
-        filter.querySelectorAll('.filter__subcategory')[0].innerHTML = event.target.innerText;        
-        doc.querySelector(selector).innerText = event.target.innerText;
-        doc.querySelector(selector).classList.add('text-red');
-      }           
-    }
-  })
+  filter.addEventListener('click', slectFilters);
+}
+
+function slectFilters(event) {
+  let param = makeIdFromTitle(this.querySelectorAll('.filter__category')[0].innerText);
+  let selector = '#' + param;
+  if (event.target.nodeName === 'LABEL') {
+    if(event.target.classList.contains('not-selected')) {
+      this.classList.remove('selected');
+      doc.querySelector(selector).innerText = param;
+      doc.querySelector(selector).classList.remove('text-red');
+
+      doc.querySelector('#catalog-cards').innerHTML = '';
+      renderItems();
+
+    } else {
+
+      doc.querySelector('#catalog-cards').innerHTML = '';
+      _.assign(filteredItems, _.filter(items, item => _.includes(item[param], event.target.innerHTML.toLowerCase())));
+      renderItems(filteredItems);
+
+      this.classList.add('selected');
+      this.querySelectorAll('.filter__subcategory')[0].innerHTML = event.target.innerText;        
+      doc.querySelector(selector).innerText = event.target.innerText;
+      doc.querySelector(selector).classList.add('text-red');
+    }           
+  }
+}
+
+function renderItems(arr) {
+  arr = arr || items;
+  let cards = doc.querySelector('#catalog-cards');
+  _.forEach(arr, (item) => {
+    let card = doc.createElement('div');
+      card.classList.add('card');
+      card.innerHTML = `
+                      <a href="./item.html" class="card__img start-card__img">
+                        <img src="${item.img}" alt="new arrivals photo">
+                        <div class="card__link">View item</div>
+                      </a>
+                      <div class="card__text">
+                        <div class="card__desc">${item.title}</div>
+                        <div class="card__price">£${item.price}</div>
+                      </div>
+                      `;
+      cards.appendChild(card);
+  } )
 }
 

@@ -1307,7 +1307,13 @@ input:checked + label {
     display: none;
   }
 
+  .filters__item.selected {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
   .filter__category {
+    font-family: 'OpenSansBold' !important;
     font-size: 16px !important;
   }
 
