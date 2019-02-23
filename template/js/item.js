@@ -60,6 +60,7 @@ btnBuy.addEventListener('click', function(event) {
     randomItem.size = size.value;
     bag.push(randomItem);
     renderBagsPrice();
+    saveToLocalStorage();
   }  
 })
 

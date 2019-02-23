@@ -112,6 +112,24 @@ function renderBagsPrice() {
   bagQuantity.innerHTML = bag.length;
 }
 
+function saveToLocalStorage() {
+  if(window.sessionStorage && window.localStorage) {
+    localStorage.setItem('cart', JSON.stringify(bag));
+  }
+}
+
+function lookLocalStorage () {
+  bag = JSON.parse(localStorage.getItem('cart'));
+  let sum = 0;
+  for (let item of bag) {
+    sum += item.price;
+  };
+  bagPrice.innerHTML = sum.toFixed(2);
+  bagQuantity.innerHTML = bag.length;
+}
+
+window.onload = lookLocalStorage();
+
 
 
 
