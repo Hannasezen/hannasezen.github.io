@@ -1907,3 +1907,8 @@ input:checked + label {
   }
   
 }
+
+#item-big-img {
+  max-height: 450px;
+  overflow: hidden;
+}

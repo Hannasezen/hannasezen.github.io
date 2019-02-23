@@ -8,6 +8,7 @@ let items = [
   {
     title: 'Straight Leg Jeans',
     img: './img/arrival_1.png',
+    smallImg: './img/arrival_1_small.png',
     description: '',
     price: 55.00,
     size: ['uk 18', 'uk 20', 'uk 22'],
@@ -21,6 +22,7 @@ let items = [
   {
     title: 'Boyfriend T-Shirt with Bohemian Print',
     img: './img/arrival_2.png',
+    smallImg: './img/arrival_2_small.png',
     description: '',
     price: 34.25,
     size: ['uk 50', 'uk 52'],
@@ -34,6 +36,7 @@ let items = [
   {
     title: 'Only Busted Knee Jean',
     img: './img/arrival_3.png',
+    smallImg: './img/arrival_3_small.png',
     description: '',
     price: 140.50,
     size: ['uk 20', 'uk 22l'],
@@ -47,6 +50,7 @@ let items = [
   {
     title: 'Only Skinny Jeans',
     img: './img/arrival_4.png',
+    smallImg: './img/arrival_4_small.png',
     description: '',
     price: 12.75,
     size: ['uk 18', 'uk 22s'],
@@ -60,6 +64,7 @@ let items = [
   {
     title: 'Neck Knitted Jumper',
     img: './img/arrival_4.png',
+    smallImg: './img/arrival_4_small.png',
     description: '',
     price: 76.25,
     size: ['uk 18', 'uk 22s'],
@@ -91,6 +96,22 @@ doc.querySelector('#burger-btn').addEventListener('click', function () {
   this.classList.toggle('active');
   doc.querySelector('#burger-menu').classList.toggle('open-menu');
 })
+
+//shopping bag
+let bag = [];
+
+let bagPrice = doc.querySelector('#bag-price');
+let bagQuantity = doc.querySelector('#bag-quantity');
+
+function renderBagsPrice() {
+  let price = 0;
+  for (let item of bag) {
+    price += item.price;
+  }
+  bagPrice.innerHTML = price.toFixed(2);
+  bagQuantity.innerHTML = bag.length;
+}
+
 
 
 

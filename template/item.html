@@ -30,7 +30,7 @@
               <div class="cart">
                 <a href="./shopping-cart.html">
                   <img src="./img/shopping_bag.png" alt="shopping bag img" class="cart__img">
-                  <span>Bag </span><span>(0)</span>
+                  <span>Bag </span><span id="bag-price">£</span>(<span id="bag-quantity">0</span>)
                 </a>
               </div>         
             </div>
@@ -69,7 +69,7 @@
       </div>      
     </div>
     <div class="item-info-wrapper">
-      <div class="item-info container">
+      <div class="item-info container" id="item">
         <div class="item__images">
           <div id="item-big-img" class="item__images-big">
             <img src="./img/item-photo-1.jpg" alt="product item photo">
@@ -87,27 +87,32 @@
           </div>
         </div>
         <div class="item__description">
-          <div class="description__title">Dark classic fit suit</div>
-          <div class="description__text">Featuring fine Italian wool, this elegant suit has pick-stitch edging, cascade buttons at the cuffs</div>
-          <div class="description__price">£180.60</div>
-          <form class="description__form" id="description__form" action="submit">
+          <div class="description__title"></div> <!--Dark classic fit suit-->
+          <div class="description__text"></div> <!--Featuring fine Italian wool, this elegant suit has pick-stitch edging, cascade buttons at the cuffs-->
+          <div class="description__price"></div> <!--£180.60-->
+          <form class="description__form" id="item_details_form" action="submit">
             <div class="description__menu description__sizes">
               <div class="menu__param">Size:</div>
-              <div class="menu__variants">
-                <input id="52" type="radio" name="size" value="UK52"><label for="52">UK 52</label>
-                <input id="54" type="radio" name="size" value="UK54"><label for="54">UK 54</label>
-                <input id="56" type="radio" name="size" value="UK56"><label for="56">UK 56</label>
+              <div class="menu__variants" id="sizes">
+                <!--<input id="52" type="radio" name="size" value="UK52">
+                <label for="52">UK 52</label>
+                <input id="54" type="radio" name="size" value="UK54">
+                <label for="54">UK 54</label>
+                <input id="56" type="radio" name="size" value="UK56">
+                <label for="56">UK 56</label>-->
               </div>
             </div>
             <div class="description__menu description__colors">
               <div class="menu__param">Color:</div>
-              <div class="menu__variants">
-                <input id="black" type="radio" name="color" id="black"><label for="black">Black</label>
-                <input id="blaue" type="radio" name="color" id="blaue"><label for="blaue">Blue</label>
+              <div class="menu__variants" id="colors">
+                <!--<input id="black" type="radio" name="color" id="black">
+                <label for="black">Black</label>
+                <input id="blaue" type="radio" name="color" id="blaue">
+                <label for="blaue">Blue</label>-->
               </div>
             </div>
             <div class="description__btn">
-              <button class="btn">Add to bag</button>
+              <button class="btn" id="buy-btn">Add to bag</button>
             </div> 
           </form>                 
         </div>
@@ -226,7 +231,8 @@
     </footer>
   </div>
   <script src="./js/common.js"></script>
-  <script src="./js/item.js"></script>
+  <script src="./js/lodash.js"></script>
   <script src="./js/shopping-bag.js"></script>
+  <script src="./js/item.js"></script>  
 </body>
 </html>
