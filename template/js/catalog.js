@@ -133,7 +133,7 @@ function slectFilters(event) {
       renderItems();
 
     } else {
-
+      console.log(event.target.innerHTML.toLowerCase())
       doc.querySelector('#catalog-cards').innerHTML = '';
       filteredItems = _.filter( items, item => _.includes( item[param], event.target.innerHTML.toLowerCase() ) );
       renderItems(filteredItems);

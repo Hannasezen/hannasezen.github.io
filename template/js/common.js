@@ -14,7 +14,9 @@ let items = [
     color: ['blue', 'golden'],
     new: true,
     category: 'women',
-    fashion: 'sport'
+    fashion: 'sport',
+    producttype: 'coats &amp; jackets',
+    brand: 'chi chi london'
   },
   {
     title: 'Boyfriend T-Shirt with Bohemian Print',
@@ -24,7 +26,10 @@ let items = [
     size: ['uk 50', 'uk 52'],
     color: ['black', 'red'],
     new: true,
-    category: 'men'
+    category: 'men',
+    fashion: 'nail the 90s',
+    producttype: 'jersey tops',
+    brand: 'antipodium'
   },
   {
     title: 'Only Busted Knee Jean',
@@ -34,7 +39,10 @@ let items = [
     size: ['uk 20', 'uk 22l'],
     color: ['golden', 'red'],
     new: true,
-    category: 'women'
+    category: 'women',
+    fashion: ['casual style', 'vintage'],
+    producttype: 'jersey tops',
+    brand: 'new balance'
   },
   {
     title: 'Only Skinny Jeans',
@@ -44,7 +52,10 @@ let items = [
     size: ['uk 18', 'uk 22s'],
     color: ['green', 'blue'],
     new: true,
-    category: 'women'
+    category: 'women',
+    fashion: ['new look', 'sport'],
+    producttype: 'dresses',
+    brand: 'river island'
   },
   {
     title: 'Neck Knitted Jumper',
@@ -54,7 +65,10 @@ let items = [
     size: ['uk 18', 'uk 22s'],
     color: ['green', 'blue'],
     new: false,
-    category: 'women'
+    category: 'women',
+    fashion: ['new look', 'classical style'],
+    producttype: 'jersey tops',
+    brand: 'adidas'
   }
 ];
 
