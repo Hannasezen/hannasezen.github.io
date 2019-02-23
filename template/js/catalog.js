@@ -116,8 +116,8 @@ doc.querySelector('#catalog-filters').addEventListener('click', function() {
 
 // filters data
 let filters = doc.querySelectorAll('.filters__item');
-for (let filter of filters) {
-  filter.addEventListener('click', slectFilters);
+for (let i = 0; i < filters.length; i++) {
+  filters[i].addEventListener('click', slectFilters);
 }
 
 function slectFilters(event) {

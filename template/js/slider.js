@@ -5,7 +5,7 @@
 
   (function renderPoints() {
     let pointsHolder = doc.querySelector('#control-points');
-    for(let slide of slides) {
+    for(let i = 0; i < slides.length; i++) {
       let point = document.createElement('li');
       point.classList.add('slider__point');
       points.push(point);
@@ -20,8 +20,8 @@
   activePoint.classList.add('active');
 
   function removeClass(items) {
-    for (let item of items) {
-      item.classList.remove('active');
+    for (let i = 0; i < items.length; i++) {
+      items[i].classList.remove('active');
     }    
   }
 

@@ -79,15 +79,15 @@ let items = [
 
 // for open/close headers search form
 let form = doc.getElementById('search');
-let searchInput = form.querySelector('#search__input');
 form.addEventListener('click', search);
 function search(event) {
   event.preventDefault();
+  let searchInput = form.querySelector('#search__input');
   this.classList.toggle('open-search');
-  searchInput.focus();
+  form.querySelector('#search__input').focus();
   if ((event.target.nodeName === 'IMG' || event.target.nodeName === 'BUTTON') && searchInput.value !== '') {
     console.log('send form');
-    searchInput.value = '';
+    form.querySelector('#search__input').value = '';
   }
 }
 
@@ -105,8 +105,8 @@ let bagQuantity = doc.querySelector('#bag-quantity');
 
 function renderBagsPrice() {
   let price = 0;
-  for (let item of bag) {
-    price += item.price;
+  for (let i = 0; i < bag.length; i++) {
+    price += bag[i].price;
   }
   bagPrice.innerHTML = price.toFixed(2);
   bagQuantity.innerHTML = bag.length;
@@ -119,13 +119,17 @@ function saveToLocalStorage() {
 }
 
 function lookLocalStorage () {
-  bag = JSON.parse(localStorage.getItem('cart'));
-  let sum = 0;
-  for (let item of bag) {
-    sum += item.price;
-  };
-  bagPrice.innerHTML = sum.toFixed(2);
-  bagQuantity.innerHTML = bag.length;
+  if(window.sessionStorage && window.localStorage) {
+    if (localStorage.getItem('cart') !== null) {
+      bag = JSON.parse(localStorage.getItem('cart'));
+      let sum = 0;
+      for (let i = 0; i < bag.length; i++) {
+        sum += bag[i].price;
+      };
+      bagPrice.innerHTML = sum.toFixed(2);
+      bagQuantity.innerHTML = bag.length;
+    }
+  }  
 }
 
 window.onload = lookLocalStorage();
