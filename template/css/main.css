@@ -1586,12 +1586,11 @@ input:checked + label {
   }
 
   .item__images-big {
-    min-width: 590px;
-    min-height: 345px;
+    flex-basis: 75%;
   }
 
-  .item__images-big img {
-    height: 100%;
+  .item__images-small {
+    flex-basis: 25%;
   }
 
 }

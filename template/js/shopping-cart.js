@@ -41,6 +41,7 @@ function renderBag() {
     size.innerHTML = 'Size: <span class="item__size">' + bag[i].size + '</span>';
     let quant = doc.createElement('div');
     quant.classList.add('bag-card__quantity');
+    
     quant.innerHTML = 'Quantity: <span class="item__quantity">' + bag[i].quantity + '</span>';
     params.appendChild(color);
     params.appendChild(size);
