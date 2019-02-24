@@ -953,6 +953,18 @@ input:checked + label {
 
 /* SHOPPING CARDS block --------------------------------------------- */
 
+.bag__message {
+  display: none;
+  font-size: 16px;
+  font-family: 'Roboto';
+  text-align: center;
+  padding: 20px 0;
+}
+
+.bag__message.show-message {
+  display: block;
+}
+
 .bag__cards {
   display: flex;
   flex-direction: row;

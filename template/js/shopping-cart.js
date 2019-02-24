@@ -1,9 +1,11 @@
 // render shopping cart items
 function renderBag() {
   let bagCards = doc.querySelector('#bag-cards');
-  console.log(bag);
-  console.log(bagCards);
+  let totalPrice = doc.querySelector('#total-price');
+  let sum = 0;
+
   for (let i = 0; i < bag.length; i++) {
+    sum += bag[i].price;
     let card = doc.createElement('div');
     card.classList.add('card', 'bag__card');
     let a = doc.createElement('a');
@@ -53,6 +55,36 @@ function renderBag() {
 
     bagCards.appendChild(card);
   }
+  
+  totalPrice.innerHTML = sum.toFixed(2);
 }
 
 window.onload = renderBag();
+
+// buy now button
+let btnBuyNow = doc.querySelector('#buy-now-btn');
+btnBuyNow.addEventListener('click', buyNow);
+
+//empty bag button
+let btnEmptyBag = doc.querySelector('#empty-bag');
+btnEmptyBag.addEventListener('click', emptyBag);
+
+function buyNow () {
+  bag.length = 0;
+  let message = doc.querySelector('#bag-message');
+  message.innerHTML = 'Thank you for your purchase';
+  message.classList.add('show-message');
+  doc.querySelector('#bag-cards').innerHTML = '';
+  renderBag();
+  saveToLocalStorage();
+}
+
+function emptyBag () {
+  bag.length = 0;
+  let message = doc.querySelector('#bag-message');
+  message.innerHTML = "Your shopping bag is empty. Use Catalog to add new items".;
+  message.classList.add('show-message');
+  doc.querySelector('#bag-cards').innerHTML = '';
+  renderBag();
+  saveToLocalStorage();
+}

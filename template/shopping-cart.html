@@ -68,6 +68,9 @@
         </div>        
       </div>
       <div class="bag">
+        <!--message 'Thank you for your purchase' or "Your shopping bag is empty. Use Catalog to add new items".-->
+        <div class="bag__message" id="bag-message"></div>
+        <!--shopping bag items-->
         <div class="bag__cards container" id="bag-cards">
           <div class="card bag__card">
             <a href="./item.html" class="card__img bag-card__img">
@@ -148,11 +151,13 @@
           </div>         
         </div>
         <div class="bag__buynow container">
-          <div class="bag__empty">Empty bag</div>
-          <button class="btn bag__btn">Buy now</button>
+          <div class="bag__empty">
+            <a href="#" id="empty-bag">Empty bag</a> 
+          </div>
+          <button class="btn bag__btn" id="buy-now-btn">Buy now</button>
           <div class="bag__total-cost">
             <div class="total-cost_text">Total Cost</div>
-            <div class="total-cost__pound">£<span class="total-cost__price">1 640.50</span></div>
+            <div class="total-cost__pound">£<span class="total-cost__price" id="total-price">1 640.50</span></div>
           </div>
         </div>
       </div>
