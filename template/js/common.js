@@ -77,7 +77,7 @@ let items = [
   }
 ];
 
-// for open/close headers search form
+// for open/close header`s search form
 let form = doc.getElementById('search');
 form.addEventListener('click', search);
 function search(event) {
@@ -91,7 +91,7 @@ function search(event) {
   }
 }
 
-// header menu on mobile version open/close
+// header burger-menu on mobile version open/close
 doc.querySelector('#burger-btn').addEventListener('click', function () {
   this.classList.toggle('active');
   doc.querySelector('#burger-menu').classList.toggle('open-menu');

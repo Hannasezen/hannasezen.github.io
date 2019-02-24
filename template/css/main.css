@@ -1005,6 +1005,14 @@ input:checked + label {
   margin-bottom: 0;
 }
 
+.item__color {
+  text-transform: capitalize;
+}
+
+.item__size {
+  text-transform: uppercase;
+}
+
 .bag-card__remove {
   font-family: 'OpenSansBold';
   font-size: 13px;

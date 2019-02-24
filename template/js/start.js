@@ -5,6 +5,7 @@ function renderItems () {
     if (items[i].new === true) {
       let card = doc.createElement('div');
         card.classList.add('card');
+        
         card.innerHTML = `
                         <a href="./item.html" class="card__img start-card__img">
                           <img src="${items[i].img}" alt="new arrivals photo">
