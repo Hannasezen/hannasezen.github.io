@@ -27,7 +27,7 @@ function renderBag() {
     title.innerHTML = bag[i].title;
     let price = doc.createElement('div');
     price.classList.add('bag-card__price');
-    price.innerHTML = '£' + bag[i].price;
+    price.innerHTML = '£' + bag[i].price.toFixed(2);
     desc.appendChild(title);
     desc.appendChild(price);
 
@@ -57,7 +57,7 @@ function renderBag() {
 
     bagCards.appendChild(card);
   }
-  
+
   totalPrice.innerHTML = sum.toFixed(2);
 }
 

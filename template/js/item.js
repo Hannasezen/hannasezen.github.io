@@ -5,7 +5,7 @@ let randomItem = items[_.random(0, items.length - 1)];
 function renderItem() {
   let item = doc.querySelector('#item');
   item.querySelectorAll('.description__title')[0].innerHTML = randomItem.title;
-  item.querySelectorAll('.description__text')[0].innerHTML = randomItem.desc;
+  item.querySelectorAll('.description__text')[0].innerHTML = randomItem.description;
   item.querySelectorAll('.description__price')[0].innerHTML = '£' + randomItem.price.toFixed(2);
 
   let size = item.querySelector('#sizes');
@@ -58,6 +58,7 @@ btnBuy.addEventListener('click', function(event) {
   } else {
     randomItem.color = color.value;
     randomItem.size = size.value;
+
     bag.push(randomItem);
     renderBagsPrice();
     saveToLocalStorage();

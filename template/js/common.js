@@ -9,7 +9,7 @@ let items = [
     title: 'Straight Leg Jeans',
     img: './img/arrival_1.png',
     smallImg: './img/arrival_1_small.png',
-    description: '',
+    description: 'Featuring fine Italian wool, this elegant suit has pick-stitch edging, cascade buttons at the cuffs and a subtle stripe pattern throughout. ',
     price: 55.00,
     size: ['uk 18', 'uk 20', 'uk 22'],
     color: ['blue', 'golden'],
@@ -17,13 +17,14 @@ let items = [
     category: 'women',
     fashion: 'sport',
     producttype: 'coats &amp; jackets',
-    brand: 'chi chi london'
+    brand: 'chi chi london',
+    quantity: 1
   },
   {
     title: 'Boyfriend T-Shirt with Bohemian Print',
     img: './img/arrival_2.png',
     smallImg: './img/arrival_2_small.png',
-    description: '',
+    description: 'Featuring fine Italian wool, this elegant suit has pick-stitch edging, cascade buttons at the cuffs and a subtle stripe pattern throughout. ',
     price: 34.25,
     size: ['uk 50', 'uk 52'],
     color: ['black', 'red'],
@@ -31,13 +32,14 @@ let items = [
     category: 'men',
     fashion: 'nail the 90s',
     producttype: 'jersey tops',
-    brand: 'antipodium'
+    brand: 'antipodium',
+    quantity: 1
   },
   {
     title: 'Only Busted Knee Jean',
     img: './img/arrival_3.png',
     smallImg: './img/arrival_3_small.png',
-    description: '',
+    description: 'Featuring fine Italian wool, this elegant suit has pick-stitch edging, cascade buttons at the cuffs and a subtle stripe pattern throughout. ',
     price: 140.50,
     size: ['uk 20', 'uk 22l'],
     color: ['golden', 'red'],
@@ -45,13 +47,14 @@ let items = [
     category: 'women',
     fashion: ['casual style', 'vintage'],
     producttype: 'jersey tops',
-    brand: 'new balance'
+    brand: 'new balance',
+    quantity: 1
   },
   {
     title: 'Only Skinny Jeans',
     img: './img/arrival_4.png',
     smallImg: './img/arrival_4_small.png',
-    description: '',
+    description: 'Featuring fine Italian wool, this elegant suit has pick-stitch edging, cascade buttons at the cuffs and a subtle stripe pattern throughout. ',
     price: 12.75,
     size: ['uk 18', 'uk 22s'],
     color: ['green', 'blue'],
@@ -59,13 +62,14 @@ let items = [
     category: 'women',
     fashion: ['new look', 'sport'],
     producttype: 'dresses',
-    brand: 'river island'
+    brand: 'river island',
+    quantity: 1
   },
   {
     title: 'Neck Knitted Jumper',
     img: './img/arrival_4.png',
     smallImg: './img/arrival_4_small.png',
-    description: '',
+    description: 'Featuring fine Italian wool, this elegant suit has pick-stitch edging, cascade buttons at the cuffs and a subtle stripe pattern throughout. ',
     price: 76.25,
     size: ['uk 18', 'uk 22s'],
     color: ['green', 'blue'],
@@ -73,7 +77,8 @@ let items = [
     category: 'women',
     fashion: ['new look', 'classical style'],
     producttype: 'jersey tops',
-    brand: 'adidas'
+    brand: 'adidas',
+    quantity: 1
   }
 ];
 
@@ -121,7 +126,7 @@ function saveToLocalStorage() {
   if(window.sessionStorage && window.localStorage) {
     localStorage.setItem('cart', JSON.stringify(bag));
   }
-}
+};
 
 function lookLocalStorage () {
   if(window.sessionStorage && window.localStorage) {
@@ -134,6 +139,68 @@ function lookLocalStorage () {
 
 window.onload = lookLocalStorage();
 
+/*
+  {
+    title: 'Only Skinny Jeans',
+    img: './img/women9.png',
+    smallImg: './img/arrival_1_small.png',
+    description: 'Featuring fine Italian wool, this elegant suit has pick-stitch edging, cascade buttons at the cuffs and a subtle stripe pattern throughout. ',
+    price: 390.25,
+    size: 'uk 17',
+    color: 'Phillipa wash',
+    new: false,
+    category: 'women',
+    fashion: 'sport',
+    producttype: 'coats &amp; jackets',
+    brand: 'chi chi london',
+    quantity: 1
+  },
+  {
+    title: 'Paul & Joe Sister Jumper with Neon Trims',
+    img: './img/arrival_1.png',
+    smallImg: './img/arrival_1_small.png',
+    description: 'Featuring fine Italian wool, this elegant suit has pick-stitch edging, cascade buttons at the cuffs and a subtle stripe pattern throughout. ',
+    price: 400.75,
+    size: 'uk 18',
+    color: 'blue',
+    new: false,
+    category: 'women',
+    fashion: 'sport',
+    producttype: 'coats &amp; jackets',
+    brand: 'chi chi london',
+    quantity: 1
+  },
+  {
+    title: 'Boyfriend T-Shirt with Bohemian Print',
+    img: './img/women8.png',
+    smallImg: './img/arrival_1_small.png',
+    description: 'Featuring fine Italian wool, this elegant suit has pick-stitch edging, cascade buttons at the cuffs and a subtle stripe pattern throughout. ',
+    price: 360.00,
+    size: 'uk 18',
+    color: 'black',
+    new: false,
+    category: 'women',
+    fashion: 'sport',
+    producttype: 'coats &amp; jackets',
+    brand: 'chi chi london',
+    quantity: 1
+  },
+  {
+    title: 'Turtle Neck Jumper in Rib',
+    img: './img/arrival_4.png',
+    smallImg: './img/arrival_1_small.png',
+    description: 'Featuring fine Italian wool, this elegant suit has pick-stitch edging, cascade buttons at the cuffs and a subtle stripe pattern throughout. ',
+    price: 489.50,
+    size: 'uk 19',
+    color: 'green',
+    new: false,
+    category: 'women',
+    fashion: 'sport',
+    producttype: 'coats &amp; jackets',
+    brand: 'chi chi london',
+    quantity: 1
+  }
 
+*/
 
 
