@@ -97,7 +97,7 @@ doc.querySelector('#burger-btn').addEventListener('click', function () {
   doc.querySelector('#burger-menu').classList.toggle('open-menu');
 })
 
-//shopping bag
+//shopping bag at header
 let bag = [];
 
 let bagPrice = doc.querySelector('#bag-price');
@@ -108,9 +108,14 @@ function renderBagsPrice() {
   for (let i = 0; i < bag.length; i++) {
     price += bag[i].price;
   }
-  bagPrice.innerHTML = price.toFixed(2);
+  if (bag.length > 0) {
+    bagPrice.innerHTML = '£' + price.toFixed(2);
+  } else {
+    bagPrice.innerHTML = '';
+  }  
   bagQuantity.innerHTML = bag.length;
-}
+};
+window.onload = renderBagsPrice();
 
 function saveToLocalStorage() {
   if(window.sessionStorage && window.localStorage) {
@@ -122,12 +127,7 @@ function lookLocalStorage () {
   if(window.sessionStorage && window.localStorage) {
     if (localStorage.getItem('cart') !== null) {
       bag = JSON.parse(localStorage.getItem('cart'));
-      let sum = 0;
-      for (let i = 0; i < bag.length; i++) {
-        sum += bag[i].price;
-      };
-      bagPrice.innerHTML = sum.toFixed(2);
-      bagQuantity.innerHTML = bag.length;
+      renderBagsPrice();
     }
   }  
 }

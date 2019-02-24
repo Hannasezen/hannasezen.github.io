@@ -28,6 +28,8 @@ function renderBag() {
     let price = doc.createElement('div');
     price.classList.add('bag-card__price');
     price.innerHTML = '£' + bag[i].price;
+    desc.appendChild(title);
+    desc.appendChild(price);
 
     let params = doc.createElement('div');
     params.classList.add('bag-card__params');
@@ -76,15 +78,17 @@ function buyNow () {
   message.classList.add('show-message');
   doc.querySelector('#bag-cards').innerHTML = '';
   renderBag();
+  renderBagsPrice();
   saveToLocalStorage();
 }
 
 function emptyBag () {
   bag.length = 0;
   let message = doc.querySelector('#bag-message');
-  message.innerHTML = "Your shopping bag is empty. Use Catalog to add new items".;
+  message.innerHTML = "Your shopping bag is empty. Use Catalog to add new items";
   message.classList.add('show-message');
   doc.querySelector('#bag-cards').innerHTML = '';
   renderBag();
+  renderBagsPrice();
   saveToLocalStorage();
 }
