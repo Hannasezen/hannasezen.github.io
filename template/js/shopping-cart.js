@@ -8,10 +8,9 @@ function renderBag() {
   for (let i = 0; i < uniqCards.length; i++) {
     let uniqArr =  _.filter(bag, item => item.color === uniqCards[i].color &&  item.size === uniqCards[i].size && item.title === uniqCards[i].title);
     let totalCoast = 0;
-    let totalQuantity = 0;
+    let totalQuantity = uniqArr.length;
     for (let i = 0; i < uniqArr.length; i++) {
       totalCoast += uniqArr[i].price;
-      totalQuantity += 1;
     }
     uniqArr.price = totalCoast;
     uniqArr.quantity = totalQuantity;
