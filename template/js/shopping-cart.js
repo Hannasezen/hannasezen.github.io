@@ -72,11 +72,28 @@ function renderBag() {
 
     bagCards.appendChild(card);
   }
-
   totalPrice.innerHTML = sum.toFixed(2);
+
+  let cards = doc.querySelectorAll('.bag__card');
+  for (let i = 0; i < cards.length; i++) {
+    cards[i].addEventListener('click', function(event) {
+      if (event.target.classList.contains('bag-card__remove')) {
+        event.preventDefault();
+        let removeItem = bag.find( item => {
+          return ((item.size === this.querySelectorAll('.item__size')[0].innerHTML.toLowerCase()) && (item.color === this.querySelectorAll('.item__color')[0].innerHTML.toLowerCase()));
+        });
+        bag.splice(bag.indexOf(removeItem), 1);
+        bagCards.innerHTML = '';
+        renderBag();
+        renderBagsPrice();
+      }
+    })
+  }
 }
 
 window.onload = renderBag();
+
+
 
 // buy now button
 let btnBuyNow = doc.querySelector('#buy-now-btn');
