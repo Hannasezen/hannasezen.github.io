@@ -3,6 +3,13 @@ function renderBag() {
   let bagCards = doc.querySelector('#bag-cards');
   let totalPrice = doc.querySelector('#total-price');
   let sum = 0;
+  let uniqCards = _.uniqWith(bag, _.isEqual);
+  let filteredArray = [];
+  for (let i = 0; i < uniqCards.length; i++) {
+    let uniqArr =  _.filter(bag, item => item.color === uniqCards[i].color &&  item.size === uniqCards[i].size && item.title === uniqCards[i].title)
+    filteredArray.push(uniqArr);
+  }
+  console.log(filteredArray)
 
   for (let i = 0; i < bag.length; i++) {
     sum += bag[i].price;

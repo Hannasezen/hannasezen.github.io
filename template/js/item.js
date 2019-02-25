@@ -42,10 +42,19 @@ function renderItem() {
 
 // select photo for make bigger
 let imgBig = document.getElementById('item-big-img');
-let imgsSmall = document.getElementById('item-small-images');
-imgsSmall.addEventListener('click', function(event) {
-  imgBig.getElementsByTagName('img')[0].src = event.target.src;
-})
+let imgsSmall = doc.querySelectorAll('.image-small');
+for (let i = 0; i < imgsSmall.length; i++) {
+  imgsSmall[i].addEventListener('click', function(event) {
+    if (event.target.nodeName === 'IMG') {
+      for (let i = 0; i < imgsSmall.length; i++) {
+        imgsSmall[i].classList.remove('shadow');
+      }
+      imgBig.getElementsByTagName('img')[0].src = event.target.src;
+      this.classList.add('shadow')
+    }
+  })
+}
+
 
 //add to bag
 let btnBuy = doc.querySelector('#buy-btn');
@@ -58,8 +67,17 @@ btnBuy.addEventListener('click', function(event) {
   } else {
     randomItem.color = color.value;
     randomItem.size = size.value;
-
-    bag.push(randomItem);
+    let sameItem = _.find(bag, item => {
+      return ((item.color === randomItem.color) && (item.size === randomItem.size) && (item.title === randomItem.title));
+    });
+    /*if (sameItem) {
+      sameItem.quantity += 1;
+      sameItem.price += randomItem.price;
+      console.log(sameItem);
+    } else {*/
+      bag.push(Object.assign({}, randomItem));
+    //}
+    
     renderBagsPrice();
     saveToLocalStorage();
   }  
