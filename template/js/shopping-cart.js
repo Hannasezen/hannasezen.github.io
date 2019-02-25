@@ -86,6 +86,7 @@ function renderBag() {
         bagCards.innerHTML = '';
         renderBag();
         renderBagsPrice();
+        saveToLocalStorage();
       }
     })
   }
