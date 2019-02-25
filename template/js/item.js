@@ -59,7 +59,7 @@ for (let i = 0; i < imgsSmall.length; i++) {
 //add to bag
 let btnBuy = doc.querySelector('#buy-btn');
 btnBuy.addEventListener('click', function(event) {
-  event.preventDefault();
+  event.preventDefault();  
   let color = _.find(item_details_form.querySelectorAll('input[name="color"]'), 'checked');
   let size = _.find(item_details_form.querySelectorAll('input[name="size"]'), 'checked');
   if (color === undefined || size === undefined) {

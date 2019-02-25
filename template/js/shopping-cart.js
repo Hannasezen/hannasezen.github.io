@@ -80,7 +80,7 @@ function renderBag() {
       if (event.target.classList.contains('bag-card__remove')) {
         event.preventDefault();
         let removeItem = bag.find( item => {
-          return ((item.size === this.querySelectorAll('.item__size')[0].innerHTML.toLowerCase()) && (item.color === this.querySelectorAll('.item__color')[0].innerHTML.toLowerCase()));
+          return ((item.size === this.querySelectorAll('.item__size')[0].innerHTML.toLowerCase()) && (item.color === this.querySelectorAll('.item__color')[0].innerHTML.toLowerCase()) && (item.title === this.querySelectorAll('.bag-card__title')[0].innerHTML));
         });
         bag.splice(bag.indexOf(removeItem), 1);
         bagCards.innerHTML = '';
