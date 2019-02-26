@@ -1,22 +1,21 @@
 //random card from data
 let hash = decodeURI(window.location.hash.substring(1));
 console.log(hash);
-let randomItem = _.find(items, function (item) {
+let productItem = _.find(items, function (item) {
   return item.title === hash;
 });
-console.log(randomItem);
 
 //render product card
 function renderItem() {
   let item = doc.querySelector('#item');
-  item.querySelectorAll('.description__title')[0].innerHTML = randomItem.title;
-  item.querySelectorAll('.description__text')[0].innerHTML = randomItem.description;
-  item.querySelectorAll('.description__price')[0].innerHTML = '£' + randomItem.price.toFixed(2);
+  item.querySelectorAll('.description__title')[0].innerHTML = productItem.title;
+  item.querySelectorAll('.description__text')[0].innerHTML = productItem.description;
+  item.querySelectorAll('.description__price')[0].innerHTML = '£' + productItem.price.toFixed(2);
 
   let size = item.querySelector('#sizes');
-  for (let i in randomItem.size) {
+  for (let i in productItem.size) {
     let input = doc.createElement('input');
-    let id = randomItem.size[i].replace(' ', '');
+    let id = productItem.size[i].replace(' ', '');
     input.id = id;
     input.type = 'radio';
     input.name = 'size';
@@ -24,14 +23,14 @@ function renderItem() {
 
     let label = doc.createElement('label');
     label.setAttribute('for', id);
-    label.innerHTML = randomItem.size[i].toUpperCase();
+    label.innerHTML = productItem.size[i].toUpperCase();
     size.appendChild(input);
     size.appendChild(label);
   }
   let color = item.querySelector('#colors');
-  for (let i in randomItem.color) {
+  for (let i in productItem.color) {
     let input = doc.createElement('input');
-    let id = randomItem.color[i].replace(' ', '');
+    let id = productItem.color[i].replace(' ', '');
     input.id = id;
     input.type = 'radio';
     input.name = 'color';
@@ -39,7 +38,7 @@ function renderItem() {
 
     let label = doc.createElement('label');
     label.setAttribute('for', id);
-    label.innerHTML = randomItem.color[i];
+    label.innerHTML = productItem.color[i].toUpperCase();
     color.appendChild(input);
     color.appendChild(label);
   }
@@ -64,20 +63,22 @@ for (let i = 0; i < imgsSmall.length; i++) {
 
 //add to bag
 let btnBuy = doc.querySelector('#buy-btn');
-btnBuy.addEventListener('click', function(event) {
+btnBuy.addEventListener('click', addToCart);
+
+function addToCart(event) {
   event.preventDefault();  
   let color = _.find(item_details_form.querySelectorAll('input[name="color"]'), 'checked');
   let size = _.find(item_details_form.querySelectorAll('input[name="size"]'), 'checked');
   if (color === undefined || size === undefined) {
     alert('Please choose color and size');
   } else {
-    randomItem.color = color.value;
-    randomItem.size = size.value;
-    bag.push(Object.assign({}, randomItem));
-    /*let obj = Object.create(randomItem);
+    productItem.color = color.value;
+    productItem.size = size.value;
+    bag.push(Object.assign({}, productItem));
+    /*let obj = Object.create(productItem);
     bag.push(obj);  */  
     renderBagsPrice();
     saveToLocalStorage();
   }  
-})
+}
 

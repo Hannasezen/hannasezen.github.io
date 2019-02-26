@@ -117,10 +117,10 @@ doc.querySelector('#catalog-filters').addEventListener('click', function() {
 // filters data
 let filters = doc.querySelectorAll('.filters__item');
 for (let i = 0; i < filters.length; i++) {
-  filters[i].addEventListener('click', slectFilters);
+  filters[i].addEventListener('click', selectFilters);
 }
 
-function slectFilters(event) {
+function selectFilters(event) {
   let param = makeIdFromTitle(this.querySelectorAll('.filter__category')[0].innerText);
   let selector = '#' + param;
   if (event.target.nodeName === 'LABEL') {
