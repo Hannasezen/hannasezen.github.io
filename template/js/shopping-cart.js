@@ -29,7 +29,7 @@ function renderBag() {
     card.classList.add('card', 'bag__card');
     let a = doc.createElement('a');
     a.classList.add('card__img', 'bag-card__img');
-    a.setAttribute('href', './item.html');
+    a.setAttribute('href', './item.html#' + filteredArray[i][0].title);
     let img = doc.createElement('img');
     img.setAttribute('src', filteredArray[i][0].img);
     let link = doc.createElement('div');
@@ -84,8 +84,9 @@ function renderBag() {
     cards[i].addEventListener('click', function(event) {
       if (event.target.classList.contains('bag-card__remove')) {
         event.preventDefault();
-        let removeItem = _.find( bag, function (item) {
-          return ((item.size === this.querySelectorAll('.item__size')[0].innerHTML.toLowerCase()) && (item.color === this.querySelectorAll('.item__color')[0].innerHTML.toLowerCase()) && (item.title === this.querySelectorAll('.bag-card__title')[0].innerHTML));
+        console.log(event.currentTarget.querySelectorAll('.item__size')[0].innerHTML);
+        let removeItem = bag.find( function (item) {
+          return ((item.size === event.currentTarget.querySelectorAll('.item__size')[0].innerHTML.toLowerCase()) && (item.color === event.currentTarget.querySelectorAll('.item__color')[0].innerHTML.toLowerCase()) && (item.title === event.currentTarget.querySelectorAll('.bag-card__title')[0].innerHTML));
         });
         bag.splice(bag.indexOf(removeItem), 1);
         bagCards.innerHTML = '';
@@ -111,10 +112,14 @@ btnBuyNow.addEventListener('click', buyNow);
 let btnEmptyBag = doc.querySelector('#empty-bag');
 btnEmptyBag.addEventListener('click', emptyBag);
 
-// functions for cart
+
 function buyNow() {
-  bag.length = 0;
-  showMessage('Thank you for your purchase');
+  if (bag.length > 0) {
+    bag.length = 0;
+    showMessage('Thank you for your purchase');
+  } else {
+    showMessage('Your shopping bag is empty. Use Catalog to add new items');
+  }  
 }
 
 function emptyBag() {
@@ -127,7 +132,7 @@ function showMessage(text) {
   message.innerHTML = text;
   message.classList.add('show-message');
   doc.querySelector('#bag-cards').innerHTML = '';
-  renderBag();
+  doc.querySelector('#total-price').innerHTML = '0.00';
   renderBagsPrice();
   saveToLocalStorage();
 }

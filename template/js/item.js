@@ -1,5 +1,10 @@
 //random card from data
-let randomItem = items[_.random(0, items.length - 1)];
+let hash = decodeURI(window.location.hash.substring(1));
+console.log(hash);
+let randomItem = _.find(items, function (item) {
+  return item.title === hash;
+});
+console.log(randomItem);
 
 //render product card
 function renderItem() {
@@ -68,9 +73,9 @@ btnBuy.addEventListener('click', function(event) {
   } else {
     randomItem.color = color.value;
     randomItem.size = size.value;
-    //bag.push(Object.assign({}, randomItem));
-    let obj = Object.create(randomItem);
-    bag.push(obj);    
+    bag.push(Object.assign({}, randomItem));
+    /*let obj = Object.create(randomItem);
+    bag.push(obj);  */  
     renderBagsPrice();
     saveToLocalStorage();
   }  

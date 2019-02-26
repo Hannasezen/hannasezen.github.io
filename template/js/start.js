@@ -8,7 +8,7 @@ function renderItems () {
         card.classList.add('card');
         let a = doc.createElement('a');
         a.classList.add('card__img', 'start-card__img');
-        a.setAttribute('href', './item.html');
+        a.setAttribute('href', './item.html#' + items[i].title);
         let img = doc.createElement('img');
         img.setAttribute('src', items[i].img);
         img.setAttribute('alt', "new arrivals photo");

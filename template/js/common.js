@@ -1,7 +1,7 @@
 'use strict';
 
-var doc = document;
-let itemsName = '';
+const doc = document;
+
 // product cards
 
 let items = [
@@ -137,7 +137,7 @@ function lookLocalStorage () {
   }  
 }
 
-//window.onload = lookLocalStorage();
+window.onload = lookLocalStorage();
 
 /*
   {
@@ -202,7 +202,5 @@ function lookLocalStorage () {
   }
 
 */
-
-let itemName = '';
 
 
