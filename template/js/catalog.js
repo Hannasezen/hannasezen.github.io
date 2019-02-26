@@ -135,7 +135,9 @@ function slectFilters(event) {
     } else {
       console.log(event.target.innerHTML.toLowerCase())
       doc.querySelector('#catalog-cards').innerHTML = '';
-      filteredItems = _.filter( items, item => _.includes( item[param], event.target.innerHTML.toLowerCase() ) );
+      filteredItems = _.filter( items, function (item) { 
+        return _.includes( item[param], event.target.innerHTML.toLowerCase() ) 
+      });
       renderItems(filteredItems);
 
       this.classList.add('selected');
@@ -149,20 +151,35 @@ function slectFilters(event) {
 function renderItems(arr) {
   arr = arr || items;
   let cards = doc.querySelector('#catalog-cards');
-  _.forEach(arr, (item) => {
+  _.forEach(arr, function (item) {
     let card = doc.createElement('div');
-      card.classList.add('card');
-      card.innerHTML = `
-                      <a href="./item.html" class="card__img start-card__img">
-                        <img src="${item.img}" alt="new arrivals photo">
-                        <div class="card__link">View item</div>
-                      </a>
-                      <div class="card__text">
-                        <div class="card__desc">${item.title}</div>
-                        <div class="card__price">£${item.price}</div>
-                      </div>
-                      `;
-      cards.appendChild(card);
+    card.classList.add('card');
+    let a = doc.createElement('a');
+    a.classList.add('card__img');
+    a.setAttribute('href', './item.html');
+    let img = doc.createElement('img');
+    img.setAttribute('src', item.img);
+    img.setAttribute('alt', "catalog item photo");
+    let link = doc.createElement('div');
+    link.classList.add('card__link');
+    link.innerHTML = 'View item';
+    a.appendChild(img);
+    a.appendChild(link);
+    card.appendChild(a);
+
+    let text = doc.createElement('div');
+    text.classList.add('card__text');
+    let desc = doc.createElement('div');
+    desc.classList.add('card__desc');
+    desc.innerHTML = item.title;
+    let price = doc.createElement('div');
+    price.classList.add('card__price');
+    price.innerHTML = item.price.toFixed(2);
+    text.appendChild(desc);
+    text.appendChild(price);
+    card.appendChild(text);
+  
+    cards.appendChild(card);
   } )
 }
 

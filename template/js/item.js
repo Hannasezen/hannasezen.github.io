@@ -40,6 +40,8 @@ function renderItem() {
   }
 }
 
+window.onload = renderItem();
+
 // select photo for make bigger
 let imgBig = document.getElementById('item-big-img');
 let imgsSmall = doc.querySelectorAll('.image-small');
@@ -55,7 +57,6 @@ for (let i = 0; i < imgsSmall.length; i++) {
   })
 }
 
-
 //add to bag
 let btnBuy = doc.querySelector('#buy-btn');
 btnBuy.addEventListener('click', function(event) {
@@ -67,20 +68,11 @@ btnBuy.addEventListener('click', function(event) {
   } else {
     randomItem.color = color.value;
     randomItem.size = size.value;
-    let sameItem = _.find(bag, item => {
-      return ((item.color === randomItem.color) && (item.size === randomItem.size) && (item.title === randomItem.title));
-    });
-    /*if (sameItem) {
-      sameItem.quantity += 1;
-      sameItem.price += randomItem.price;
-      console.log(sameItem);
-    } else {*/
-      bag.push(Object.assign({}, randomItem));
-    //}
-    
+    //bag.push(Object.assign({}, randomItem));
+    let obj = Object.create(randomItem);
+    bag.push(obj);    
     renderBagsPrice();
     saveToLocalStorage();
   }  
 })
 
-window.onload = renderItem();

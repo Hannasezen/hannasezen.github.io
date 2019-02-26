@@ -1,12 +1,17 @@
-// render shopping cart items
+// renders shopping cart items
 function renderBag() {
+  //taking elements from HTML
   let bagCards = doc.querySelector('#bag-cards');
   let totalPrice = doc.querySelector('#total-price');
+  //counting total price of the cart
   let sum = 0;
+  // 
   let uniqCards = _.uniqWith(bag, _.isEqual);
   let filteredArray = [];
   for (let i = 0; i < uniqCards.length; i++) {
-    let uniqArr =  _.filter(bag, item => item.color === uniqCards[i].color &&  item.size === uniqCards[i].size && item.title === uniqCards[i].title);
+    let uniqArr =  _.filter(bag, function (item) {
+      return item.color === uniqCards[i].color &&  item.size === uniqCards[i].size && item.title === uniqCards[i].title;
+    });
     let totalCoast = 0;
     let totalQuantity = uniqArr.length;
     for (let i = 0; i < uniqArr.length; i++) {
@@ -16,7 +21,7 @@ function renderBag() {
     uniqArr.quantity = totalQuantity;
     filteredArray.push(uniqArr);
   }
-  console.log(filteredArray)
+  console.log(filteredArray);
 
   for (let i = 0; i < filteredArray.length; i++) {
     sum += filteredArray[i].price;
@@ -79,7 +84,7 @@ function renderBag() {
     cards[i].addEventListener('click', function(event) {
       if (event.target.classList.contains('bag-card__remove')) {
         event.preventDefault();
-        let removeItem = bag.find( item => {
+        let removeItem = _.find( bag, function (item) {
           return ((item.size === this.querySelectorAll('.item__size')[0].innerHTML.toLowerCase()) && (item.color === this.querySelectorAll('.item__color')[0].innerHTML.toLowerCase()) && (item.title === this.querySelectorAll('.bag-card__title')[0].innerHTML));
         });
         bag.splice(bag.indexOf(removeItem), 1);
@@ -98,8 +103,6 @@ function renderBag() {
 
 window.onload = renderBag();
 
-
-
 // buy now button
 let btnBuyNow = doc.querySelector('#buy-now-btn');
 btnBuyNow.addEventListener('click', buyNow);
@@ -108,6 +111,7 @@ btnBuyNow.addEventListener('click', buyNow);
 let btnEmptyBag = doc.querySelector('#empty-bag');
 btnEmptyBag.addEventListener('click', emptyBag);
 
+// functions for cart
 function buyNow() {
   bag.length = 0;
   showMessage('Thank you for your purchase');

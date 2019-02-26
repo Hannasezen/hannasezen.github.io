@@ -1,4 +1,3 @@
-;(() => {
   let slides = document.querySelectorAll('.slider__img');
   let points = [];
 
@@ -25,4 +24,3 @@
   }
 
   let interval = setInterval(moveSlide, 10000);
-})()
