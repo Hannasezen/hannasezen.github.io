@@ -84,9 +84,13 @@ function renderBag() {
         });
         bag.splice(bag.indexOf(removeItem), 1);
         bagCards.innerHTML = '';
-        renderBag();
-        renderBagsPrice();
-        saveToLocalStorage();
+        if (bag.length === 0) {
+          showMessage("Your shopping bag is empty. Use Catalog to add new items");
+        } else {
+          renderBag();
+          renderBagsPrice();
+          saveToLocalStorage();
+        }        
       }
     })
   }
@@ -104,21 +108,19 @@ btnBuyNow.addEventListener('click', buyNow);
 let btnEmptyBag = doc.querySelector('#empty-bag');
 btnEmptyBag.addEventListener('click', emptyBag);
 
-function buyNow () {
+function buyNow() {
   bag.length = 0;
-  let message = doc.querySelector('#bag-message');
-  message.innerHTML = 'Thank you for your purchase';
-  message.classList.add('show-message');
-  doc.querySelector('#bag-cards').innerHTML = '';
-  renderBag();
-  renderBagsPrice();
-  saveToLocalStorage();
+  showMessage('Thank you for your purchase');
 }
 
-function emptyBag () {
+function emptyBag() {
   bag.length = 0;
+  showMessage("Your shopping bag is empty. Use Catalog to add new items");
+}
+
+function showMessage(text) {
   let message = doc.querySelector('#bag-message');
-  message.innerHTML = "Your shopping bag is empty. Use Catalog to add new items";
+  message.innerHTML = text;
   message.classList.add('show-message');
   doc.querySelector('#bag-cards').innerHTML = '';
   renderBag();

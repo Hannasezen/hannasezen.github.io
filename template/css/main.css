@@ -1223,9 +1223,9 @@ input:checked + label {
 }
 
 
-/* styles for tablet */
+/* styles for tablet ------------------------------------------------------------------------*/
 @media screen and (max-width: 1023px) {
-  /* common styles for tablet */
+  /* common styles for tablet -----------------------------------------------------------*/
 
   .btn {
     font-size: 20px;
@@ -1289,7 +1289,7 @@ input:checked + label {
     width: 50%;
   }
 
-  /* tablet adaptive for START page */
+  /* tablet adaptive for START page --------------------------------------------------------*/
 
   .arrivals__cards .card {
     max-width: 204px;
@@ -1328,7 +1328,7 @@ input:checked + label {
     display: none;
   }
 
-  /* tablet adaptive for CATALOG page */
+  /* tablet adaptive for CATALOG page -------------------------------------------- */
 
   .filters__list {
     display: none;
@@ -1416,7 +1416,7 @@ input:checked + label {
     right: 62px;
   }
 
-  /* tablet styles for FILTERS in catalog */
+  /* tablet styles for FILTERS in catalog ----------------------------------*/
 
   .filters-mobile__wrapper {
     display: block;
@@ -1466,7 +1466,7 @@ input:checked + label {
     list-style-type: disc;
   }
 
-  /* tablet adaptive for ITEM page */
+  /* tablet adaptive for ITEM page --------------------------------------- */
   
   .item-info {
     flex-direction: column;
@@ -1554,7 +1554,7 @@ input:checked + label {
   }
   
 
-  /* tablet adaptive for SHOPPING CART */
+  /* tablet adaptive for SHOPPING CART -----------------------------------------------------*/
 
   .bag-title {
     font-size: 20px;
@@ -1598,7 +1598,7 @@ input:checked + label {
 
 }
 
-
+/* adding styles for search form and item`s page photos --------------------------------------- */
 @media screen and (max-width: 1023px) and (min-width: 768px) {
 
   .search {
@@ -1625,7 +1625,7 @@ input:checked + label {
 }
   
 
-/* styles for mobile */
+/* styles for mobile -------------------------------------------------------------------------*/
 @media screen and (max-width: 767px) {
 
   .btn {
@@ -1711,7 +1711,7 @@ input:checked + label {
     right: 43px;
   }
 
-  /* mobile styles for START page */
+  /* mobile styles for START page -------------------------------------------------------------------- */
 
   .points__wrap {
     width: 20%;
@@ -1853,7 +1853,7 @@ input:checked + label {
     font-size: 14px;
   }
 
-  /* mobile styles for ITEM page */
+  /* mobile styles for ITEM page --------------------------------------------------------------- */
 
   .item-info {
     padding: 14px 0 99px 0;
@@ -1885,7 +1885,7 @@ input:checked + label {
     right: 43px;
   }
 
-  /* mobile adaptive for CATALOG page */
+  /* mobile adaptive for CATALOG page ---------------------------------------------------------- */
 
   .catalog__main {
     padding-bottom: 100px;
@@ -1933,7 +1933,7 @@ input:checked + label {
     font-size: 14px;
   }
 
-  /* mobile styles for SHOPPING BAG page */
+  /* mobile styles for SHOPPING BAG page-------------------------------------------------------------------------------- */
 
   .bag__card {
     width: 100%;
