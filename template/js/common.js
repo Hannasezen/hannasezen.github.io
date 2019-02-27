@@ -271,7 +271,7 @@ function search(event) {
   this.classList.toggle('open-search');
   form.querySelector('#search__input').focus();
   if ((event.target.nodeName === 'IMG' || event.target.nodeName === 'BUTTON') && searchInput.value !== '') {
-    console.log('send form');
+    console.log('form sended');
     form.querySelector('#search__input').value = '';
   }
 }

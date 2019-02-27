@@ -21,7 +21,6 @@
     index = (index + 1) % slides.length;   
     slides[index].classList.add('active');
     points[index].classList.add('active');
-    console.log(index) 
   }
 
   function reternInterval () {

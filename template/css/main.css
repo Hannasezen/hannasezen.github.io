@@ -665,11 +665,16 @@ a:active {
 }
 
 .slider__img {
-  display: none;
+  display: block;
+  height: 100%;
+  max-height: 0;
+  opacity: 0;
+  transition: opacity ease 1s;
 }
 
 .slider__img.active {
-  display: block;
+  max-height: 1000px;
+  opacity: 1;
 }
 
 /* PROMO block ------------------------------------------------------------
