@@ -6,26 +6,42 @@
     for(let i = 0; i < slides.length; i++) {
       let point = document.createElement('li');
       point.classList.add('slider__point');
+      point.setAttribute('data-index', i)
       points.push(point);
       pointsHolder.appendChild(point);
       if (i === 0) {
         point.classList.add('active');
       }
     }
-  })()
+  })();
+
+  doc.querySelector('#control-points').addEventListener('click', function(event) {
+    if(event.target.nodeName === 'LI') {
+      let index = event.target.getAttribute('data-index');
+      console.log(index);
+      clearInterval(interval);
+      for (let i = 0; i < points.length; i++) {
+        points[i].classList.remove('active');
+        slides[i].classList.remove('active');
+      };
+      slides[index].classList.add('active');
+      points[index].classList.add('active');
+      reternInterval();
+    }
+  })
 
   let index = 0;
   function moveSlide() {
     slides[index].classList.remove('active');
     points[index].classList.remove('active');
-    index = (index + 1) % slides.length;   
+    index = (index + 1) % slides.length;
     slides[index].classList.add('active');
-    points[index].classList.add('active');
+    points[index].classList.add('active');    
   }
 
   function reternInterval () {
-    return interval = setInterval(moveSlide, 10000);
-  }
+    return interval = setInterval(moveSlide, 3000);
+  };
 
   reternInterval();
 
@@ -57,3 +73,8 @@
     reternInterval();
     
   });
+
+  points.addEventListener('swipe', function() {
+    alert('swiped')
+  })
+
