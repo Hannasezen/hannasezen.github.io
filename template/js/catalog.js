@@ -25,7 +25,7 @@ let filtersData = {
   },
   'Brand': {
     'Not selected': '',
-    'Chi Chi London': 'hi Chi London',
+    'Chi Chi London': 'Chi Chi London',
     'Antipodium': 'Antipodium',
     'Adidas': 'Adidas',
     'New Balance': 'New Balance',
@@ -126,7 +126,7 @@ function selectFilters(event) {
   if (event.target.nodeName === 'LABEL') {
     if(event.target.classList.contains('not-selected')) {
       this.classList.remove('selected');
-      doc.querySelector(selector).innerText = param;
+      doc.querySelector(selector).innerText = _.capitalize(param);
       doc.querySelector(selector).classList.remove('text-red');
 
       doc.querySelector('#catalog-cards').innerHTML = '';
@@ -154,5 +154,16 @@ function renderItems(arr) {
   _.forEach(arr, function (item) {
     renderCard(item, cards);
   } )
-}
+};
+
+function renderCatalogItems () {
+  let cards = doc.querySelector('#catalog-cards');
+  for (let i = 0; i < items.length; i++) {
+    if (items[i].category === 'catalog') {
+      renderCard(items[i], cards);
+    }
+  }
+};
+
+window.onload = renderCatalogItems();
 
