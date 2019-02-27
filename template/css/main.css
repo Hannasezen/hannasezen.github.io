@@ -360,6 +360,15 @@ a:active {
   margin-right: 20%;
 }
 
+.twit__logo.icon-social-twitter::before {
+  color: rgb(215, 215, 215);
+}
+
+.socials__fb:hover span::before,
+.socials__twit:hover span::before {
+  color: rgb(241, 74, 88);
+}
+
 .twit__title,
 .phone__title {
   margin-bottom: 20px;
@@ -610,6 +619,7 @@ a:active {
 }
 
 .arrow__left, .arrow__right {
+  position: relative;
   width: 35px;
   height: 110px;
   background-color: rgb(241, 74, 88);
@@ -621,6 +631,15 @@ a:active {
 
 .arrow__right {
   float: right;
+}
+
+.icon-keyboard_arrow_right,
+.icon-keyboard_arrow_left {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .slider__points {
@@ -760,6 +779,7 @@ a:active {
   flex-grow: 1;
   text-align: right;
   cursor: pointer;
+  z-index: 2;
 }
 
 .open-filters .filters-cross {
@@ -1357,7 +1377,7 @@ input:checked + label {
     box-shadow: -10px 0 50px 20px white;
   }  
 
-  .dropdown-arrow.close {
+  .open-filters .dropdown-arrow {
     display: none;
   }
 
