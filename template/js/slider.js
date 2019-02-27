@@ -40,7 +40,7 @@
   }
 
   function reternInterval () {
-    return interval = setInterval(moveSlide, 10000);
+    return interval = setInterval(moveSlide, 3000);
   };
 
   reternInterval();
