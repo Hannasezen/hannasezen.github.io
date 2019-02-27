@@ -20,7 +20,41 @@
     points[index].classList.remove('active');
     index = (index + 1) % slides.length;   
     slides[index].classList.add('active');
-    points[index].classList.add('active');     
+    points[index].classList.add('active');
+    console.log(index) 
   }
 
-  let interval = setInterval(moveSlide, 10000);
+  function reternInterval () {
+    return interval = setInterval(moveSlide, 10000);
+  }
+
+  reternInterval();
+
+  let rightArrow = doc.querySelector('#slider-right-arrow');
+  rightArrow.addEventListener('click', function() {
+    clearInterval(interval);
+    let i = _.findIndex(slides, function(slide) {
+      return slide.classList.contains('active');
+    });
+    let index = i + 1;
+    moveSlide();
+    reternInterval();
+  });
+
+  let leftArrow = doc.querySelector('#slider-left-arrow');
+  leftArrow.addEventListener('click', function() {
+    clearInterval(interval);
+    let i = _.findIndex(slides, function(slide) {
+      return slide.classList.contains('active');
+    });
+    index = i -1;
+    if (index === -1) {
+      index = slides.length - 1;
+    }
+    slides[i].classList.remove('active');
+    points[i].classList.remove('active');
+    slides[index].classList.add('active');
+    points[index].classList.add('active');
+    reternInterval();
+    
+  });

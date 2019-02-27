@@ -1,12 +1,12 @@
 //random card from data
 let hash = decodeURI(window.location.hash.substring(1));
-console.log(hash);
 let productItem = _.find(items, function (item) {
   return item.title === hash;
 });
 
 //render product card
 function renderItem() {
+  productItem = productItem || items[0];
   let item = doc.querySelector('#item');
   item.querySelectorAll('.description__title')[0].innerHTML = productItem.title;
   item.querySelectorAll('.description__text')[0].innerHTML = productItem.description;
@@ -75,8 +75,6 @@ function addToCart(event) {
     productItem.color = color.value;
     productItem.size = size.value;
     bag.push(Object.assign({}, productItem));
-    /*let obj = Object.create(productItem);
-    bag.push(obj);  */  
     renderBagsPrice();
     saveToLocalStorage();
   }  
