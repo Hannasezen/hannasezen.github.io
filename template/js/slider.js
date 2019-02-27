@@ -74,7 +74,7 @@
     
   });
 
-  points.addEventListener('swipe', function() {
+  doc.querySelector('#control-points').addEventListener('swipe', function() {
     alert('swiped')
   })
 
