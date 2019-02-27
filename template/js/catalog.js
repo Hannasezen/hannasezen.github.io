@@ -73,11 +73,9 @@ function renderFilters () {
     filterParams.appendChild(filterSubcategory);
     li.appendChild(filterParams);
 
-    let img = doc.createElement('img');
-    img.classList.add('filters__dropdown-arrow');
-    img.src = './img/dropdown_arrow.png';
-    img.alt= 'dropdown-arrow';
-    li.appendChild(img);
+    let span = doc.createElement('span');
+    span.classList.add('filters__dropdown-arrow', 'icon-arrow_drop_down');
+    li.appendChild(span);
 
     let catalogSelect = doc.createElement('div');
     catalogSelect.classList.add('catalog__select');

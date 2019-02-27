@@ -40,7 +40,7 @@
   }
 
   function reternInterval () {
-    return interval = setInterval(moveSlide, 3000);
+    return interval = setInterval(moveSlide, 10000);
   };
 
   reternInterval();
@@ -74,7 +74,5 @@
     
   });
 
-  doc.querySelector('#control-points').addEventListener('swipe', function() {
-    alert('swiped')
-  })
+  
 
