@@ -1014,6 +1014,7 @@ input:checked + label {
 .bag__card {
   display: flex;
   width: 50%;
+  align-items: flex-start;
 }
 
 .bag-card__img {
@@ -1317,10 +1318,6 @@ input:checked + label {
   }
 
   /* tablet adaptive for START page --------------------------------------------------------*/
-
-  .arrivals__cards .card {
-    width: 30%;
-  }
 
   .start__promos .promo {
     flex-basis: 66.7%;
@@ -1764,10 +1761,6 @@ input:checked + label {
 
   .arrivals__cards {
     margin-bottom: 70px;
-  }
-
-  .arrivals__cards .card {
-    width: 45%;
   }
 
   .arrivals__cards .card:nth-child(1n + 3) {
