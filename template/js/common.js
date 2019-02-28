@@ -312,7 +312,7 @@ function lookLocalStorage () {
   if(window.sessionStorage && window.localStorage) {
     if (localStorage.getItem('cart') !== null) {
       bag = JSON.parse(localStorage.getItem('cart'));
-      renderBagsPrice();
+      renderBagsPrice();      
     }
   }  
 }

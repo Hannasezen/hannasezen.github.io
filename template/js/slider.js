@@ -18,7 +18,6 @@ let points = [];
 doc.querySelector('#control-points').addEventListener('click', function(event) {
   if(event.target.nodeName === 'LI') {
     let index = event.target.getAttribute('data-index');
-    console.log(index);
     clearInterval(interval);
     for (let i = 0; i < points.length; i++) {
       points[i].classList.remove('active');

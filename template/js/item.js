@@ -12,7 +12,7 @@ function renderItem() {
   item.querySelectorAll('.description__text')[0].innerHTML = productItem.description;
   item.querySelectorAll('.description__price')[0].innerHTML = '£' + productItem.price.toFixed(2);
 
-  let size = item.querySelector('#sizes');
+  /*let size = item.querySelector('#sizes');
   for (let i in productItem.size) {
     let input = doc.createElement('input');
     let id = productItem.size[i].replace(' ', '');
@@ -41,10 +41,35 @@ function renderItem() {
     label.innerHTML = productItem.color[i].toUpperCase();
     color.appendChild(input);
     color.appendChild(label);
-  }
+  }*/
+  renderInput('color', productItem.color);
+  renderInput('size', productItem.size);
 }
 
 window.onload = renderItem();
+
+//render input in color/size menu function
+function renderInput(param, arr) {
+  let selector = '#' + param + 's';
+  let menu = doc.querySelector('#item').querySelector(selector);
+  for (let i = 0; i < arr.length; i++) {
+    let input = doc.createElement('input');
+    let id = arr[i].replace(' ', '');
+    input.id = id;
+    input.type = 'radio';
+    input.name = param;
+    input.value = id;
+    if (i === 0) {
+      input.setAttribute('checked', true);
+    }
+
+    let label = doc.createElement('label');
+    label.setAttribute('for', id);
+    label.innerHTML = arr[i].toUpperCase();
+    menu.appendChild(input);
+    menu.appendChild(label);
+  }
+}
 
 // select photo for make bigger
 let imgBig = document.getElementById('item-big-img');
@@ -74,6 +99,8 @@ function addToCart(event) {
   } else {
     productItem.color = color.value;
     productItem.size = size.value;
+    //let bag = lookLocalStorage();
+    //bag.push(productItem);
     bag.push(Object.assign({}, productItem));
     renderBagsPrice();
     saveToLocalStorage();
