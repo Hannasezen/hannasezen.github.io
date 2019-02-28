@@ -100,15 +100,9 @@ function addToCart(event) {
   } else {
     productItem.color = color.value;
     productItem.size = size.value;
-    //let bag = lookLocalStorage();
-    console.log(bag);
-    bag.push(productItem);
-    console.log(bag);
-    //bag.push(Object.assign({}, productItem));
+    bag.push(Object.assign({}, productItem));
     renderBagsPrice();
     saveToLocalStorage();
-    let bag1 = lookLocalStorage();
-    console.log(bag1);
   }  
 }
 
