@@ -494,8 +494,10 @@ a:active {
 .card__img {
   position: relative;
   display: block;
-  max-height: 340px;
   overflow: hidden;
+  max-width: 240px;
+  max-height: 340px;
+  margin: auto;
 }
 
 .card__img:hover .card__link {
@@ -1318,8 +1320,7 @@ input:checked + label {
   /* tablet adaptive for START page --------------------------------------------------------*/
 
   .arrivals__cards .card {
-    max-width: 204px;
-    min-width: 204px;
+    width: 30%;
   }
 
   .start__promos .promo {
@@ -1402,12 +1403,12 @@ input:checked + label {
   }
 
   .catalog__cards {
-    justify-content: space-around;
+    justify-content: space-between;
     padding-bottom: 0;
   }
   
   .catalog__cards .card {
-    width: 33.3%;
+    width: 30%;
     margin-top: 0;
   }
 
@@ -1768,8 +1769,7 @@ input:checked + label {
   }
 
   .arrivals__cards .card {
-    max-width: 158px;
-    min-width: 158px;
+    width: 45%;
   }
 
   .arrivals__cards .card:nth-child(1n + 3) {
@@ -1921,17 +1921,16 @@ input:checked + label {
     padding-top: 20px;
   }
 
+  .catalog__cards {
+    justify-content: space-between;
+  }
+
   .catalog__cards .card {
-    width: 50%;
+    width: 45%;
   }
 
   .catalog__cards .card:nth-child(1n + 9) {
     display: none;
-  }
-
-  .catalog__cards .card__img {
-    max-height: 223px;
-    max-width: 158px;
   }
 
   .catalog__cards .card:first-child {
@@ -1950,7 +1949,7 @@ input:checked + label {
   }
 
   .special-price {
-    top: 395px;
+    top: 20%;
   }
 
   .special-price__title {
