@@ -100,7 +100,8 @@ function addToCart(event) {
   } else {
     productItem.color = color.value;
     productItem.size = size.value;
-    bag.push(Object.assign({}, productItem));
+    bag.push(_.assign({}, productItem));
+    //bag.push(Object.assign({}, productItem));
     renderBagsPrice();
     saveToLocalStorage();
   }  
