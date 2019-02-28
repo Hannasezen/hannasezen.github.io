@@ -3,6 +3,7 @@ let hash = decodeURI(window.location.hash.substring(1));
 let productItem = _.find(items, function (item) {
   return item.title === hash;
 });
+console.log(bag);
 
 //render product card
 function renderItem() {
@@ -100,10 +101,14 @@ function addToCart(event) {
     productItem.color = color.value;
     productItem.size = size.value;
     //let bag = lookLocalStorage();
-    //bag.push(productItem);
-    bag.push(Object.assign({}, productItem));
+    console.log(bag);
+    bag.push(productItem);
+    console.log(bag);
+    //bag.push(Object.assign({}, productItem));
     renderBagsPrice();
     saveToLocalStorage();
+    let bag1 = lookLocalStorage();
+    console.log(bag1);
   }  
 }
 

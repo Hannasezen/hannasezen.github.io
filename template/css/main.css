@@ -495,9 +495,6 @@ a:active {
   position: relative;
   display: block;
   overflow: hidden;
-  max-width: 240px;
-  max-height: 340px;
-  margin: auto;
 }
 
 .card__img:hover .card__link {
@@ -506,6 +503,8 @@ a:active {
 
 .card__img img {
   width: 100%;
+  max-width: 240px;
+  max-height: 340px;
 }
 
 .card__link {
@@ -1594,7 +1593,6 @@ input:checked + label {
   .bag-card__img {
     min-width: 145px;
     width: 145px;
-    height: 204px;
   }
 
   .bag-card__desc {
@@ -1966,6 +1964,10 @@ input:checked + label {
   .bag__card {
     width: 100%;
     height: 265px;
+  }
+
+  .bag__card img {
+    min-width: 158px;
   }
 
   .delivery-message,
