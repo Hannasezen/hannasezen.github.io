@@ -1,4 +1,4 @@
-// filters data 
+// all filters for catalog page
 let filtersData = {
   'Fashion': {
     'Not selected': '',
@@ -50,13 +50,16 @@ let filtersData = {
   }
 };
 
+// filtered products
 let filteredItems = {};
 
+//makes id for every filter
 function makeIdFromTitle (title) {
   let res = title.toLowerCase().replace(/\W/g, '');
   return res;
 }
 
+//rendering filters to the catalog page
 function renderFilters () {
   for (let key in filtersData) {
     let li = doc.createElement('li');
@@ -112,12 +115,13 @@ doc.querySelector('#catalog-filters').addEventListener('click', function() {
   doc.querySelector('#filters').classList.toggle('open-filters');
 })
 
-// filters data
+// event for select filters
 let filters = doc.querySelectorAll('.filters__item');
 for (let i = 0; i < filters.length; i++) {
   filters[i].addEventListener('click', selectFilters);
 }
 
+// changing selected filters
 function selectFilters(event) {
   let param = makeIdFromTitle(this.querySelectorAll('.filter__category')[0].innerText);
   let selector = '#' + param;
@@ -126,18 +130,14 @@ function selectFilters(event) {
       this.classList.remove('selected');
       doc.querySelector(selector).innerText = _.capitalize(param);
       doc.querySelector(selector).classList.remove('text-red');
-
       doc.querySelector('#catalog-cards').innerHTML = '';
       renderItems();
-
     } else {
-      console.log(event.target.innerHTML.toLowerCase())
       doc.querySelector('#catalog-cards').innerHTML = '';
       filteredItems = _.filter( items, function (item) { 
         return _.includes( item[param], event.target.innerHTML.toLowerCase() ) 
       });
       renderItems(filteredItems);
-
       this.classList.add('selected');
       this.querySelectorAll('.filter__subcategory')[0].innerHTML = event.target.innerText;        
       doc.querySelector(selector).innerText = event.target.innerText;
@@ -146,6 +146,7 @@ function selectFilters(event) {
   }
 }
 
+//rendering filtered products to the catalog page
 function renderItems(arr) {
   arr = arr || items;
   let cards = doc.querySelector('#catalog-cards');
@@ -154,6 +155,7 @@ function renderItems(arr) {
   } )
 };
 
+// rendering all products on the catalog page
 function renderCatalogItems () {
   let cards = doc.querySelector('#catalog-cards');
   for (let i = 0; i < items.length; i++) {

@@ -323,7 +323,7 @@ function renderCard(item, cards) {
   let card = doc.createElement('div');
   card.classList.add('card');
   let a = doc.createElement('a');
-  a.classList.add('card__img', 'start-card__img');
+  a.classList.add('card__img');
   a.setAttribute('href', './item.html#' + item.title);
   let img = doc.createElement('img');
   img.setAttribute('src', item.img);
