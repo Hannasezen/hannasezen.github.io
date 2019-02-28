@@ -7,7 +7,7 @@ function renderBag() {
   let sum = 0;
   // 
   let uniqCards = _.uniqWith(bag, _.isEqual);
-  let filteredArray = [];
+  let filteredProducts = [];
   for (let i = 0; i < uniqCards.length; i++) {
     let uniqArr =  _.filter(bag, function (item) {
       return item.color === uniqCards[i].color &&  item.size === uniqCards[i].size && item.title === uniqCards[i].title;
@@ -19,19 +19,19 @@ function renderBag() {
     }
     uniqArr.price = totalCoast;
     uniqArr.quantity = totalQuantity;
-    filteredArray.push(uniqArr);
+    filteredProducts.push(uniqArr);
   }
-  console.log(filteredArray);
+  console.log(filteredProducts);
 
-  for (let i = 0; i < filteredArray.length; i++) {
-    sum += filteredArray[i].price;
+  for (let i = 0; i < filteredProducts.length; i++) {
+    sum += filteredProducts[i].price;
     let card = doc.createElement('div');
     card.classList.add('card', 'bag__card');
     let a = doc.createElement('a');
     a.classList.add('card__img', 'bag-card__img');
-    a.setAttribute('href', './item.html#' + filteredArray[i][0].title);
+    a.setAttribute('href', './item.html#' + filteredProducts[i][0].title);
     let img = doc.createElement('img');
-    img.setAttribute('src', filteredArray[i][0].img);
+    img.setAttribute('src', filteredProducts[i][0].img);
     let link = doc.createElement('div');
     link.classList.add('card__link');
     link.innerHTML = 'View item';
@@ -43,10 +43,10 @@ function renderBag() {
     desc.classList.add('bag-card__desc');
     let title = doc.createElement('div');
     title.classList.add('card__desc', 'bag-card__title');
-    title.innerHTML = filteredArray[i][0].title;
+    title.innerHTML = filteredProducts[i][0].title;
     let price = doc.createElement('div');
     price.classList.add('bag-card__price');
-    price.innerHTML = '£' + filteredArray[i].price.toFixed(2);
+    price.innerHTML = '£' + filteredProducts[i].price.toFixed(2);
     desc.appendChild(title);
     desc.appendChild(price);
 
@@ -54,14 +54,14 @@ function renderBag() {
     params.classList.add('bag-card__params');
     let color = doc.createElement('div');
     color.classList.add('bag-card__color');
-    color.innerHTML = 'Color: <span class="item__color">' + filteredArray[i][0].color + '</span>';
+    color.innerHTML = 'Color: <span class="item__color">' + filteredProducts[i][0].color + '</span>';
     let size = doc.createElement('div');
     size.classList.add('bag-card__size');
-    size.innerHTML = 'Size: <span class="item__size">' + filteredArray[i][0].size + '</span>';
+    size.innerHTML = 'Size: <span class="item__size">' + filteredProducts[i][0].size + '</span>';
     let quant = doc.createElement('div');
     quant.classList.add('bag-card__quantity');
     
-    quant.innerHTML = 'Quantity: <span class="item__quantity">' + filteredArray[i].quantity + '</span>';
+    quant.innerHTML = 'Quantity: <span class="item__quantity">' + filteredProducts[i].quantity + '</span>';
     params.appendChild(color);
     params.appendChild(size);
     params.appendChild(quant);
