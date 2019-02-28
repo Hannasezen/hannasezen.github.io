@@ -138,9 +138,9 @@ let pizzas = [
 let addings = ["грибы", "оливки", "помидоры", "отстрый соус", "майонез"];
 let cards = doc.querySelectorAll('li.pizza'); //collection of pizzas on the screen
 let myCart = []; // array for pizzas in cart
-if(window.localStorage.getItem('cart')) {
-  myCart = JSON.parse(localStorage.getItem('cart'));
-  cartQuantity.innerHTML = JSON.parse(localStorage.getItem('cart')).length;
+if(window.localStorage.getItem('pizzasCart')) {
+  myCart = JSON.parse(localStorage.getItem('pizzasCart'));
+  cartQuantity.innerHTML = JSON.parse(localStorage.getItem('pizzasCart')).length;
 }
 // generate id for pizzas
 function* generator () {
@@ -301,7 +301,7 @@ function addAddings (event) {
 
 function saveCartToStorage() {
   let cartJSON = JSON.stringify(myCart);
-  localStorage.setItem('cart', cartJSON);
+  localStorage.setItem('pizzasCart', cartJSON);
 }
 
 function buyPizza(event) {
@@ -400,7 +400,7 @@ function renderCart() {
 function emptyCart(event) {
   event.stopPropagation();
   myCart = [];
-  window.localStorage.setItem('cart', '');
+  window.localStorage.setItem('pizzasCart', '');
   cartQuantity.innerHTML = '0';
   cartOpen.classList.remove('open');
 }
