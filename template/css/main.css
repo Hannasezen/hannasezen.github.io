@@ -558,6 +558,7 @@ a:active {
   display: flex;
   flex-direction: row;
   border: 1px solid rgb(229, 229, 229);
+  cursor: pointer;
 }
 
 .promo {

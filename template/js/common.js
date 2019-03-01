@@ -302,12 +302,14 @@ function renderBagsPrice() {
 };
 window.onload = renderBagsPrice();
 
+// saves current bag array to the local storage
 function saveToLocalStorage() {
   if(window.sessionStorage && window.localStorage) {
     localStorage.setItem('cart', JSON.stringify(bag));
   }
 };
 
+// takes current bag array from the local storage
 function lookLocalStorage () {
   if(window.sessionStorage && window.localStorage) {
     if (localStorage.getItem('cart') !== null) {
@@ -319,6 +321,7 @@ function lookLocalStorage () {
 
 window.onload = lookLocalStorage();
 
+// rendering product cards
 function renderCard(item, cards) {
   let card = doc.createElement('div');
   card.classList.add('card');
@@ -354,6 +357,21 @@ function renderCard(item, cards) {
 
   cards.appendChild(card);
 }
+
+// click on the banners image
+let bigBanners = doc.querySelectorAll('.promo');
+let smallBanners = doc.querySelectorAll('.promo-small');
+let banners = doc.querySelectorAll('.promos')[0];
+banners.addEventListener('click', function(event) {
+  if(event.target.classList.contains('promo__title') || event.target.classList.contains('promo__category')) {
+    let link = event.target.closest('div').parentNode.querySelectorAll('a')[0].href;
+    document.location.href = link;
+  } else if (event.target.classList.contains('promo__text') || event.target.classList.contains('promo-small__text')) {
+    let link = event.target.parentNode.querySelectorAll('a')[0].href;
+    document.location.href = link;
+  }
+}, true)
+
 
 /*
   {
