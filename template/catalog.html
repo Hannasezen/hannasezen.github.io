@@ -8,41 +8,52 @@
   <meta name="description" lang="en" content="e-commerce website">
   <link rel="shortcut icon" type="image/png" href="./img/favicon.png"/>
   <title>Catalog</title>
-  <link rel="stylesheet" href="./css/icomoon.css">
-  <link rel="stylesheet" href="./css/normalize.css">
-  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/icomoon.css"><!--icon fonts-->
+  <link rel="stylesheet" href="./css/normalize.css"><!--normalize styles-->
+  <link rel="stylesheet" href="./css/main.css"><!--main styles-->
 </head>
 <body>
+  <!--Catalog page`s wrapper-->
   <div class="wrapper">
+    <!--Start page`s header block-->
     <header class="header">
       <div class="container">
         <div class="mobile-wrapper">
           <div class="wrap wrap-logo">
+            <!--Header logos-->
             <div class="header__logo desktop-logo">
-              <a href="index.html" class="logo">Template</a>
+              <a href="index.html" class="logo" accesskey="t">Template</a>
             </div>
             <div class="header__logo mobile-logo">
-              <a href="index.html" class="logo">TL</a>
+              <a href="index.html" class="logo" accesskey="t">TL</a>
             </div>
+            <!--Header`s logos end-->
+            <!--Header`s auth link and shopping bag link-->
             <div class="auth-cart">
+              <!--auth link-->
               <div class="auth">
                 <a href="#">E-mail sing up</a>
               </div>
+              <!--shopping bag link-->
               <div class="cart">
-                <a href="./shopping-cart.html">
+                <a href="./shopping-cart.html" accesskey="c">
                   <span class="cart__img icon-shopping-bag"></span>
                   <span>Bag </span><span id="bag-price"></span> (<span id="bag-quantity">0</span>)
                 </a>
               </div>         
             </div>
+            <!--Header`s auth link and shopping cart link end-->
           </div>
+          <!--Header`s burger menu-->
           <div id="burger-btn" class="burger-menu">
             <div class="line"></div>
             <div class="line"></div>
             <div class="line"></div>
           </div>
+          <!--Header`s burger menu end-->
         </div>        
-        <div id="burger-menu" class="wrap wrap-menu">
+        <div id="header-menu" class="wrap wrap-menu">
+          <!--Header`s navigation-->
           <nav class="header__nav">
             <ul class="nav__links">
               <li class="nav__link"><a href="#">women</a></li>
@@ -55,17 +66,25 @@
               <li class="nav__link"><a href="#">Store Locator</a></li>
             </ul>
           </nav>
+          <!--Header`s navigation end-->
+          <!--Header`s search form-->
           <form class="search" id="search">
             <input id="search__input" class="search__input" type="text" placeholder="style name">
-            <button class="search__btn" type="submit"><span class="icon-search"></span></button>
+            <button class="search__btn" type="submit" accesskey="s">
+              <span class="icon-search"></span>
+            </button>
           </form>
+          <!--Header`s search form end-->
         </div>      
       </div>
     </header>
+    <!--Start page`s header end-->
+    <!--Start page`s filters block-->
     <div class="catalog-controls">
       <div class="filters" id="filters">
         <div id="catalog-filters" class="filters-mobile__wrapper">
           <div class="container">
+            <!--filters categories for tablet/mobile-->
             <div class="filter-mobile">
               <ul class="filter-mobile__list">
                 <li class="filter-mobile__item">
@@ -104,14 +123,20 @@
                 <span class="icon-cancel"></span>
               </div>
             </div>
+            <!--filters categories for tablet/mobile end-->
           </div>          
         </div>
+        <!--filters categories-->
         <ul id="filters-list" class="filters__list">
-          <!--rendering from js-->
+          <!--renders from js-->
         </ul>
+        <!--filters categories end-->
       </div>          
     </div>
+    <!--Start page`s filters block end-->
+    <!--Start page`s main block-->
     <main class="catalog__main">
+      <!--catalog cards-->
       <div class="cards catalog__cards" id="catalog-cards">
         <!--<div class="card">
           <a href="./item.html" class="card__img">
@@ -235,6 +260,8 @@
           </div>
         </div>-->
       </div>
+      <!--catalog cards end-->
+      <!--catalog special price block-->
       <div class="special-price">
         <h3 class="special-price__title">
           <a href="#">Last weekend <span class="text-red">extra 50%</span> off on all reduced boots and shoulder bags</a>
@@ -243,9 +270,13 @@
           <a href="#">This offer is valid in-store and online. Prices displayed reflect this additional discount. This offer ends at 11:59 GMT on March 1st 2015</a>
         </h4>
       </div>
+      <!--catalog special price block end-->
       <button class="catalog__btn btn">Show more</button>
     </main>
+    <!--Start page`s main block end-->
+    <!--Start page`s promo banners block-->
     <div class="promos catalog__promos">
+      <!--big banner-->
       <div class="promo">
         <div class="promo__text">
           <h3 class="promo__title">adidas blue</h3>
@@ -255,7 +286,10 @@
           <img src="./img/catalog_banner1.jpg" alt="catalog promo image">
         </a>
       </div>
+      <!--big banner end-->
+      <!--small banners-->
       <div class="promo promos-wrap">
+        <!--small banner #1-->
         <div class="promo-small promo-repair">
           <div class="promo-small__text">
             <h3 class="promo__title">repair patchies</h3>
@@ -266,6 +300,8 @@
             <img src="./img/catalog_banner2.png" alt="catalog promo image">
           </a>
         </div>
+        <!--small banner #1 end-->
+        <!--small banner #2-->
         <div class="promo-small promo-sale">
           <div class="promo-small__text">
             <h3 class="promo__title text-red">sale</h3>
@@ -276,12 +312,18 @@
             <img src="./img/catalog_banner3.png" alt="catalog promo image">
           </a>
         </div>
-      </div>          
+        <!--small banner #2 end-->
+      </div>
+      <!--small banners end-->          
     </div>
+    <!--Start page`s promo banners block end-->
+    <!--Start page`s additions block-->
     <div class="additions-wrapper">
       <div class="additions container">
+        <!--adittion navigation-->
         <div class="navigation">
-          <div class="pages__nav">
+          <!--navigation`s Quick Links block-->
+          <nav class="pages__nav">
             <h3 class="pages__title additions__title">Quick Links</h3>
             <ul class="pages__links">
               <li class="pages__link"><a href="#">Store locator</a></li>
@@ -290,8 +332,10 @@
               <li class="pages__link"><a href="#">About us</a></li>
               <li class="pages__link"><a href="#">Support</a></li>
             </ul>
-          </div>
-          <div class="customer__nav">
+          </nav>
+          <!--navigation`s Quick Links block end-->
+          <!--navigation`s Customer Care block-->
+          <nav class="customer__nav">
             <h3 class="customer__title additions__title">Customer Care</h3>
             <ul class="customer__links">
               <li class="customer__link"><a href="#">Customer service</a></li>
@@ -301,10 +345,14 @@
               <li class="customer__link"><a href="#">Contact us</a></li>
               <li class="customer__link"><a href="#">Careers</a></li>
             </ul>
-          </div>
+          </nav>
+          <!--navigation`s Customer Care block end-->
         </div>
+        <!--adittion navigation end-->
+        <!--adittion contacts block-->
         <div class="contacts">
           <div class="contacts__way">
+            <!--contacts by twitter-->
             <div class="contacts__twit">
               <h3 class="additions__title twit__title">Questions</h3>
               <a href="https://twitter.com/">
@@ -314,6 +362,7 @@
                 </div>
               </a>            
             </div>
+            <!--contacts by phone-->
             <div class="contacts__phone">
               <h3 class="additions__title phone__title">Order by phone</h3>
               <div class="phone__text">
@@ -321,9 +370,11 @@
               </div>
             </div>
           </div>
+          <!--contact`s delivery info-->
           <div class="contacts__delivery">
               We have our own delivery service which operates in 23 major European cities. Delivery time - 3-5 days.
           </div>
+          <!--socials block for desktop/tablet-->
           <div class="contacts__socials">
             <a href="https://www.facebook.com/" class="socials__fb">
               <span class="icon-social-facebook"></span>
@@ -332,13 +383,24 @@
               <span class="icon-social-twitter"></span>
             </a>
           </div>
+          <!--socials block for desktop/tablet end-->
         </div>
+        <!--adittion contacts block end-->
       </div>      
     </div>
+    <!--Start page`s additions block end-->
+    <!--Start page`s footer-->
     <footer class="footer-wrapper">
       <div class="footer container">
-        <div class="footer__copyrights">© 2010–2015, The Template Group inc.</div>
-        <div class="footer__share">share<span class="shares__number">1 437</span></div>
+        <!--footer copyrights-->
+        <div class="footer__copyrights">
+          &copy; 2010–2019, The Template Group inc.
+        </div>
+        <!--footer share count-->
+        <div class="footer__share">share
+          <span class="shares__number">1 437</span>
+        </div>
+        <!--socials block for mobile-->
         <div class="footer__socials">
           <a href="https://www.facebook.com/" class="socials__fb">
             <span class="icon-social-facebook"></span>
@@ -347,18 +409,25 @@
             <span class="icon-social-twitter twit__logo"></span>
           </a>
         </div>
-        <div class="footer__nav">
+        <!--socials block for mobile end-->
+        <!--footer navigation-->
+        <nav class="footer__nav">
           <ul class="nav__items">
             <li class="nav__item"><a href="#">Legal notice</a></li>
             <li class="nav__item"><a href="#">Privacy policy</a></li>
             <li class="nav__item"><a href="#">Site map</a></li>
           </ul>
-        </div>
+        </nav>
+        <!--footer navigation end-->
       </div>      
     </footer>
+    <!--Start page`s footer end-->
   </div>
+  <!--Start page`s wrapper end-->
+  <!--JavaScript-->
   <script src="./js/lodash.js"></script>
   <script src="./js/common.js"></script>
   <script src="./js/catalog.js"></script>
+  <!--JavaScript end--> 
 </body>
 </html>

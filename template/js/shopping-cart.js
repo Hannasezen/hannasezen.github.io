@@ -21,7 +21,6 @@ function renderBag() {
     uniqArr.quantity = totalQuantity;
     filteredProducts.push(uniqArr);
   }
-  console.log(filteredProducts);
 
   for (let i = 0; i < filteredProducts.length; i++) {
     sum += filteredProducts[i].price;

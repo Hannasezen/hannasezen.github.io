@@ -279,7 +279,7 @@ function search(event) {
 // header burger-menu on mobile version open/close
 doc.querySelector('#burger-btn').addEventListener('click', function () {
   this.classList.toggle('active');
-  doc.querySelector('#burger-menu').classList.toggle('open-menu');
+  doc.querySelector('#header-menu').classList.toggle('open-menu');
 })
 
 //shopping bag at header

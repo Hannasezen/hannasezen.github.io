@@ -7,41 +7,52 @@
   <meta name="author" content="Anna Sezen">
   <meta name="description" lang="en" content="e-commerce website">
   <title>Shopping Cart</title>
-  <link rel="stylesheet" href="./css/icomoon.css">
-  <link rel="stylesheet" href="./css/normalize.css">
-  <link rel="stylesheet" href="./css/main.css">  
+  <link rel="stylesheet" href="./css/icomoon.css"><!--icon fonts-->
+  <link rel="stylesheet" href="./css/normalize.css"><!--normalize styles-->
+  <link rel="stylesheet" href="./css/main.css"><!--main styles-->
 </head>
 <body>
+  <!--Bag page`s wrapper-->
   <div class="wrapper">
+    <!--Bag page`s header block-->
     <header class="header">
       <div class="container">
         <div class="mobile-wrapper">
           <div class="wrap wrap-logo">
+            <!--Header logos-->
             <div class="header__logo desktop-logo">
-              <a href="index.html" class="logo">Template</a>
+              <a href="index.html" class="logo" accesskey="t">Template</a>
             </div>
             <div class="header__logo mobile-logo">
-              <a href="index.html" class="logo">TL</a>
+              <a href="index.html" class="logo" accesskey="t">TL</a>
             </div>
+            <!--Header`s logos end-->
+            <!--Header`s auth link and shopping bag link-->
             <div class="auth-cart">
+              <!--auth link-->
               <div class="auth">
                 <a href="#">E-mail sing up</a>
               </div>
+              <!--shopping bag link-->
               <div class="cart">
-                <a href="./shopping-cart.html">
-                  <span class="cart__img icon-shopping-bag"></span>
+                <a href="./shopping-cart.html" accesskey="c">
+                  <span class="cart__img icon-shopping-bag"></span><!--bag`s icon-->
                   <span>Bag </span><span id="bag-price"></span> (<span id="bag-quantity">0</span>)
                 </a>
               </div>         
             </div>
+            <!--Header`s auth link and shopping cart link end-->
           </div>
+          <!--Header`s burger menu-->
           <div id="burger-btn" class="burger-menu">
             <div class="line"></div>
             <div class="line"></div>
             <div class="line"></div>
           </div>
-        </div>        
-        <div id="burger-menu" class="wrap wrap-menu">
+          <!--Header`s burger menu end-->
+        </div>     
+        <div id="header-menu" class="wrap wrap-menu">
+          <!--Header`s navigation-->
           <nav class="header__nav">
             <ul class="nav__links">
               <li class="nav__link"><a href="#">women</a></li>
@@ -54,102 +65,41 @@
               <li class="nav__link"><a href="#">Store Locator</a></li>
             </ul>
           </nav>
+          <!--Header`s navigation end-->
+          <!--Header`s search form--> 
           <form class="search" id="search">
             <input  id="search__input" class="search__input" type="text" placeholder="style name">
-            <button class="search__btn" type="submit"><span class="icon-search"></span></button>
+            <button class="search__btn" type="submit" accesskey="s">
+              <span class="icon-search"></span><!--search form`s icon-->
+            </button>
           </form>
+          <!--Header`s search form end-->
         </div>      
       </div>
     </header>
+    <!--Bag page`s header end-->
+    <!--Bag page`s main block-->
     <main class="bag-main">
+      <!--shopping bag`s title-->
       <div class="title">
         <div class="container">
           <h1 class="bag-title">Shopping bag</h1>
         </div>        
       </div>
+      <!--shopping bag`s items-->
       <div class="bag">
-        <!--message 'Thank you for your purchase' or "Your shopping bag is empty. Use Catalog to add new items".-->
+        <!--message for user-->
         <div class="bag__message" id="bag-message"></div>
         <!--shopping bag items-->
         <div class="bag__cards container" id="bag-cards">
-          <!--<div class="card bag__card">
-            <a href="./item.html" class="card__img bag-card__img">
-              <img src="./img/women9.png" alt="cart item photo">
-              <div class="card__link">View item</div>
-            </a>
-            <div class="bag-card__desc">
-              <div class="card__desc bag-card__title">Only Skinny Jeans</div>
-              <div class="bag-card__price">£390.25</div>
-              <div class="bag-card__params">
-                <div class="bag-card__color">Color: <span class="item__color">Phillipa wash</span></div>
-                <div class="bag-card__size">Size: <span class="item__size">UK 17</span></div>
-                <div class="bag-card__quantity">Quantity: <span class="item__quantity">1</span></div>
-              </div>
-              <a href="#" class="bag-card__remove text-red">Remove item</a>
-            </div>
-          </div>
-          <div class="bag__card card">
-            <a href="./item.html" class="card__img bag-card__img">
-              <img src="./img/arrival_1.png" alt="cart item photo">
-              <div class="card__link">View item</div>
-            </a>
-            <div class="bag-card__desc">
-              <div class="card__desc bag-card__title">Paul & Joe Sister Jumper with Neon Trims</div>
-              <div class="bag-card__price">£400.75</div>
-              <div class="bag-card__params">
-                <div class="bag-card__color">Color: <span class="item__color">Blue</span></div>
-                <div class="bag-card__size">Size: <span class="item__size">UK 18</span></div>
-                <div class="bag-card__quantity">Quantity: <span class="item__quantity">1</span></div>
-              </div>
-              <a href="#" class="bag-card__remove text-red">Remove item</a>
-            </div>
-          </div>
-          <div class="card bag__card">
-            <a href="./item.html" class="card__img bag-card__img">
-              <img src="./img/women8.png" alt="cart item photo">
-              <div class="card__link">View item</div>
-            </a>
-            <div class="bag-card__desc">
-              <div class="card__desc bag-card__title">Boyfriend T-Shirt with Bohemian Print</div>
-              <div class="bag-card__price">£360.00</div>
-              <div class="bag-card__params">
-                <div class="bag-card__color">Color: <span class="item__color">Black</span></div>
-                <div class="bag-card__size">Size: <span class="item__size">UK 18</span></div>
-                <div class="bag-card__quantity">Quantity: <span class="item__quantity">1</span></div>
-              </div>
-              <a href="#" class="bag-card__remove text-red">Remove item</a>
-            </div>
-          </div>
-
-          <div class="card bag__card">
-            <a href="./item.html" class="card__img bag-card__img">
-              <img src="./img/arrival_4.png" alt="cart item photo">
-              <div class="card__link">View item</div>
-            </a>
-            <div class="bag-card__desc">
-              <div class="card__desc bag-card__title">Turtle Neck Jumper in Rib</div>
-              <div class="bag-card__price">£489.50</div>
-              <div class="bag-card__params">
-                <div class="bag-card__color">Color: 
-                  <span class="item__color">Green</span>
-                </div>
-                <div class="bag-card__size">Size: 
-                  <span class="item__size">UK 19</span>
-                </div>
-                <div class="bag-card__quantity">Quantity: 
-                  <span class="item__quantity">1</span>
-                </div>
-              </div>
-              <a href="#" class="bag-card__remove text-red">Remove item</a>
-            </div>
-          </div>-->
-
         </div>
+        <!--delivery message-->
         <div class="delivery-message">
           <div class="container">
             You've qualified for Free UK Next Day Delivery on your order. Don't forget to enter the code <span class="text-red">nexday</span> at checkout
           </div>         
         </div>
+        <!--shopping bag`s control buttons block-->
         <div class="bag__buynow container">
           <div class="bag__empty">
             <a href="#" id="empty-bag">Empty bag</a> 
@@ -162,11 +112,14 @@
         </div>
       </div>
     </main>   
-
+    <!--Bag page`s main block end-->
+    <!--Bag page`s additions block-->
     <div class="additions-wrapper">
       <div class="additions container">
+        <!--adittion navigation-->
         <div class="navigation">
-          <div class="pages__nav">
+          <!--navigation`s Quick Links block-->
+          <nav class="pages__nav">
             <h3 class="pages__title additions__title">Quick Links</h3>
             <ul class="pages__links">
               <li class="pages__link"><a href="#">Store locator</a></li>
@@ -175,8 +128,10 @@
               <li class="pages__link"><a href="#">About us</a></li>
               <li class="pages__link"><a href="#">Support</a></li>
             </ul>
-          </div>
-          <div class="customer__nav">
+          </nav>
+          <!--navigation`s Quick Links block end-->
+          <!--navigation`s Customer Care block-->
+          <nav class="customer__nav">
             <h3 class="customer__title additions__title">Customer Care</h3>
             <ul class="customer__links">
               <li class="customer__link"><a href="#">Customer service</a></li>
@@ -186,10 +141,14 @@
               <li class="customer__link"><a href="#">Contact us</a></li>
               <li class="customer__link"><a href="#">Careers</a></li>
             </ul>
-          </div>
+          </nav>
+          <!--navigation`s Customer Care block end-->
         </div>
+        <!--adittion navigation end-->
+        <!--adittion contacts block-->
         <div class="contacts">
           <div class="contacts__way">
+            <!--contacts by twitter-->
             <div class="contacts__twit">
               <h3 class="additions__title twit__title">Questions</h3>
               <a href="https://twitter.com/">
@@ -199,6 +158,7 @@
                 </div>
               </a>            
             </div>
+            <!--contacts by phone-->
             <div class="contacts__phone">
               <h3 class="additions__title phone__title">Order by phone</h3>
               <div class="phone__text">
@@ -206,9 +166,11 @@
               </div>
             </div>
           </div>
+          <!--contact`s delivery info-->
           <div class="contacts__delivery">
               We have our own delivery service which operates in 23 major European cities. Delivery time - 3-5 days.
           </div>
+          <!--socials block for desktop/tablet-->
           <div class="contacts__socials">
             <a href="https://www.facebook.com/" class="socials__fb">
               <span class="icon-social-facebook"></span>
@@ -217,14 +179,24 @@
               <span class="icon-social-twitter"></span>
             </a>
           </div>
+          <!--socials block for desktop/tablet end-->
         </div>
-      </div>
-      
+        <!--adittion contacts block end-->
+      </div>      
     </div>
+    <!--Bag page`s additions block end-->
+    <!--Bag page`s footer-->
     <footer class="footer-wrapper">
       <div class="footer container">
-        <div class="footer__copyrights">© 2010–2015, The Template Group inc.</div>
-        <div class="footer__share">share<span class="shares__number">1 437</span></div>
+        <!--footer copyrights-->
+        <div class="footer__copyrights">
+          &copy; 2010–2019, The Template Group inc.
+        </div>
+        <!--footer share count-->
+        <div class="footer__share">share
+          <span class="shares__number">1 437</span>
+        </div>
+        <!--socials block for mobile-->
         <div class="footer__socials">
           <a href="https://www.facebook.com/" class="socials__fb">
             <span class="icon-social-facebook"></span>
@@ -233,18 +205,25 @@
             <span class="icon-social-twitter"></span>
           </a>
         </div>
-        <div class="footer__nav">
+        <!--socials block for mobile end-->
+        <!--footer navigation-->
+        <nav class="footer__nav">
           <ul class="nav__items">
             <li class="nav__item"><a href="#">Legal notice</a></li>
             <li class="nav__item"><a href="#">Privacy policy</a></li>
             <li class="nav__item"><a href="#">Site map</a></li>
           </ul>
-        </div>
+        </nav>
+        <!--footer navigation end-->
       </div>      
     </footer>
+    <!--Bag page`s footer end-->
   </div>
+  <!--Bag page`s wrapper end-->
+  <!--JavaScript-->
   <script src="./js/lodash.js"></script>
   <script src="./js/common.js"></script>
   <script src="./js/shopping-cart.js"></script>
+  <!--JavaScript end-->
 </body>
 </html>
