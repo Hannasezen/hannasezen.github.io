@@ -117,13 +117,13 @@ function buyNow() {
     bag.length = 0;
     showMessage('Thank you for your purchase');
   } else {
-    showMessage('Your shopping bag is empty. Use Catalog to add new items');
+    showMessage('Your shopping bag is empty. Use <a href="./catalog.html"><strong>Catalog</strong></a> to add new items');
   }  
 }
 
 function emptyBag() {
   bag.length = 0;
-  showMessage("Your shopping bag is empty. Use Catalog to add new items");
+  showMessage('Your shopping bag is empty. Use <a href="./catalog.html"><strong>Catalog</strong></a> to add new items');
 }
 
 function showMessage(text) {
