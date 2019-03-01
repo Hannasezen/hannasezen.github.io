@@ -90,7 +90,7 @@ function renderBag() {
         bag.splice(bag.indexOf(removeItem), 1);
         bagCards.innerHTML = '';
         if (bag.length === 0) {
-          showMessage("Your shopping bag is empty. Use Catalog to add new items");
+          showMessage('Your shopping bag is empty. Use <a href="./catalog.html"><strong>Catalog</strong></a> to add new items');
         } else {
           renderBag();
           renderBagsPrice();
