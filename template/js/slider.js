@@ -1,6 +1,8 @@
+// slides/points arrays
 let slides = document.querySelectorAll('.slider__img');
 let points = [];
 
+// renders poin for every slide
 (function renderPoints() {
   let pointsHolder = doc.querySelector('#control-points');
   for(let i = 0; i < slides.length; i++) {
@@ -15,6 +17,7 @@ let points = [];
   }
 })();
 
+// points funtionality
 doc.querySelector('#control-points').addEventListener('click', function(event) {
   if(event.target.nodeName === 'LI') {
     clearInterval(interval);
@@ -29,6 +32,7 @@ doc.querySelector('#control-points').addEventListener('click', function(event) {
   }
 })
 
+// function for move slide
 let index = 0;
 function moveSlide() {
   index = _.findIndex(slides, function (slide) {
@@ -43,13 +47,17 @@ function moveSlide() {
   points[index].classList.add('active');    
 }
 
+// move slide with interval
 function reternInterval () {
   return interval = setInterval(moveSlide, 10000);
 };
 
 reternInterval();
 
+// sliders arrows
 let rightArrow = doc.querySelector('#slider-right-arrow');
+
+// right arrow funtionality
 rightArrow.addEventListener('click', function() {
   clearInterval(interval);
   let i = _.findIndex(slides, function(slide) {
@@ -60,6 +68,7 @@ rightArrow.addEventListener('click', function() {
   reternInterval();
 });
 
+// left arrow funtionality
 let leftArrow = doc.querySelector('#slider-left-arrow');
 leftArrow.addEventListener('click', function() {
   clearInterval(interval);

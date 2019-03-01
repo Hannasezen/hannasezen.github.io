@@ -111,7 +111,7 @@ btnBuyNow.addEventListener('click', buyNow);
 let btnEmptyBag = doc.querySelector('#empty-bag');
 btnEmptyBag.addEventListener('click', emptyBag);
 
-
+// function buy products
 function buyNow() {
   if (bag.length > 0) {
     bag.length = 0;
@@ -121,11 +121,13 @@ function buyNow() {
   }  
 }
 
+// function delete all products from the cart
 function emptyBag() {
   bag.length = 0;
   showMessage('Your shopping bag is empty. Use <a href="./catalog.html"><strong>Catalog</strong></a> to add new items');
 }
 
+// shows the message after clearing the cart
 function showMessage(text) {
   let message = doc.querySelector('#bag-message');
   message.innerHTML = text;
