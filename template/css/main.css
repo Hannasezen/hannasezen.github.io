@@ -631,28 +631,18 @@ a:active {
   overflow: hidden;
 }
 
-.slider__arrows {
-  width: 100%;
+.arrow__left, .arrow__right {
   position: absolute;
+  width: 35px;
+  height: 110px;
+  background-color: rgb(241, 74, 88);
   top: 50%;
-  left: 0;
   z-index: 2;
   transform: translate(0, -50%);
 }
 
-.arrow__left, .arrow__right {
-  position: relative;
-  width: 35px;
-  height: 110px;
-  background-color: rgb(241, 74, 88);
-}
-
-.arrow__left {
-  float: left;
-}
-
 .arrow__right {
-  float: right;
+  right: 0;
 }
 
 .icon-keyboard_arrow_right,
