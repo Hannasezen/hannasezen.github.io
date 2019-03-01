@@ -17,12 +17,12 @@ let points = [];
 
 doc.querySelector('#control-points').addEventListener('click', function(event) {
   if(event.target.nodeName === 'LI') {
-    let index = event.target.getAttribute('data-index');
     clearInterval(interval);
     for (let i = 0; i < points.length; i++) {
       points[i].classList.remove('active');
       slides[i].classList.remove('active');
     };
+    index = event.target.getAttribute('data-index');
     slides[index].classList.add('active');
     points[index].classList.add('active');
     reternInterval();
@@ -31,19 +31,20 @@ doc.querySelector('#control-points').addEventListener('click', function(event) {
 
 let index = 0;
 function moveSlide() {
+  index = _.findIndex(slides, function (slide) {
+    return slide.classList.contains('active');
+  })
   for (let i = 0; i < slides.length; i++) {
     slides[i].classList.remove('active');
     points[i].classList.remove('active');
   }
-  //slides[index].classList.remove('active');
-  //points[index].classList.remove('active');
   index = (index + 1) % slides.length;
   slides[index].classList.add('active');
   points[index].classList.add('active');    
 }
 
 function reternInterval () {
-  return interval = setInterval(moveSlide, 3000);
+  return interval = setInterval(moveSlide, 10000);
 };
 
 reternInterval();
