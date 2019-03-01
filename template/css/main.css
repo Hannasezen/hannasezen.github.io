@@ -557,7 +557,7 @@ a:active {
 .promos {
   display: flex;
   flex-direction: row;
-  box-shadow: 0 1px 0 0 rgb(229, 229, 229);
+  border: 1px solid rgb(229, 229, 229);
 }
 
 .promo {
