@@ -1538,11 +1538,11 @@ input:checked + label {
   }
 
   .item__images-big {
-    flex-basis: 75%;
+    width: 75%;
   }
 
   .item__images-small {
-    flex-basis: 25%;
+    width: 25%;
   }
 
   .item__images-small {
@@ -1910,8 +1910,17 @@ input:checked + label {
   }
 
   .item__images {
-    flex-direction: column;
-    
+    flex-direction: column;    
+  }
+
+  .item__images-small {
+    width: 100%;
+    height: 25%;
+  }
+
+  .item__images-big {
+    width: 100%;
+    height: 75%;
   }
 
   .item__images-small {
