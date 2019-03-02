@@ -98,13 +98,13 @@ let images = doc.querySelectorAll('.slider__img img');
 for (let i = 0; i < images.length; i++) {
   images[i].addEventListener('touchstart', function(e) {
     if(e.touches.length > 1) {
-      return
+      doc.querySelectorAll('.logo')[0].getElementsByClassName.color = 'green'
     }
     start = e.touches[0].clientX;
   });
   images[i].addEventListener('touchend', function(e) {
     if(e.touches.length > 1) {
-      return
+      doc.querySelectorAll('.logo')[0].getElementsByClassName.color = 'blue'
     }
     end = e.changedTouches[0].clientX;
     let dist = end - start;
