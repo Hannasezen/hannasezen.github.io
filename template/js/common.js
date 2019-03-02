@@ -304,15 +304,19 @@ window.onload = renderBagsPrice();
 
 // saves current bag array to the local storage
 function saveToLocalStorage() {
-  if(window.sessionStorage && window.localStorage) {
-    localStorage.setItem('cart', JSON.stringify(bag));
+  if(!!window.sessionStorage && !!window.localStorage) {
+    console.log('storage');
+    window.localStorage.setItem('cart', JSON.stringify(bag));
+  } else {
+    console.log(window.localStorage);
   }
+  
 };
 
 // takes current bag array from the local storage
 function lookLocalStorage () {
-  if(window.sessionStorage && window.localStorage) {
-    if (localStorage.getItem('cart') !== null) {
+  if(!!window.sessionStorage && !!window.localStorage) {
+    if (window.localStorage.getItem('cart') !== null) {
       bag = JSON.parse(localStorage.getItem('cart'));
       renderBagsPrice();      
     }

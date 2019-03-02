@@ -25,9 +25,11 @@ function renderBag() {
   for (let i = 0; i < filteredProducts.length; i++) {
     sum += filteredProducts[i].price;
     let card = doc.createElement('div');
-    card.classList.add('card', 'bag__card');
+    card.classList.add('card');
+    card.classList.add('bag__card');
     let a = doc.createElement('a');
-    a.classList.add('card__img', 'bag-card__img');
+    a.classList.add('card__img');
+    a.classList.add('bag-card__img');
     a.setAttribute('href', './item.html#' + filteredProducts[i][0].title);
     let img = doc.createElement('img');
     img.setAttribute('src', filteredProducts[i][0].img);
@@ -41,7 +43,8 @@ function renderBag() {
     let desc = doc.createElement('div');
     desc.classList.add('bag-card__desc');
     let title = doc.createElement('div');
-    title.classList.add('card__desc', 'bag-card__title');
+    title.classList.add('card__desc');
+    title.classList.add('bag-card__title');
     title.innerHTML = filteredProducts[i][0].title;
     let price = doc.createElement('div');
     price.classList.add('bag-card__price');
@@ -68,7 +71,8 @@ function renderBag() {
     
 
     let remove = doc.createElement('a');
-    remove.classList.add('bag-card__remove', 'text-red');
+    remove.classList.add('bag-card__remove');
+    remove.classList.add('text-red');
     remove.setAttribute('href', '#');
     remove.innerHTML = 'Remove item';
     desc.appendChild(remove);
@@ -84,7 +88,7 @@ function renderBag() {
       if (event.target.classList.contains('bag-card__remove')) {
         event.preventDefault();
         console.log(event.currentTarget.querySelectorAll('.item__size')[0].innerHTML);
-        let removeItem = bag.find( function (item) {
+        let removeItem = _.find(bag, function (item) {
           return ((item.size === event.currentTarget.querySelectorAll('.item__size')[0].innerHTML.toLowerCase()) && (item.color === event.currentTarget.querySelectorAll('.item__color')[0].innerHTML.toLowerCase()) && (item.title === event.currentTarget.querySelectorAll('.bag-card__title')[0].innerHTML));
         });
         bag.splice(bag.indexOf(removeItem), 1);
