@@ -51,26 +51,10 @@ function moveSlide() {
 function reternInterval () {
   return interval = setInterval(moveSlide, 10000);
 };
-
 reternInterval();
 
-// sliders arrows
-let rightArrow = doc.querySelector('#slider-right-arrow');
-
-// right arrow funtionality
-rightArrow.addEventListener('click', function() {
-  clearInterval(interval);
-  let i = _.findIndex(slides, function(slide) {
-    return slide.classList.contains('active');
-  });
-  let index = i + 1;
-  moveSlide();
-  reternInterval();
-});
-
-// left arrow funtionality
-let leftArrow = doc.querySelector('#slider-left-arrow');
-leftArrow.addEventListener('click', function() {
+//move slide left
+function slideLeft() {
   clearInterval(interval);
   let i = _.findIndex(slides, function(slide) {
     return slide.classList.contains('active');
@@ -84,41 +68,52 @@ leftArrow.addEventListener('click', function() {
   slides[index].classList.add('active');
   points[index].classList.add('active');
   reternInterval();
-});
+}
 
+//move slide right
+function slideRight() {
+clearInterval(interval);
+let i = _.findIndex(slides, function(slide) {
+  return slide.classList.contains('active');
+});
+let index = i + 1;
+moveSlide();
+reternInterval();
+}
+
+// sliders arrows
+let rightArrow = doc.querySelector('#slider-right-arrow');
+
+// right arrow funtionality
+rightArrow.addEventListener('click', slideRight);
+
+// left arrow funtionality
+let leftArrow = doc.querySelector('#slider-left-arrow');
+leftArrow.addEventListener('click', slideLeft);
+
+//swipe event
 let start;
 let end;
 let images = doc.querySelectorAll('.slider__img img');
 for (let i = 0; i < images.length; i++) {
   images[i].addEventListener('touchstart', function(e) {
+    if(e.touches.length > 1) {
+      return
+    }
     start = e.touches[0].clientX;
   });
   images[i].addEventListener('touchend', function(e) {
+    if(e.touches.length > 1) {
+      return
+    }
     end = e.changedTouches[0].clientX;
     let dist = end - start;
     if (dist < -40) {
-      clearInterval(interval);
-      let i = _.findIndex(slides, function(slide) {
-        return slide.classList.contains('active');
-      });
-      let index = i + 1;
-      moveSlide();
-      reternInterval();
+      slideRight();
     } else if (dist > 40) {
-      clearInterval(interval);
-      let i = _.findIndex(slides, function(slide) {
-        return slide.classList.contains('active');
-      });
-      index = i -1;
-      if (index === -1) {
-        index = slides.length - 1;
-      }
-      slides[i].classList.remove('active');
-      points[i].classList.remove('active');
-      slides[index].classList.add('active');
-      points[index].classList.add('active');
-      reternInterval();
+      slideLeft();
     }
   });
 }
+
 
