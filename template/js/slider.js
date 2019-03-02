@@ -2,6 +2,12 @@
 let slides = document.querySelectorAll('.slider__img');
 let points = [];
 
+for (let i = 0; i < slides.length; i++) {
+  slides[i].addEventListener('swipe', function(e) {
+    alert(e);
+  })
+}
+
 // renders poin for every slide
 (function renderPoints() {
   let pointsHolder = doc.querySelector('#control-points');
