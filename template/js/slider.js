@@ -96,7 +96,7 @@ for (let i = 0; i < images.length; i++) {
   images[i].addEventListener('touchend', function(e) {
     end = e.changedTouches[0].clientX;
     let dist = end - start;
-    if (dist < -10) {
+    if (dist < -40) {
       clearInterval(interval);
       let i = _.findIndex(slides, function(slide) {
         return slide.classList.contains('active');
@@ -104,7 +104,7 @@ for (let i = 0; i < images.length; i++) {
       let index = i + 1;
       moveSlide();
       reternInterval();
-    } else if (dist > 10) {
+    } else if (dist > 40) {
       clearInterval(interval);
       let i = _.findIndex(slides, function(slide) {
         return slide.classList.contains('active');
