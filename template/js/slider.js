@@ -1,12 +1,6 @@
 // slides/points arrays
 let slides = document.querySelectorAll('.slider__img');
 let points = [];
-let img = document.querySelectorAll('.slider__img img');
-for (let i = 0; i < img.length; i++) {
-  img[i].addEventListener('swipe', function(e) {
-    alert(e);
-  })
-}
 
 // renders poin for every slide
 (function renderPoints() {
@@ -92,5 +86,39 @@ leftArrow.addEventListener('click', function() {
   reternInterval();
 });
 
-  
+let start;
+let end;
+let images = doc.querySelectorAll('.slider__img img');
+for (let i = 0; i < images.length; i++) {
+  images[i].addEventListener('touchstart', function(e) {
+    start = e.touches[0].clientX;
+  });
+  images[i].addEventListener('touchend', function(e) {
+    end = e.changedTouches[0].clientX;
+    let dist = end - start;
+    if (dist < -10) {
+      clearInterval(interval);
+      let i = _.findIndex(slides, function(slide) {
+        return slide.classList.contains('active');
+      });
+      let index = i + 1;
+      moveSlide();
+      reternInterval();
+    } else if (dist > 10) {
+      clearInterval(interval);
+      let i = _.findIndex(slides, function(slide) {
+        return slide.classList.contains('active');
+      });
+      index = i -1;
+      if (index === -1) {
+        index = slides.length - 1;
+      }
+      slides[i].classList.remove('active');
+      points[i].classList.remove('active');
+      slides[index].classList.add('active');
+      points[index].classList.add('active');
+      reternInterval();
+    }
+  });
+}
 
