@@ -1,9 +1,9 @@
 // slides/points arrays
 let slides = document.querySelectorAll('.slider__img');
 let points = [];
-
-for (let i = 0; i < slides.length; i++) {
-  slides[i].addEventListener('swipe', function(e) {
+let img = document.querySelectorAll('.slider__img img');
+for (let i = 0; i < img.length; i++) {
+  img[i].addEventListener('swipe', function(e) {
     alert(e);
   })
 }
