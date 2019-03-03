@@ -632,6 +632,11 @@ a:active {
   overflow: hidden;
 }
 
+.slide-mobile,
+.slide-tablet {
+  display: none;
+}
+
 .arrow__left, .arrow__right {
   position: absolute;
   width: 35px;
@@ -1327,6 +1332,15 @@ input:checked + label {
     display: none;
   }
 
+  .slide-desktop,
+  .slide-mobile {
+    display: none;
+  }
+
+  .slide-tablet {
+    display: block;
+  }
+
   .slider__arrows {
     display: none;
   }
@@ -1764,6 +1778,15 @@ input:checked + label {
 
   .points__wrap {
     width: 20%;
+  }
+
+  .slide-desktop,
+  .slide-tablet {
+    display: none;
+  }
+
+  .slide-mobile {
+    display: block;
   }
 
   .start__promos .promo-small {
