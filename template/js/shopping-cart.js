@@ -105,7 +105,13 @@ function renderBag() {
   }
 }
 
-window.onload = renderBag();
+window.onload = function() {
+  if (bag.length > 0) {
+    renderBag();
+  } else {
+    showMessage('Your shopping bag is empty. Use <a href="./catalog.html"><strong>Catalog</strong></a> to add new items');
+  }
+};
 
 // buy now button
 let btnBuyNow = doc.querySelector('#buy-now-btn');
