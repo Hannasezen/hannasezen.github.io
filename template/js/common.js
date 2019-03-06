@@ -263,18 +263,21 @@ let items = [
 ];
 
 // for open/close header`s search form
-let form = doc.getElementById('search');
-form.addEventListener('click', search);
-function search(event) {
-  event.preventDefault();
-  let searchInput = form.querySelector('#search__input');
-  this.classList.toggle('open-search');
-  form.querySelector('#search__input').focus();
-  if ((event.target.nodeName === 'IMG' || event.target.nodeName === 'BUTTON') && searchInput.value !== '') {
+let formSearch = doc.getElementById('search');
+let btnSearch = formSearch.querySelectorAll('.search__btn')[0];
+
+btnSearch.addEventListener('click', function(event) {
+  let inputSearch = formSearch.querySelector('#search__input').value
+  if (inputSearch !== '') {
+    event.preventDefault();
+    formSearch.querySelector('#search__input').value = ''
+    formSearch.classList.toggle('open-search');
     console.log('form sended');
-    form.querySelector('#search__input').value = '';
+  } else if (inputSearch === '') {
+    event.preventDefault();
+    formSearch.classList.toggle('open-search');
   }
-}
+})
 
 // header burger-menu on mobile version open/close
 doc.querySelector('#burger-btn').addEventListener('click', function () {

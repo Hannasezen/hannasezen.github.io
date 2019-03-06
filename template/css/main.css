@@ -250,16 +250,8 @@ a:hover {
   box-shadow: -10px 0 50px 20px white;
 }
 
-.search.open-search {
-  width: 250px;
-}
-
-.open-search .search__input {
-  width: 100%;
-}
-
-.open-search.search:after {
-  width: 250px;
+.search__input {
+  width: calc(100% - 25px);
 }
 
 .search:after {
@@ -769,6 +761,10 @@ a:hover {
   justify-content: space-between;
   font-family: 'OpenSansBold';
   font-size: 16px;
+}
+
+.catalog-controls.wrapper {
+  overflow: visible;
 }
 
 .filters {
@@ -1673,14 +1669,44 @@ input:checked + label {
     margin-left: 54px;
   }
 
+  .search.open-search {
+    width: 200px;
+  }
+
   .search__input {
     width: 0;
+  }
+  
+  .open-search .search__input {
+    width: calc(100% - 25px);
   }
 
   .search::after {
     width: 0;
   }
 
+  .open-search.search::after {
+    width: 200px;
+  }
+
+}
+
+@media screen and (max-width: 767px) and (min-width: 601px) {
+  .special-price {
+    top: 480px;
+  }
+}
+
+@media screen and (max-width: 600px) and (min-width: 420px) {
+  .special-price {
+    top: 450px;
+  }
+}
+
+@media screen and (max-width: 419px) {
+  .special-price {
+    top: 395px;
+  }
 }
   
 
@@ -1997,9 +2023,9 @@ input:checked + label {
     margin-bottom: 10px;
   }
 
-  .special-price {
+  /*.special-price {
     top: 395px;
-  }
+  }*/
 
   .special-price__title {
     font-size: 18px;
