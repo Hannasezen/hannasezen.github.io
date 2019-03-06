@@ -33,14 +33,14 @@ let filtersData = {
   },
   'Size': {
     'Not selected': '',
-    'UK 2': 2,
-    'UK 18': 18,
+    'UK 2': '2',
+    'UK 18': '18',
     'UK 18L': '18L',
-    'UK 20': 20,
+    'UK 20': '20',
     'UK 20L': '20L',
     'UK 20S': '20S',
     'UK 22S': '22S',
-    'UK 22': 22
+    'UK 22': '22'
   },
   'Price rang': {
     'Not selected': '',
@@ -91,6 +91,7 @@ function renderFilters () {
       input.type = 'radio';
       input.id = inputId;
       input.name = key;
+      input.value = Object.values(filtersData[key])[i];
       if (i === 0) {
         input.checked = true;
       }
@@ -134,8 +135,8 @@ function selectFilters(event) {
       renderItems();
     } else {
       doc.querySelector('#catalog-cards').innerHTML = '';
-      filteredItems = _.filter( items, function (item) { 
-        return _.includes( item[param], event.target.innerHTML.toLowerCase() ) 
+      filteredItems = _.filter( items, function (item) {
+        return _.includes( item[param], event.target.innerHTML.toLowerCase() )
       });
       renderItems(filteredItems);
       this.classList.add('selected');
