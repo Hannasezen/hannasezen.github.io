@@ -116,6 +116,7 @@ let items = [
     smallImg: './img/arrival_4_small.png',
     description: 'Featuring fine Italian wool, this elegant suit has pick-stitch edging, cascade buttons at the cuffs and a subtle stripe pattern throughout. ',
     price: 130.25,
+    newItem: true,
     size: ['uk 18', 'uk 20s'],
     color: ['green', 'black'],
     new: false,
@@ -146,6 +147,7 @@ let items = [
     smallImg: './img/arrival_4_small.png',
     description: 'Featuring fine Italian wool, this elegant suit has pick-stitch edging, cascade buttons at the cuffs and a subtle stripe pattern throughout. ',
     price: 0,
+    message: 'More colours',
     size: ['uk 18', 'uk 22s'],
     color: ['blue', 'red'],
     new: false,
@@ -161,6 +163,10 @@ let items = [
     smallImg: './img/arrival_4_small.png',
     description: 'Featuring fine Italian wool, this elegant suit has pick-stitch edging, cascade buttons at the cuffs and a subtle stripe pattern throughout. ',
     price: 90.00,
+    message: '',
+    sale: true,
+    oldPrice: 120.00,
+    discount: '25%',
     size: ['uk 2', 'uk 22s'],
     color: ['red', 'blue'],
     new: false,
@@ -221,6 +227,7 @@ let items = [
     smallImg: './img/arrival_4_small.png',
     description: 'Featuring fine Italian wool, this elegant suit has pick-stitch edging, cascade buttons at the cuffs and a subtle stripe pattern throughout. ',
     price: 19.75,
+    newItem: true,
     size: ['uk 18l', 'uk 22s'],
     color: ['green', 'blue'],
     new: false,
@@ -350,86 +357,51 @@ function renderCard(item, cards) {
   let desc = doc.createElement('div');
   desc.classList.add('card__desc');
   desc.innerHTML = item.title;
-  let price = doc.createElement('div');
-  price.classList.add('card__price');
-  let pound = doc.createElement('span');
-  pound.innerHTML = '£';
-  price.appendChild(pound);
-  let priceSpan = doc.createElement('span');
-  priceSpan.innerText = item.price.toFixed(2);
-  price.appendChild(priceSpan);
   text.appendChild(desc);
-  text.appendChild(price);
   card.appendChild(text);
+
+  let price = doc.createElement('div');
+    price.classList.add('card__price');
+
+  if (item.message) {
+    let message = doc.createElement('span');
+    message.innerText = item.message;
+    message.classList.add('price-message');
+    price.appendChild(message);    
+  }
+
+  if (item.sale) {
+    let sale = doc.createElement('span');
+    sale.classList.add('price-sale-message');
+    let discount = doc.createElement('span');
+    discount.classList.add('price-discount-message');
+    discount.innerHTML = item.discount;
+    let oldPrice = doc.createElement('span');
+    oldPrice.classList.add('price-old-price-message');
+    oldPrice.innerHTML = '£' + item.oldPrice.toFixed(2);
+    sale.appendChild(oldPrice);
+    sale.appendChild(discount);
+    price.appendChild(sale);
+  }
+
+  if (item.price > 0) {    
+    let pound = doc.createElement('span');
+    pound.innerHTML = '£';
+    price.appendChild(pound);
+    let priceSpan = doc.createElement('span');
+    priceSpan.innerText = item.price.toFixed(2);
+    price.appendChild(priceSpan);    
+  }
+
+  text.appendChild(price);  
+
+  if (item.newItem) {
+    let newItem = doc.createElement('span');
+    newItem.innerText = 'New';
+    newItem.classList.add('price-new-item-message');
+    price.appendChild(newItem);    
+  }  
 
   cards.appendChild(card);
 }
-
-
-
-
-/*
-  {
-    title: 'Only Skinny Jeans',
-    img: './img/women9.png',
-    smallImg: './img/arrival_1_small.png',
-    description: 'Featuring fine Italian wool, this elegant suit has pick-stitch edging, cascade buttons at the cuffs and a subtle stripe pattern throughout. ',
-    price: 390.25,
-    size: 'uk 17',
-    color: 'Phillipa wash',
-    new: false,
-    category: 'women',
-    fashion: 'sport',
-    producttype: 'coats &amp; jackets',
-    brand: 'chi chi london',
-    quantity: 1
-  },
-  {
-    title: 'Paul & Joe Sister Jumper with Neon Trims',
-    img: './img/arrival_1.png',
-    smallImg: './img/arrival_1_small.png',
-    description: 'Featuring fine Italian wool, this elegant suit has pick-stitch edging, cascade buttons at the cuffs and a subtle stripe pattern throughout. ',
-    price: 400.75,
-    size: 'uk 18',
-    color: 'blue',
-    new: false,
-    category: 'women',
-    fashion: 'sport',
-    producttype: 'coats &amp; jackets',
-    brand: 'chi chi london',
-    quantity: 1
-  },
-  {
-    title: 'Boyfriend T-Shirt with Bohemian Print',
-    img: './img/women8.png',
-    smallImg: './img/arrival_1_small.png',
-    description: 'Featuring fine Italian wool, this elegant suit has pick-stitch edging, cascade buttons at the cuffs and a subtle stripe pattern throughout. ',
-    price: 360.00,
-    size: 'uk 18',
-    color: 'black',
-    new: false,
-    category: 'women',
-    fashion: 'sport',
-    producttype: 'coats &amp; jackets',
-    brand: 'chi chi london',
-    quantity: 1
-  },
-  {
-    title: 'Turtle Neck Jumper in Rib',
-    img: './img/arrival_4.png',
-    smallImg: './img/arrival_1_small.png',
-    description: 'Featuring fine Italian wool, this elegant suit has pick-stitch edging, cascade buttons at the cuffs and a subtle stripe pattern throughout. ',
-    price: 489.50,
-    size: 'uk 19',
-    color: 'green',
-    new: false,
-    category: 'women',
-    fashion: 'sport',
-    producttype: 'coats &amp; jackets',
-    brand: 'chi chi london',
-    quantity: 1
-  }
-
-*/
-
 

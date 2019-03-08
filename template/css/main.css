@@ -561,6 +561,11 @@ a:hover {
   text-align: center;
 }
 
+.promo__img:hover,
+.promo-small__img:hover {
+  color: inherit;
+}
+
 .promo__title {
   font-family: 'RobotoBold';
   font-size: 28px;

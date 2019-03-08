@@ -91,7 +91,10 @@ function renderFilters () {
       input.type = 'radio';
       input.id = inputId;
       input.name = key;
-      input.value = Object.values(filtersData[key])[i];
+      
+      input.value = Object.keys(filtersData[key])[i];
+
+      //input.value = Object.values(filtersData[key])[i];
       if (i === 0) {
         input.checked = true;
       }

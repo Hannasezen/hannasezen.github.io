@@ -13,36 +13,6 @@ function renderItem() {
   item.querySelectorAll('.description__text')[0].innerHTML = productItem.description;
   item.querySelectorAll('.description__price')[0].innerHTML = '£' + productItem.price.toFixed(2);
 
-  /*let size = item.querySelector('#sizes');
-  for (let i in productItem.size) {
-    let input = doc.createElement('input');
-    let id = productItem.size[i].replace(' ', '');
-    input.id = id;
-    input.type = 'radio';
-    input.name = 'size';
-    input.value = id;
-
-    let label = doc.createElement('label');
-    label.setAttribute('for', id);
-    label.innerHTML = productItem.size[i].toUpperCase();
-    size.appendChild(input);
-    size.appendChild(label);
-  }
-  let color = item.querySelector('#colors');
-  for (let i in productItem.color) {
-    let input = doc.createElement('input');
-    let id = productItem.color[i].replace(' ', '');
-    input.id = id;
-    input.type = 'radio';
-    input.name = 'color';
-    input.value = id;
-
-    let label = doc.createElement('label');
-    label.setAttribute('for', id);
-    label.innerHTML = productItem.color[i].toUpperCase();
-    color.appendChild(input);
-    color.appendChild(label);
-  }*/
   renderInput('color', productItem.color);
   renderInput('size', productItem.size);
 }
