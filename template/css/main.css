@@ -760,6 +760,10 @@ a:hover {
 /* Filters block -----------------------------------------------------------
 -------------------------------------------------------------------------- */
 
+.filters-container {
+  border-bottom: 1px solid rgb(229, 229, 229);
+}
+
 .catalog-controls {
   display: flex;
   flex-direction: row;
@@ -822,12 +826,14 @@ a:hover {
 }
 
 .filters__item {
-  box-shadow: inset 1px -1px 0 0 rgb(229, 229, 229);
   position: relative;
   flex-grow: 1;
   flex-basis: 16.67%;
   padding: 20px;
   cursor: pointer;
+  border-left: 1px solid rgb(229, 229, 229);
+  border-right: 1px solid rgb(229, 229, 229);
+  border-collapse: collapse;
 }
 
 .filters__item:hover>.catalog__select {
@@ -849,11 +855,6 @@ a:hover {
 
 .filters__item:first-child .select__item {
   padding-left: 60px;
-}
-
-.filters__item:last-child {
-  box-shadow: inset 1px -1px 0 0 rgb(229, 229, 229),
-  inset -1px 0px 0 0 rgb(229, 229, 229);
 }
 
 .filters__dropdown-arrow {

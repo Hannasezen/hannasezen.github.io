@@ -12,192 +12,169 @@
   <link rel="stylesheet" href="./css/main.css"><!--main styles-->
 </head>
 <body>
-  <!--Bag page`s wrapper-->
-  <div class="wrapper">
-    <!--Bag page`s header block-->
-    <header class="header">
-      <div class="container">
-        <div class="mobile-wrapper">
-          <div class="wrap wrap-logo">
-            <!--Header logos-->
-            <div class="header__logo desktop-logo">
-              <a href="index.html" class="logo" accesskey="t">Template</a>
+  
+  <!--Bag page`s header block-->
+  <header class="header">
+    <div class="container">
+      <div class="mobile-wrapper">
+        <div class="wrap wrap-logo">
+          <!--Header logos-->
+          <div class="header__logo desktop-logo">
+            <a href="index.html" class="logo" accesskey="t">Template</a>
+          </div>
+          <div class="header__logo mobile-logo">
+            <a href="index.html" class="logo" accesskey="t">TL</a>
+          </div>
+          <!--Header`s logos end-->
+          <!--Header`s auth link and shopping bag link-->
+          <div class="auth-cart">
+            <!--auth link-->
+            <div class="auth">
+              <a href="#">E-mail sing up</a>
             </div>
-            <div class="header__logo mobile-logo">
-              <a href="index.html" class="logo" accesskey="t">TL</a>
-            </div>
-            <!--Header`s logos end-->
-            <!--Header`s auth link and shopping bag link-->
-            <div class="auth-cart">
-              <!--auth link-->
-              <div class="auth">
-                <a href="#">E-mail sing up</a>
-              </div>
-              <!--shopping bag link-->
-              <div class="cart">
-                <a href="./shopping-cart.html" accesskey="c">
-                  <span class="cart__img icon-shopping-bag"></span><!--bag`s icon-->
-                  <span>Bag </span><span id="bag-price"></span> (<span id="bag-quantity">0</span>)
-                </a>
-              </div>         
-            </div>
-            <!--Header`s auth link and shopping cart link end-->
+            <!--shopping bag link-->
+            <div class="cart">
+              <a href="./shopping-cart.html" accesskey="c">
+                <span class="cart__img icon-shopping-bag"></span><!--bag`s icon-->
+                <span>Bag </span><span id="bag-price"></span> (<span id="bag-quantity">0</span>)
+              </a>
+            </div>         
           </div>
-          <!--Header`s burger menu-->
-          <div id="burger-btn" class="burger-menu">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-          </div>
-          <!--Header`s burger menu end-->
-        </div>     
-        <div id="header-menu" class="wrap wrap-menu">
-          <!--Header`s navigation-->
-          <nav class="header__nav">
-            <ul class="nav__links">
-              <li class="nav__link"><a href="#">women</a></li>
-              <li class="nav__link"><a href="#">men</a></li>
-              <li class="nav__link"><a href="#">handbags</a></li>
-              <li class="nav__link"><a href="#">Accessories</a></li>
-              <li class="nav__link"><a href="#">Sale</a></li>
-              <li class="nav__link"><a href="#">New Arrivals</a></li>
-              <li class="nav__link"><a href="#">Clearance</a></li>
-              <li class="nav__link"><a href="#">Store Locator</a></li>
-            </ul>
-          </nav>
-          <!--Header`s navigation end-->
-          <!--Header`s search form--> 
-          <form class="search" id="search">
-            <input  id="search__input" class="search__input" type="text" placeholder="style name">
-            <button class="search__btn" type="submit" accesskey="s">
-              <span class="icon-search"></span><!--search form`s icon-->
-            </button>
-          </form>
-          <!--Header`s search form end-->
-        </div>      
-      </div>
-    </header>
-    <!--Bag page`s header end-->
-    <!--Bag page`s main block-->
-    <main class="bag-main">
-      <!--shopping bag`s title-->
-      <div class="title">
-        <div class="container">
-          <h1 class="bag-title">Shopping bag</h1>
-        </div>        
-      </div>
-      <!--shopping bag`s items-->
-      <div class="bag">
-        <!--message for user-->
-        <div class="bag__message" id="bag-message"></div>
-        <!--shopping bag items-->
-        <div class="bag__cards container" id="bag-cards">
+          <!--Header`s auth link and shopping cart link end-->
         </div>
-        <!--delivery message-->
-        <div class="delivery-message">
-          <div class="container">
-            You've qualified for Free UK Next Day Delivery on your order. Don't forget to enter the code <span class="text-red">nexday</span> at checkout
-          </div>         
+        <!--Header`s burger menu-->
+        <div id="burger-btn" class="burger-menu">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
         </div>
-        <!--shopping bag`s control buttons block-->
-        <div class="bag__buynow container">
-          <div class="bag__empty">
-            <a href="#" id="empty-bag">Empty bag</a> 
-          </div>
-          <button class="btn bag__btn" id="buy-now-btn">Buy now</button>
-          <div class="bag__total-cost">
-            <div class="total-cost_text">Total Cost</div>
-            <div class="total-cost__pound">£<span class="total-cost__price" id="total-price">1 640.50</span></div>
-          </div>
-        </div>
-      </div>
-    </main>   
-    <!--Bag page`s main block end-->
-    <!--Bag page`s additions block-->
-    <div class="additions-wrapper">
-      <div class="additions container">
-        <!--adittion navigation-->
-        <div class="navigation">
-          <!--navigation`s Quick Links block-->
-          <nav class="pages__nav">
-            <h3 class="pages__title additions__title">Quick Links</h3>
-            <ul class="pages__links">
-              <li class="pages__link"><a href="#">Store locator</a></li>
-              <li class="pages__link"><a href="#">Gift cards</a></li>
-              <li class="pages__link"><a href="#">Size guide</a></li>
-              <li class="pages__link"><a href="#">About us</a></li>
-              <li class="pages__link"><a href="#">Support</a></li>
-            </ul>
-          </nav>
-          <!--navigation`s Quick Links block end-->
-          <!--navigation`s Customer Care block-->
-          <nav class="customer__nav">
-            <h3 class="customer__title additions__title">Customer Care</h3>
-            <ul class="customer__links">
-              <li class="customer__link"><a href="#">Customer service</a></li>
-              <li class="customer__link"><a href="#">Track my order</a></li>
-              <li class="customer__link"><a href="#">Return policy</a></li>
-              <li class="customer__link"><a href="#">Shipping & delivery</a></li>
-              <li class="customer__link"><a href="#">Contact us</a></li>
-              <li class="customer__link"><a href="#">Careers</a></li>
-            </ul>
-          </nav>
-          <!--navigation`s Customer Care block end-->
-        </div>
-        <!--adittion navigation end-->
-        <!--adittion contacts block-->
-        <div class="contacts">
-          <div class="contacts__way">
-            <!--contacts by twitter-->
-            <div class="contacts__twit">
-              <h3 class="additions__title twit__title">Questions</h3>
-              <a href="https://twitter.com/">
-                <div class="twit__text">
-                  <span class="icon-social-twitter twit__logo"></span>
-                  Tweet us @template
-                </div>
-              </a>            
-            </div>
-            <!--contacts by phone-->
-            <div class="contacts__phone">
-              <h3 class="additions__title phone__title">Order by phone</h3>
-              <div class="phone__text">
-                <a href="tel: 88004094712">8-800-409-47-12</a>
-              </div>
-            </div>
-          </div>
-          <!--contact`s delivery info-->
-          <div class="contacts__delivery">
-              We have our own delivery service which operates in 23 major European cities. Delivery time - 3-5 days.
-          </div>
-          <!--socials block for desktop/tablet-->
-          <div class="contacts__socials">
-            <a href="https://www.facebook.com/" class="socials__fb">
-              <span class="icon-social-facebook"></span>
-            </a>
-            <a href="https://twitter.com/" class="socials__twit">
-              <span class="icon-social-twitter"></span>
-            </a>
-          </div>
-          <!--socials block for desktop/tablet end-->
-        </div>
-        <!--adittion contacts block end-->
+        <!--Header`s burger menu end-->
+      </div>     
+      <div id="header-menu" class="wrap wrap-menu">
+        <!--Header`s navigation-->
+        <nav class="header__nav">
+          <ul class="nav__links">
+            <li class="nav__link"><a href="#">women</a></li>
+            <li class="nav__link"><a href="#">men</a></li>
+            <li class="nav__link"><a href="#">handbags</a></li>
+            <li class="nav__link"><a href="#">Accessories</a></li>
+            <li class="nav__link"><a href="#">Sale</a></li>
+            <li class="nav__link"><a href="#">New Arrivals</a></li>
+            <li class="nav__link"><a href="#">Clearance</a></li>
+            <li class="nav__link"><a href="#">Store Locator</a></li>
+          </ul>
+        </nav>
+        <!--Header`s navigation end-->
+        <!--Header`s search form--> 
+        <form class="search" id="search">
+          <input  id="search__input" class="search__input" type="text" placeholder="style name">
+          <button class="search__btn" type="submit" accesskey="s">
+            <span class="icon-search"></span><!--search form`s icon-->
+          </button>
+        </form>
+        <!--Header`s search form end-->
       </div>      
     </div>
-    <!--Bag page`s additions block end-->
-    <!--Bag page`s footer-->
-    <footer class="footer-wrapper">
-      <div class="footer container">
-        <!--footer copyrights-->
-        <div class="footer__copyrights">
-          &copy; 2010–2019, The Template Group inc.
+  </header>
+  <!--Bag page`s header end-->
+
+  <!--shopping bag`s title-->
+  <div class="title">
+    <div class="container">
+      <h1 class="bag-title">Shopping bag</h1>
+    </div>        
+  </div>
+
+  <!--Bag page`s main block-->
+  <main class="bag-main">      
+    <!--shopping bag`s items-->
+    <div class="bag">
+      <!--message for user-->
+      <div class="bag__message container" id="bag-message"></div>
+      <!--shopping bag items-->
+      <div class="bag__cards container container" id="bag-cards">
+      </div>
+      <!--delivery message-->
+      <div class="delivery-message">
+        <div class="container">
+          You've qualified for Free UK Next Day Delivery on your order. Don't forget to enter the code <span class="text-red">nexday</span> at checkout
+        </div>         
+      </div>
+      <!--shopping bag`s control buttons block-->
+      <div class="bag__buynow container">
+        <div class="bag__empty">
+          <a href="#" id="empty-bag">Empty bag</a> 
         </div>
-        <!--footer share count-->
-        <div class="footer__share">share
-          <span class="shares__number">1 437</span>
+        <button class="btn bag__btn" id="buy-now-btn">Buy now</button>
+        <div class="bag__total-cost">
+          <div class="total-cost_text">Total Cost</div>
+          <div class="total-cost__pound">£<span class="total-cost__price" id="total-price">1 640.50</span></div>
         </div>
-        <!--socials block for mobile-->
-        <div class="footer__socials">
+      </div>
+    </div>
+  </main>   
+  <!--Bag page`s main block end-->
+
+
+  <!--Bag page`s additions block-->
+  <div class="additions-wrapper">
+    <div class="additions container">
+      <!--adittion navigation-->
+      <div class="navigation">
+        <!--navigation`s Quick Links block-->
+        <nav class="pages__nav">
+          <h3 class="pages__title additions__title">Quick Links</h3>
+          <ul class="pages__links">
+            <li class="pages__link"><a href="#">Store locator</a></li>
+            <li class="pages__link"><a href="#">Gift cards</a></li>
+            <li class="pages__link"><a href="#">Size guide</a></li>
+            <li class="pages__link"><a href="#">About us</a></li>
+            <li class="pages__link"><a href="#">Support</a></li>
+          </ul>
+        </nav>
+        <!--navigation`s Quick Links block end-->
+        <!--navigation`s Customer Care block-->
+        <nav class="customer__nav">
+          <h3 class="customer__title additions__title">Customer Care</h3>
+          <ul class="customer__links">
+            <li class="customer__link"><a href="#">Customer service</a></li>
+            <li class="customer__link"><a href="#">Track my order</a></li>
+            <li class="customer__link"><a href="#">Return policy</a></li>
+            <li class="customer__link"><a href="#">Shipping & delivery</a></li>
+            <li class="customer__link"><a href="#">Contact us</a></li>
+            <li class="customer__link"><a href="#">Careers</a></li>
+          </ul>
+        </nav>
+        <!--navigation`s Customer Care block end-->
+      </div>
+      <!--adittion navigation end-->
+      <!--adittion contacts block-->
+      <div class="contacts">
+        <div class="contacts__way">
+          <!--contacts by twitter-->
+          <div class="contacts__twit">
+            <h3 class="additions__title twit__title">Questions</h3>
+            <a href="https://twitter.com/">
+              <div class="twit__text">
+                <span class="icon-social-twitter twit__logo"></span>
+                Tweet us @template
+              </div>
+            </a>            
+          </div>
+          <!--contacts by phone-->
+          <div class="contacts__phone">
+            <h3 class="additions__title phone__title">Order by phone</h3>
+            <div class="phone__text">
+              <a href="tel: 88004094712">8-800-409-47-12</a>
+            </div>
+          </div>
+        </div>
+        <!--contact`s delivery info-->
+        <div class="contacts__delivery">
+            We have our own delivery service which operates in 23 major European cities. Delivery time - 3-5 days.
+        </div>
+        <!--socials block for desktop/tablet-->
+        <div class="contacts__socials">
           <a href="https://www.facebook.com/" class="socials__fb">
             <span class="icon-social-facebook"></span>
           </a>
@@ -205,21 +182,47 @@
             <span class="icon-social-twitter"></span>
           </a>
         </div>
-        <!--socials block for mobile end-->
-        <!--footer navigation-->
-        <nav class="footer__nav">
-          <ul class="nav__items">
-            <li class="nav__item"><a href="#">Legal notice</a></li>
-            <li class="nav__item"><a href="#">Privacy policy</a></li>
-            <li class="nav__item"><a href="#">Site map</a></li>
-          </ul>
-        </nav>
-        <!--footer navigation end-->
-      </div>      
-    </footer>
-    <!--Bag page`s footer end-->
+        <!--socials block for desktop/tablet end-->
+      </div>
+      <!--adittion contacts block end-->
+    </div>      
   </div>
-  <!--Bag page`s wrapper end-->
+  <!--Bag page`s additions block end-->
+  
+  <!--Bag page`s footer-->
+  <footer class="footer-wrapper">
+    <div class="footer container">
+      <!--footer copyrights-->
+      <div class="footer__copyrights">
+        &copy; 2010–2019, The Template Group inc.
+      </div>
+      <!--footer share count-->
+      <div class="footer__share">share
+        <span class="shares__number">1 437</span>
+      </div>
+      <!--socials block for mobile-->
+      <div class="footer__socials">
+        <a href="https://www.facebook.com/" class="socials__fb">
+          <span class="icon-social-facebook"></span>
+        </a>
+        <a href="https://twitter.com/" class="socials__twit">
+          <span class="icon-social-twitter"></span>
+        </a>
+      </div>
+      <!--socials block for mobile end-->
+      <!--footer navigation-->
+      <nav class="footer__nav">
+        <ul class="nav__items">
+          <li class="nav__item"><a href="#">Legal notice</a></li>
+          <li class="nav__item"><a href="#">Privacy policy</a></li>
+          <li class="nav__item"><a href="#">Site map</a></li>
+        </ul>
+      </nav>
+      <!--footer navigation end-->
+    </div>      
+  </footer>
+  <!--Bag page`s footer end-->
+  
   <!--JavaScript-->
   <script src="./js/lodash.js"></script>
   <script src="./js/common.js"></script>
