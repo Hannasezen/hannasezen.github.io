@@ -77,7 +77,8 @@ function renderFilters () {
     li.appendChild(filterParams);
 
     let span = doc.createElement('span');
-    span.classList.add('filters__dropdown-arrow', 'icon-arrow_drop_down');
+    span.classList.add('filters__dropdown-arrow');
+    span.classList.add('icon-arrow_drop_down');
     li.appendChild(span);
 
     let catalogSelect = doc.createElement('div');
