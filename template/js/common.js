@@ -61,7 +61,7 @@ let items = [
     new: true,
     category: 'women',
     fashion: ['new look', 'sport'],
-    producttype: 'dresses',
+    producttype: 'jersey tops',
     brand: 'river island',
     quantity: 1
   },
@@ -76,7 +76,7 @@ let items = [
     new: false,
     category: 'women',
     fashion: ['new look', 'classical style'],
-    producttype: 'jersey tops',
+    producttype: 'coats &amp; jackets',
     brand: 'adidas',
     quantity: 1
   },
@@ -91,7 +91,7 @@ let items = [
     new: false,
     category: 'catalog',
     fashion: ['casual style', 'classical style'],
-    producttype: 'dresses',
+    producttype: 'jersey tops',
     brand: 'new balance',
     quantity: 1
   },

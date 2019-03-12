@@ -542,7 +542,6 @@ a:hover {
 
 .card__text {
   max-width: 240px;
-  padding: 0 20px;
   margin: auto;
   font-size: 14px;
 }
@@ -2103,6 +2102,16 @@ input:checked + label {
   .card__desc {
     font-size: 12px;
     margin-bottom: 10px;
+  }
+
+  .price-discount-message,
+  .price-new-item-message,
+  .price-message {
+    font-size: 14px;
+  }
+
+  .price-old-price-message {
+    font-size: 12px;
   }
 
   /*.special-price {
