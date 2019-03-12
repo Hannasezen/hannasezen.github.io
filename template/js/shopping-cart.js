@@ -25,7 +25,7 @@ function renderBag() {
   for (let i = 0; i < filteredProducts.length; i++) {
     sum += filteredProducts[i].price;
     let card = doc.createElement('div');
-    card.classList.add('card');
+    //card.classList.add('card');
     card.classList.add('bag__card');
     let a = doc.createElement('a');
     a.classList.add('card__img');

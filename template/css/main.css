@@ -512,6 +512,7 @@ a:hover {
   overflow: hidden;
   max-width: 240px;
   max-height: 340px;
+  margin: 0 auto;
 }
 
 .card:hover .card__link {
@@ -540,7 +541,8 @@ a:hover {
 }
 
 .card__text {
-  width: 85%;
+  max-width: 240px;
+  padding: 0 20px;
   margin: auto;
   font-size: 14px;
 }
@@ -1084,10 +1086,12 @@ input:checked + label {
   display: flex;
   width: 50%;
   align-items: flex-start;
+  justify-content: flex-start;
 }
 
 .bag-card__img {
   min-width: 240px;
+  margin: 0;
 }
 
 .bag-card__desc {
@@ -2119,6 +2123,10 @@ input:checked + label {
   .bag__card {
     width: 100%;
     height: 265px;
+  }
+
+  .bag-card__img {
+    margin: 0;
   }
 
   .bag__card img {
