@@ -78,247 +78,255 @@
     </div>
   </header>
   <!--Start page`s header end-->
-  <div class="filters-container">
+
+  <!--content wrapper start-->
+  <div class="content-wrapper">
+    
     <!--Start page`s filters block-->
-    <div class="catalog-controls wrapper">
-      <div class="filters" id="filters">
-        <div id="catalog-filters" class="filters-mobile__wrapper">
-          <div class="container">
-            <!--filters categories for tablet/mobile-->
-            <div class="filter-mobile">
-              <ul class="filter-mobile__list">
-                <li class="filter-mobile__item">
-                  <a href="#">
-                    <span id="fashion">Fashion</span>,
-                  </a>
-                </li>
-                <li class="filter-mobile__item">
-                  <a href="#">
-                    <span id="producttype">Product type</span>,
-                  </a>
-                </li>
-                <li class="filter-mobile__item">
-                  <a href="#">
-                    <span id="color">Color</span>,
-                  </a>
-                </li>
-                <li class="filter-mobile__item">
-                  <a href="#">
-                    <span id="brand">Brand</span>,
-                  </a>
-                </li>
-                <li class="filter-mobile__item">
-                  <a href="#">
-                    <span id="size">Size</span>,
-                  </a>
-                </li>
-                <li class="filter-mobile__item">
-                  <a href="#">
-                    <span id="pricerang">Price rang</span>
-                  </a>
-                </li>
-              </ul>              
-              <div id="filters-cross" class="filters-cross">
-                <span class="icon-arrow_drop_down dropdown-arrow"></span>
-                <span class="icon-cancel"></span>
+    <div class="filters-container">
+      <div class="catalog-controls wrapper">
+        <div class="filters" id="filters">
+          <div id="catalog-filters" class="filters-mobile__wrapper">
+            <div class="container">
+              <!--filters categories for tablet/mobile-->
+              <div class="filter-mobile">
+                <ul class="filter-mobile__list">
+                  <li class="filter-mobile__item">
+                    <a href="#">
+                      <span id="fashion">Fashion</span>,
+                    </a>
+                  </li>
+                  <li class="filter-mobile__item">
+                    <a href="#">
+                      <span id="producttype">Product type</span>,
+                    </a>
+                  </li>
+                  <li class="filter-mobile__item">
+                    <a href="#">
+                      <span id="color">Color</span>,
+                    </a>
+                  </li>
+                  <li class="filter-mobile__item">
+                    <a href="#">
+                      <span id="brand">Brand</span>,
+                    </a>
+                  </li>
+                  <li class="filter-mobile__item">
+                    <a href="#">
+                      <span id="size">Size</span>,
+                    </a>
+                  </li>
+                  <li class="filter-mobile__item">
+                    <a href="#">
+                      <span id="pricerang">Price rang</span>
+                    </a>
+                  </li>
+                </ul>              
+                <div id="filters-cross" class="filters-cross">
+                  <span class="icon-arrow_drop_down dropdown-arrow"></span>
+                  <span class="icon-cancel"></span>
+                </div>
               </div>
-            </div>
-            <!--filters categories for tablet/mobile end-->
-          </div>          
-        </div>
-        <!--filters categories-->
-        <ul id="filters-list" class="filters__list">
-          <!--renders from js-->
-        </ul>
-        <!--filters categories end-->
-      </div>          
+              <!--filters categories for tablet/mobile end-->
+            </div>          
+          </div>
+          <!--filters categories-->
+          <ul id="filters-list" class="filters__list">
+            <!--renders from js-->
+          </ul>
+          <!--filters categories end-->
+        </div>          
+      </div>
     </div>
     <!--Start page`s filters block end-->
-  </div>    
+  
+    <!--Start page`s main block-->
+    <main class="catalog__main">
+      <!--catalog cards-->
+      <div class="cards catalog__cards container" id="catalog-cards">
+        <!--<div class="card">
+          <a href="./item.html" class="card__img">
+            <img src="./img/women4.png" alt="catalog photo">
+            <div class="card__link">View item</div>
+          </a>
+          <div class="card__text">
+            <div class="card__desc">Only Skinny Jeans</div>
+            <div class="card__price">£65.50</div>
+          </div>
+        </div>
+        <div class="card">
+          <a href="./item.html" class="card__img">
+            <img src="./img/arrival_4.png" alt="catalog photo">
+            <div class="card__link">View item</div>
+          </a>
+          <div class="card__text">
+            <div class="card__desc">Neck Knitted Jumper</div>
+            <div class="card__price">£76.25</div>
+          </div>
+        </div>
+        <div class="card">
+          <a href="./item.html" class="card__img">
+            <img src="./img/arrival_1.png" alt="catalog photo">
+            <div class="card__link">View item</div>
+          </a>
+          <div class="card__text">
+            <div class="card__desc">Turtle Neck Jumper in Rib</div>
+            <div class="card__price">£130.25 <span class="catalog__category">New</span></div>
+          </div>
+        </div>
+        <div class="card">
+          <a href="./item.html" class="card__img">
+            <img src="./img/women5.png" alt="catalog photoo">
+            <div class="card__link">View item</div>
+          </a>
+          <div class="card__text">
+            <div class="card__desc">With Patchwork Crochet</div>
+            <div class="card__price">£80.60</div>
+          </div>
+        </div>
+        <div class="card">
+          <a href="./item.html" class="card__img">
+            <img src="./img/women7.png" alt="catalog photo">
+            <div class="card__link">View item</div>
+          </a>
+          <div class="card__text">
+            <div class="card__desc">Levi’s Jeans for women</div>
+            <div class="card__price"><span class="catalog__category">More colours</span></div>
+          </div>
+        </div>
+        <div class="card">
+          <a href="./item.html" class="card__img">
+            <img src="./img/women8.png" alt="catalog photo">
+            <div class="card__link">View item</div>
+          </a>
+          <div class="card__text">
+            <div class="card__desc">Boyfriend T-Shirt with Bohemian Print</div>
+            <div class="card__price"><span class="catalog__category">£120.00 - 25% </span>£90.00</div>
+          </div>
+        </div>
+        <div class="card">
+          <a href="./item.html" class="card__img">
+            <img src="./img/women9.png" alt="catalog photo">
+            <div class="card__link">View item</div>
+          </a>
+          <div class="card__text">
+            <div class="card__desc">Colour Block</div>
+            <div class="card__price">£550.50</div>
+          </div>
+        </div>
+        <div class="card">
+          <a href="#" class="card__img">
+            <img src="./img/women10.png" alt="catalog photoo">
+            <div class="card__link">View item</div>
+          </a>
+          <div class="card__text">
+            <div class="card__desc">Monki Festval Knitted</div>
+            <div class="card__price">£24.75</div>
+          </div>
+        </div>       
+        <div class="card">
+          <a href="./item.html" class="card__img">
+            <img src="./img/arrival_3.png" alt="catalog photo">
+            <div class="card__link">View item</div>
+          </a>
+          <div class="card__text">
+            <div class="card__desc">Oversized Cardigan</div>
+            <div class="card__price">£90.00</div>
+          </div>
+        </div>
+        <div class="card">
+          <a href="./item.html" class="card__img">
+            <img src="./img/women11.png" alt="catalog photo">
+            <div class="card__link">View item</div>
+          </a>
+          <div class="card__text">
+            <div class="card__desc">Paul & Joe Sister Jumper 
+              with Neon Trims</div>
+            <div class="card__price">£19.75 <span class="catalog__category">New</span></div>
+          </div>
+        </div>
+        <div class="card">
+          <a href="./item.html" class="card__img">
+            <img src="./img/women12.png" alt="catalog photo">
+            <div class="card__link">View item</div>
+          </a>
+          <div class="card__text">
+            <div class="card__desc">Only Busted Knee Jean</div>
+            <div class="card__price">£140.50</div>
+          </div>
+        </div>
+        <div class="card">
+          <a href="./item.html" class="card__img">
+            <img src="./img/women13.png" alt="catalog photoo">
+            <div class="card__link">View item</div>
+          </a>
+          <div class="card__text">
+            <div class="card__desc">Boyfriend T-Shirt with Bohemian Print</div>
+            <div class="card__price">£85.75</div>
+          </div>
+        </div>-->
+      </div>
+      <!--catalog cards end-->
+      <!--catalog special price block-->
+      <div class="special-price">
+        <h3 class="special-price__title">
+          <a href="#">Last weekend <span class="text-red">extra 50%</span> off on all reduced boots and shoulder bags</a>
+        </h3>
+        <h4 class="special-price__text">
+          <a href="#">This offer is valid in-store and online. Prices displayed reflect this additional discount. This offer ends at 11:59 GMT on March 1st 2015</a>
+        </h4>
+      </div>
+      <!--catalog special price block end-->
+      <button class="catalog__btn btn">Show more</button>
+    </main>
+    <!--Start page`s main block end-->
 
-  <!--Start page`s main block-->
-  <main class="catalog__main wrapper">
-    <!--catalog cards-->
-    <div class="cards catalog__cards container" id="catalog-cards">
-      <!--<div class="card">
-        <a href="./item.html" class="card__img">
-          <img src="./img/women4.png" alt="catalog photo">
-          <div class="card__link">View item</div>
-        </a>
-        <div class="card__text">
-          <div class="card__desc">Only Skinny Jeans</div>
-          <div class="card__price">£65.50</div>
-        </div>
-      </div>
-      <div class="card">
-        <a href="./item.html" class="card__img">
-          <img src="./img/arrival_4.png" alt="catalog photo">
-          <div class="card__link">View item</div>
-        </a>
-        <div class="card__text">
-          <div class="card__desc">Neck Knitted Jumper</div>
-          <div class="card__price">£76.25</div>
-        </div>
-      </div>
-      <div class="card">
-        <a href="./item.html" class="card__img">
-          <img src="./img/arrival_1.png" alt="catalog photo">
-          <div class="card__link">View item</div>
-        </a>
-        <div class="card__text">
-          <div class="card__desc">Turtle Neck Jumper in Rib</div>
-          <div class="card__price">£130.25 <span class="catalog__category">New</span></div>
-        </div>
-      </div>
-      <div class="card">
-        <a href="./item.html" class="card__img">
-          <img src="./img/women5.png" alt="catalog photoo">
-          <div class="card__link">View item</div>
-        </a>
-        <div class="card__text">
-          <div class="card__desc">With Patchwork Crochet</div>
-          <div class="card__price">£80.60</div>
-        </div>
-      </div>
-      <div class="card">
-        <a href="./item.html" class="card__img">
-          <img src="./img/women7.png" alt="catalog photo">
-          <div class="card__link">View item</div>
-        </a>
-        <div class="card__text">
-          <div class="card__desc">Levi’s Jeans for women</div>
-          <div class="card__price"><span class="catalog__category">More colours</span></div>
-        </div>
-      </div>
-      <div class="card">
-        <a href="./item.html" class="card__img">
-          <img src="./img/women8.png" alt="catalog photo">
-          <div class="card__link">View item</div>
-        </a>
-        <div class="card__text">
-          <div class="card__desc">Boyfriend T-Shirt with Bohemian Print</div>
-          <div class="card__price"><span class="catalog__category">£120.00 - 25% </span>£90.00</div>
-        </div>
-      </div>
-      <div class="card">
-        <a href="./item.html" class="card__img">
-          <img src="./img/women9.png" alt="catalog photo">
-          <div class="card__link">View item</div>
-        </a>
-        <div class="card__text">
-          <div class="card__desc">Colour Block</div>
-          <div class="card__price">£550.50</div>
-        </div>
-      </div>
-      <div class="card">
-        <a href="#" class="card__img">
-          <img src="./img/women10.png" alt="catalog photoo">
-          <div class="card__link">View item</div>
-        </a>
-        <div class="card__text">
-          <div class="card__desc">Monki Festval Knitted</div>
-          <div class="card__price">£24.75</div>
-        </div>
-      </div>       
-      <div class="card">
-        <a href="./item.html" class="card__img">
-          <img src="./img/arrival_3.png" alt="catalog photo">
-          <div class="card__link">View item</div>
-        </a>
-        <div class="card__text">
-          <div class="card__desc">Oversized Cardigan</div>
-          <div class="card__price">£90.00</div>
-        </div>
-      </div>
-      <div class="card">
-        <a href="./item.html" class="card__img">
-          <img src="./img/women11.png" alt="catalog photo">
-          <div class="card__link">View item</div>
-        </a>
-        <div class="card__text">
-          <div class="card__desc">Paul & Joe Sister Jumper 
-            with Neon Trims</div>
-          <div class="card__price">£19.75 <span class="catalog__category">New</span></div>
-        </div>
-      </div>
-      <div class="card">
-        <a href="./item.html" class="card__img">
-          <img src="./img/women12.png" alt="catalog photo">
-          <div class="card__link">View item</div>
-        </a>
-        <div class="card__text">
-          <div class="card__desc">Only Busted Knee Jean</div>
-          <div class="card__price">£140.50</div>
-        </div>
-      </div>
-      <div class="card">
-        <a href="./item.html" class="card__img">
-          <img src="./img/women13.png" alt="catalog photoo">
-          <div class="card__link">View item</div>
-        </a>
-        <div class="card__text">
-          <div class="card__desc">Boyfriend T-Shirt with Bohemian Print</div>
-          <div class="card__price">£85.75</div>
-        </div>
-      </div>-->
-    </div>
-    <!--catalog cards end-->
-    <!--catalog special price block-->
-    <div class="special-price">
-      <h3 class="special-price__title">
-        <a href="#">Last weekend <span class="text-red">extra 50%</span> off on all reduced boots and shoulder bags</a>
-      </h3>
-      <h4 class="special-price__text">
-        <a href="#">This offer is valid in-store and online. Prices displayed reflect this additional discount. This offer ends at 11:59 GMT on March 1st 2015</a>
-      </h4>
-    </div>
-    <!--catalog special price block end-->
-    <button class="catalog__btn btn">Show more</button>
-  </main>
-  <!--Start page`s main block end-->
-  <!--Start page`s promo banners block-->
-  <aside class="promos catalog__promos wrapper">
-    <!--big banner-->
-    <div class="promo">
-      <a href="#" class="promo__img">
-        <img src="./img/catalog_banner1.jpg" alt="catalog promo image">
-        <div class="promo__text">
-          <h3 class="promo__title">adidas blue</h3>
-          <h4 class="banner__category">For men</h4>
-        </div>
-      </a>
-    </div>
-    <!--big banner end-->
-    <!--small banners-->
-    <div class="promo promos-wrap">
-      <!--small banner #1-->
-      <div class="promo-small promo-repair">
-        <a href="#" class="promo-small__img">
-          <img src="./img/catalog_banner2.png" alt="catalog promo image">
-          <div class="promo-small__text">
-            <h3 class="promo__title">repair patchies</h3>
-            <h4 class="banner__category">£150.50
-            </h4>
+    <!--Start page`s promo banners block-->
+    <aside class="promos catalog__promos wrapper">
+      <!--big banner-->
+      <div class="promo">
+        <a href="#" class="promo__img">
+          <img src="./img/catalog_banner1.jpg" alt="catalog promo image">
+          <div class="promo__text">
+            <h3 class="promo__title">adidas blue</h3>
+            <h4 class="banner__category">For men</h4>
           </div>
         </a>
       </div>
-      <!--small banner #1 end-->
-      <!--small banner #2-->
-      <div class="promo-small promo-sale">
-        <a href="#" class="promo-small__img">
-          <img src="./img/catalog_banner3.png" alt="catalog promo image">
-          <div class="promo-small__text">
-            <h3 class="promo__title text-red">sale</h3>
-            <h4 class="banner__category">-70%
-            </h4>
-          </div>
-        </a>
+      <!--big banner end-->
+      <!--small banners-->
+      <div class="promo promos-wrap">
+        <!--small banner #1-->
+        <div class="promo-small promo-repair">
+          <a href="#" class="promo-small__img">
+            <img src="./img/catalog_banner2.png" alt="catalog promo image">
+            <div class="promo-small__text">
+              <h3 class="promo__title">repair patchies</h3>
+              <h4 class="banner__category">£150.50
+              </h4>
+            </div>
+          </a>
+        </div>
+        <!--small banner #1 end-->
+        <!--small banner #2-->
+        <div class="promo-small promo-sale">
+          <a href="#" class="promo-small__img">
+            <img src="./img/catalog_banner3.png" alt="catalog promo image">
+            <div class="promo-small__text">
+              <h3 class="promo__title text-red">sale</h3>
+              <h4 class="banner__category">-70%
+              </h4>
+            </div>
+          </a>
+        </div>
+        <!--small banner #2 end-->
       </div>
-      <!--small banner #2 end-->
-    </div>
-    <!--small banners end-->          
-  </aside>
-  <!--Start page`s promo banners block end-->
+      <!--small banners end-->          
+    </aside>
+    <!--Start page`s promo banners block end-->
+
+  </div>
+  <!--content wrapper end-->
 
   <!--Start page`s additions block-->
   <div class="additions-wrapper">

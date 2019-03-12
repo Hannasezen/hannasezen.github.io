@@ -13,7 +13,6 @@
   <link rel="stylesheet" href="./css/main.css"><!--main styles-->
 </head>
 <body>
-  
   <!--Start page`s header block-->
   <header class="header">
     <div class="container">
@@ -78,107 +77,117 @@
     </div>
   </header>
   <!--Start page`s header end-->
-  <!--Start page`s slider block-->
-  <aside class="slider active wrapper" id="slider">
-    <!--slider `s arrows left/right-->
-    <div class="slider__arrows" id="control-arrows">
-      <button class="arrow__left" id="slider-left-arrow" accesskey="l">
-        <span class="icon-keyboard_arrow_left"></span>
-      </button>
-      <button class="arrow__right" id="slider-right-arrow" accesskey="r">
-        <span class="icon-keyboard_arrow_right"></span>
-      </button>
-    </div>
-    <!--slider `s points-->
-    <div class="slider__points">
-      <ul class="points__wrap" id="control-points">
+
+  <!--Content wrapper starts-->
+  <div class="content-wrapper">
+    
+    <!--Start page`s slider block-->
+    <aside class="slider active wrapper" id="slider">
+      <!--slider `s arrows left/right-->
+      <div class="slider__arrows" id="control-arrows">
+        <button class="arrow__left" id="slider-left-arrow" accesskey="l">
+          <span class="icon-keyboard_arrow_left"></span>
+        </button>
+        <button class="arrow__right" id="slider-right-arrow" accesskey="r">
+          <span class="icon-keyboard_arrow_right"></span>
+        </button>
+      </div>
+      <!--slider `s points-->
+      <div class="slider__points">
+        <ul class="points__wrap" id="control-points">
+          <!--renders from JS-->
+        </ul>        
+      </div>
+      <!--slider`s wrapper-->
+      <div class="slider__wrap" id="slider-wrap">
+        <!--slide #1-->
+        <a href="./catalog.html" class="slider__img active">
+          <img class="slide-mobile" src="./img/slide_375_1.jpg" alt="slide photo">
+          <img class="slide-tablet" src="./img/slide_768_1.jpg" alt="slide photo">
+          <img class="slide-desktop" src="./img/slide_1300_1.jpg" alt="slide photo">
+        </a>
+        <!--slide #1 end-->
+        <!--slide #2-->
+        <a href="./item.html" class="slider__img">
+          <img class="slide-mobile" src="./img/slide_375_2.jpg" alt="slide photo">
+          <img class="slide-tablet" src="./img/slide_768_2.jpg" alt="slide photo">
+          <img class="slide-desktop" src="./img/slide_1300_2.jpg" alt="slide photo">
+        </a>
+        <!--slide #2 end-->
+        <!--slide #3-->
+        <a href="./catalog.html" class="slider__img">
+          <img class="slide-mobile" src="./img/slide_375_3.jpg" alt="slide photo">
+          <img class="slide-tablet" src="./img/slide_768_3.jpg" alt="slide photo">
+          <img class="slide-desktop" src="./img/slide_1300_3.jpg" alt="slide photo">
+        </a>
+        <!--slide #3 end-->
+        <!--slide #4-->
+        <a href="./item.html" class="slider__img">
+          <img class="slide-mobile" src="./img/slide_375_2.jpg" alt="slide photo">
+          <img class="slide-tablet" src="./img/slide_768_2.jpg" alt="slide photo">
+          <img class="slide-desktop" src="./img/slide_1300_2.jpg" alt="slide photo">
+        </a>
+        <!--slide #4 end-->
+      </div>
+      <!--slider`s wrapper end-->     
+    </aside>
+    <!--Start page`s slider block end-->
+
+    <!--Start page`s promo banners block-->
+    <aside class="promos start__promos wrapper">
+      <!--big banner-->
+      <div class="promo">
+        <a href="./item.html" class="promo__img">
+          <img src="./img/promo_1.png" alt="promo image">
+          <div class="promo__text">
+            <h3 class="promo__title">nike red</h3>
+            <h4 class="promo__category">new</h4>
+          </div>
+        </a>
+      </div>
+      <!--big banner end-->
+      <!--big banner for desktop-->
+      <div class="promo promo-hide">
+        <a href="./catalog.html" class="promo__img">
+          <img src="./img/promo_2.png" alt="promo image">
+          <div class="promo__text">
+            <h3 class="promo__title">caps & hats</h3>
+            <h4 class="promo__category">sale -50%
+            </h4>
+          </div>
+        </a>
+      </div>
+      <!--big banner for desktop end-->
+      <!--small banner for tablet-->
+      <div class="promo-small">
+        <a href="./catalog.html" class="promo-small__img">
+          <img src="./img/catalog_banner3.png" alt="catalog promo image">
+          <div class="promo-small__text">
+            <h3 class="promo__title text-red">sale</h3>
+            <h4 class="promo__category">-70%
+            </h4>
+          </div>
+        </a>
+      </div>
+      <!--small banner for tablet end-->
+    </aside>
+    <!--Start page`s promo banners block end-->
+
+    <!--Start page`s main block-->
+    <main class="arrivals container" id="new-arrivals">
+      <!--arrivals block title-->
+      <h2 class="arrivals__title">New arrivals</h2>
+      <!--arrivals block product cards-->
+      <div class="cards arrivals__cards" id="arrivals-cards">
         <!--renders from JS-->
-      </ul>        
-    </div>
-    <!--slider`s wrapper-->
-    <div class="slider__wrap" id="slider-wrap">
-      <!--slide #1-->
-      <a href="./catalog.html" class="slider__img active">
-        <img class="slide-mobile" src="./img/slide_375_1.jpg" alt="slide photo">
-        <img class="slide-tablet" src="./img/slide_768_1.jpg" alt="slide photo">
-        <img class="slide-desktop" src="./img/slide_1300_1.jpg" alt="slide photo">
-      </a>
-      <!--slide #1 end-->
-      <!--slide #2-->
-      <a href="./item.html" class="slider__img">
-        <img class="slide-mobile" src="./img/slide_375_2.jpg" alt="slide photo">
-        <img class="slide-tablet" src="./img/slide_768_2.jpg" alt="slide photo">
-        <img class="slide-desktop" src="./img/slide_1300_2.jpg" alt="slide photo">
-      </a>
-      <!--slide #2 end-->
-      <!--slide #3-->
-      <a href="./catalog.html" class="slider__img">
-        <img class="slide-mobile" src="./img/slide_375_3.jpg" alt="slide photo">
-        <img class="slide-tablet" src="./img/slide_768_3.jpg" alt="slide photo">
-        <img class="slide-desktop" src="./img/slide_1300_3.jpg" alt="slide photo">
-      </a>
-      <!--slide #3 end-->
-      <!--slide #4-->
-      <a href="./item.html" class="slider__img">
-        <img class="slide-mobile" src="./img/slide_375_2.jpg" alt="slide photo">
-        <img class="slide-tablet" src="./img/slide_768_2.jpg" alt="slide photo">
-        <img class="slide-desktop" src="./img/slide_1300_2.jpg" alt="slide photo">
-      </a>
-      <!--slide #4 end-->
-    </div>
-    <!--slider`s wrapper end-->     
-  </aside>
-  <!--Start page`s slider block end-->
-  <!--Start page`s promo banners block-->
-  <aside class="promos start__promos wrapper">
-    <!--big banner-->
-    <div class="promo">
-      <a href="./item.html" class="promo__img">
-        <img src="./img/promo_1.png" alt="promo image">
-        <div class="promo__text">
-          <h3 class="promo__title">nike red</h3>
-          <h4 class="promo__category">new</h4>
-        </div>
-      </a>
-    </div>
-    <!--big banner end-->
-    <!--big banner for desktop-->
-    <div class="promo promo-hide">
-      <a href="./catalog.html" class="promo__img">
-        <img src="./img/promo_2.png" alt="promo image">
-        <div class="promo__text">
-          <h3 class="promo__title">caps & hats</h3>
-          <h4 class="promo__category">sale -50%
-          </h4>
-        </div>
-      </a>
-    </div>
-    <!--big banner for desktop end-->
-    <!--small banner for tablet-->
-    <div class="promo-small">
-      <a href="./catalog.html" class="promo-small__img">
-        <img src="./img/catalog_banner3.png" alt="catalog promo image">
-        <div class="promo-small__text">
-          <h3 class="promo__title text-red">sale</h3>
-          <h4 class="promo__category">-70%
-          </h4>
-        </div>
-      </a>
-    </div>
-    <!--small banner for tablet end-->
-  </aside>
-  <!--Start page`s promo banners block end-->
-  <!--Start page`s main block-->
-  <main class="arrivals container" id="new-arrivals">
-    <!--arrivals block title-->
-    <h2 class="arrivals__title">New arrivals</h2>
-    <!--arrivals block product cards-->
-    <div class="cards arrivals__cards" id="arrivals-cards">
-      <!--renders from JS-->
-    </div>
-    <a href="./catalog.html" class="arrivals__btn btn" accesskey="a">All arrivals</a>      
-  </main>
-  <!--Start page`s main block end-->
+      </div>
+      <a href="./catalog.html" class="arrivals__btn btn" accesskey="a">All arrivals</a>      
+    </main>
+    <!--Start page`s main block end-->
+    
+  </div>
+  <!--Content wrapper ends-->
+  
   <!--Start page`s additions block-->
   <div class="additions-wrapper">
     <div class="additions container">
@@ -251,6 +260,7 @@
     </div>      
   </div>
   <!--Start page`s additions block end-->
+  
   <!--Start page`s footer-->
   <footer class="footer-wrapper" id="footer">
     <div class="footer container">
