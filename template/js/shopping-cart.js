@@ -60,10 +60,23 @@ function renderBag() {
     let size = doc.createElement('div');
     size.classList.add('bag-card__size');
     size.innerHTML = 'Size: <span class="item__size">' + filteredProducts[i][0].size + '</span>';
+
     let quant = doc.createElement('div');
+    let inc = doc.createElement('button');
+    let dec = doc.createElement('button');
+    let span = doc.createElement('span');
+    inc.classList.add('item__inc');
+    dec.classList.add('item__dec');
     quant.classList.add('bag-card__quantity');
-    
-    quant.innerHTML = 'Quantity: <span class="item__quantity">' + filteredProducts[i].quantity + '</span>';
+    span.classList.add('item__quantity');
+    span.innerHTML = filteredProducts[i].quantity;
+    inc.innerHTML = "+";
+    dec.innerHTML = "-";
+    quant.innerHTML = 'Quantity:'
+    quant.appendChild(dec);
+    quant.appendChild(span);
+    quant.appendChild(inc);
+
     params.appendChild(color);
     params.appendChild(size);
     params.appendChild(quant);
@@ -85,9 +98,8 @@ function renderBag() {
   let cards = doc.querySelectorAll('.bag__card');
   for (let i = 0; i < cards.length; i++) {
     cards[i].addEventListener('click', function(event) {
-      if (event.target.classList.contains('bag-card__remove')) {
+      if (event.target.classList.contains('bag-card__remove') || event.target.classList.contains('item__dec')) {
         event.preventDefault();
-        console.log(event.currentTarget.querySelectorAll('.item__size')[0].innerHTML);
         let removeItem = _.find(bag, function (item) {
           return ((item.size === event.currentTarget.querySelectorAll('.item__size')[0].innerHTML.toLowerCase()) && (item.color === event.currentTarget.querySelectorAll('.item__color')[0].innerHTML.toLowerCase()) && (item.title === event.currentTarget.querySelectorAll('.bag-card__title')[0].innerHTML));
         });
@@ -100,6 +112,16 @@ function renderBag() {
           renderBagsPrice();
           saveToLocalStorage();
         }        
+      } else if (event.target.classList.contains('item__inc')) {
+        event.preventDefault();
+        let addItem = _.find(bag, function (item) {
+          return ((item.size === event.currentTarget.querySelectorAll('.item__size')[0].innerHTML.toLowerCase()) && (item.color === event.currentTarget.querySelectorAll('.item__color')[0].innerHTML.toLowerCase()) && (item.title === event.currentTarget.querySelectorAll('.bag-card__title')[0].innerHTML));
+        });
+        bag.push(addItem);
+        bagCards.innerHTML = '';
+        renderBag();
+        renderBagsPrice();
+        saveToLocalStorage();
       }
     })
   }

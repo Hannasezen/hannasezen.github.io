@@ -1110,6 +1110,18 @@ input:checked + label {
   text-transform: uppercase;
 }
 
+.item__inc,
+.item__dec {
+  width: 17px;
+  height: 13px;
+  margin: 0 5px;
+  vertical-align: middle;
+  line-height: 1;
+  border-radius: 3px;
+  background-color: rgb(241, 74, 88);
+  color: rgb(255, 255, 255);
+}
+
 .bag-card__remove {
   font-family: 'OpenSansBold';
   font-size: 13px;
