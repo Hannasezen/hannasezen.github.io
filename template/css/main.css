@@ -510,6 +510,8 @@ a:hover {
   position: relative;
   display: block;
   overflow: hidden;
+  max-width: 240px;
+  max-height: 340px;
 }
 
 .card:hover .card__link {
@@ -518,8 +520,10 @@ a:hover {
 
 .card__img img {
   width: 100%;
-  max-width: 240px;
-  max-height: 340px;
+  height: 100%;
+  object-fit: cover;
+  /*max-width: 240px;
+  max-height: 340px;*/
   vertical-align: top;
 }
 
@@ -1131,8 +1135,8 @@ input:checked + label {
 
 .item__inc,
 .item__dec {
-  width: 17px;
-  height: 13px;
+  width: 18px;
+  height: 14px;
   margin: 0 5px;
   vertical-align: middle;
   line-height: 1;
@@ -1688,6 +1692,10 @@ input:checked + label {
 
   .bag__cards {
     padding-bottom: 0;
+  }
+
+  .bag__card {
+    width: 48%;
   }
 
   .bag-card__img {
