@@ -58,6 +58,10 @@ body {
   line-height: 1;
 }
 
+body.open-filters {
+  visibility: hidden;
+}
+
 ul {
   list-style: none;
 }
@@ -1470,7 +1474,9 @@ input:checked + label {
   /* tablet adaptive for CATALOG page -------------------------------------------- */
 
   .filters__list {
-    display: none;
+    /*display: none;*/
+    display: flex;
+    visibility: hidden;
     position: absolute;
     left: 0;
     right: 0;
@@ -1478,8 +1484,12 @@ input:checked + label {
     z-index: 3;
   }
 
+  .open-filters .filters {
+    visibility: visible;    
+  }
+
   .open-filters .filters__list {
-    display: flex;
+    visibility: visible;    
     box-shadow: 10px 10px 20px 0 rgba(0, 0, 0, 0.3);
   }
 
