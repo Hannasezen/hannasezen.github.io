@@ -97,7 +97,8 @@ input, button {
 }
 
 .container {
-  width: 96%;
+  width: 90%;
+  min-width: 345px;
   max-width: 1180px;
   margin: 0 auto;
 }
@@ -482,6 +483,7 @@ a:hover {
 .card {
   font-family: 'Roboto';
   letter-spacing: 0.4px;
+  width: 24%;
 }
 
 .card__img::after {
@@ -534,7 +536,7 @@ a:hover {
 }
 
 .card__text {
-  max-width: 154px;
+  width: 85%;
   margin: auto;
   font-size: 14px;
 }
@@ -544,6 +546,24 @@ a:hover {
   margin-bottom: 15px;
   font-family: 'RobotoBold';
   transition: color ease 0.5s;
+}
+
+.price-discount-message,
+.price-new-item-message,
+.price-message {
+  font-family: 'CrimsonItalic';
+  font-size: 16px;
+  font-weight: normal;
+  font-style: italic;
+  color: rgb(117, 117, 117);
+  margin: 0 8px;
+}
+
+.price-old-price-message {
+  font-family: 'Roboto';
+  font-size: 14px;
+  letter-spacing: 0.4px;
+  color: rgb(117, 117, 117);
 }
 
 /* PROMO blocks -----------------------------------------------------
@@ -945,7 +965,6 @@ input:checked + label {
 ---------------------------------------------------------------------- */
 
 .catalog__main {
-  width: 96%;
   margin: auto;
   position: relative;
   padding-top: 60px;
@@ -962,7 +981,7 @@ input:checked + label {
 }
 
 .catalog__cards .card__img {
-  margin-bottom: 49px;
+  margin-bottom: 45px;
 }
 
 .catalog__cards .card__text {
@@ -1417,11 +1436,15 @@ input:checked + label {
 
   .arrivals__cards {
     margin-bottom: 89px;
-    justify-content: space-around;
+    justify-content: space-between;
   }
 
   .arrivals__cards .card:nth-child(1n + 4) {
     display: none;
+  }
+
+  .card {
+    width: 30%;
   }
 
   /* tablet adaptive for CATALOG page -------------------------------------------- */
@@ -1470,7 +1493,7 @@ input:checked + label {
   }
   
   .catalog__cards .card {
-    width: 30%;
+    /*width: 30%;*/
     margin-top: 0;
   }
 
@@ -1835,6 +1858,10 @@ input:checked + label {
     right: 43px;
   }
 
+  .card {
+    width: 45%;
+  }
+
   /* mobile styles for START page -------------------------------------------------------------------- */
 
   .points__wrap {
@@ -1882,9 +1909,9 @@ input:checked + label {
     display: none;
   }
 
-  .arrivals__cards .card {
+  /*.arrivals__cards .card {
     max-width: 45%;
-  }
+  }*/
   .additions-wrapper {
     position: relative;
   }
@@ -2043,9 +2070,9 @@ input:checked + label {
     justify-content: space-between;
   }
 
-  .catalog__cards .card {
+  /*.catalog__cards .card {
     width: 45%;
-  }
+  }*/
 
   .catalog__cards .card:nth-child(1n + 9) {
     display: none;
