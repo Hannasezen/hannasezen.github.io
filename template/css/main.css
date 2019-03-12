@@ -146,10 +146,6 @@ a:hover {
   justify-content: space-between;
 }
 
-.wrap-logo {
-  align-items: flex-start;
-}
-
 .header__logo {
   font-size: 30px;
   margin-bottom: 22px;
@@ -488,7 +484,7 @@ a:hover {
   letter-spacing: 0.4px;
 }
 
-.card:hover .card__img::after {
+.card__img::after {
 	content: "";
 	position: absolute;
 	top: 0;
@@ -496,6 +492,12 @@ a:hover {
 	right: 0;
 	bottom: 0;
   background: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: opacity ease 0.5s;
+}
+
+.card:hover .card__img::after {
+  opacity: 1;
 }
 
 .card:hover .card__desc {
@@ -508,7 +510,7 @@ a:hover {
   overflow: hidden;
 }
 
-.card__img:hover .card__link {
+.card:hover .card__link {
   opacity: 1;
 }
 
@@ -541,6 +543,7 @@ a:hover {
   line-height: 1.71;
   margin-bottom: 15px;
   font-family: 'RobotoBold';
+  transition: color ease 0.5s;
 }
 
 /* PROMO blocks -----------------------------------------------------
