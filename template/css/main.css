@@ -39,15 +39,17 @@
 /* reset styles -------------------------------------------------------
 --------------------------------------------------------------------------*/
 
+* {
+  box-sizing: border-box;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
-body, ul, li, div, main, header, footer, h1, h2, h3, h4, h5, h6, span, a, img {
+body, ul, li, div, main, header, footer, h1, h2, h3, h4, h5, h6, span, a, img, aside {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  border: none;
 }
 
 body {
@@ -70,6 +72,7 @@ a {
   text-decoration: none;
   color: inherit;
   transition: color ease 0.3s;
+  border: none;
 }
 
 button {
@@ -848,6 +851,7 @@ a:hover {
   font-size: 14px;
   letter-spacing: 0.4px;
   overflow: hidden;
+  line-height: 1.5;
 }
 
 .filter-mobile__item {
