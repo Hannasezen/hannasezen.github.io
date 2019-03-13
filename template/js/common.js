@@ -51,23 +51,8 @@ let items = [
     quantity: 1
   },
   {
-    title: 'Only Skinny Jeans',
-    img: './img/arrival_4.png',
-    smallImg: './img/arrival_4_small.png',
-    description: 'Featuring fine Italian wool, this elegant suit has pick-stitch edging, cascade buttons at the cuffs and a subtle stripe pattern throughout. ',
-    price: 12.75,
-    size: ['uk 18', 'uk 22s'],
-    color: ['green', 'blue'],
-    new: true,
-    category: 'women',
-    fashion: ['new look', 'sport'],
-    producttype: 'jersey tops',
-    brand: 'river island',
-    quantity: 1
-  },
-  {
     title: 'Neck Knitted Jumper',
-    img: './img/arrival_4.png',
+    img: './img/women4.png',
     smallImg: './img/arrival_4_small.png',
     description: 'Featuring fine Italian wool, this elegant suit has pick-stitch edging, cascade buttons at the cuffs and a subtle stripe pattern throughout. ',
     price: 76.25,
@@ -85,7 +70,7 @@ let items = [
     img: './img/women4.png',
     smallImg: './img/arrival_4_small.png',
     description: 'Featuring fine Italian wool, this elegant suit has pick-stitch edging, cascade buttons at the cuffs and a subtle stripe pattern throughout. ',
-    price: 65.50,
+    price: 65.59,
     size: ['uk 18', 'uk 22s'],
     color: ['green', 'red', 'golden'],
     new: false,

@@ -104,7 +104,7 @@ input, button {
 }
 
 .content-wrapper {
-  flex: 1;
+  flex-grow: 1;
 }
 
 .container {
@@ -518,6 +518,10 @@ a:hover {
   color: rgb(241, 74, 88);
 }
 
+.bag-card__img:hover::after {
+  opacity: 1;
+}
+
 .card__img {
   position: relative;
   display: block;
@@ -528,6 +532,10 @@ a:hover {
 }
 
 .card:hover .card__link {
+  opacity: 1;
+}
+
+.bag-card__img:hover .card__link {
   opacity: 1;
 }
 
