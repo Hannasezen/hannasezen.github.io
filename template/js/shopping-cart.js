@@ -106,6 +106,8 @@ function renderBag() {
         bag.splice(bag.indexOf(removeItem), 1);
         bagCards.innerHTML = '';
         if (bag.length === 0) {
+          btnEmptyBag.setAttribute("disabled", "true");
+          btnBuyNow.setAttribute("disabled", "true");
           showMessage('Your shopping bag is empty. Use <a href="./catalog.html"><strong>Catalog</strong></a> to add new items');
         } else {
           renderBag();
@@ -132,6 +134,8 @@ window.onload = function() {
     renderBag();
   } else {
     showMessage('Your shopping bag is empty. Use <a href="./catalog.html"><strong>Catalog</strong></a> to add new items');
+    btnEmptyBag.setAttribute("disabled", "true");
+    btnBuyNow.setAttribute("disabled", "true");
   }
 };
 
@@ -147,15 +151,20 @@ btnEmptyBag.addEventListener('click', emptyBag);
 function buyNow() {
   if (bag.length > 0) {
     bag.length = 0;
+    
     showMessage('Thank you for your purchase');
   } else {
     showMessage('Your shopping bag is empty. Use <a href="./catalog.html"><strong>Catalog</strong></a> to add new items');
   }  
+  btnBuyNow.setAttribute("disabled", "true");
+  btnEmptyBag.setAttribute("disabled", "true");
 }
 
 // function delete all products from the cart
 function emptyBag() {
   bag.length = 0;
+  btnEmptyBag.setAttribute("disabled", "true");
+  btnBuyNow.setAttribute("disabled", "true");
   showMessage('Your shopping bag is empty. Use <a href="./catalog.html"><strong>Catalog</strong></a> to add new items');
 }
 

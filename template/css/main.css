@@ -2201,3 +2201,20 @@ input:checked + label {
 #item-big-img {
   overflow: hidden;
 }
+
+#empty-bag:hover {
+  color: rgb(241, 74, 88);
+}
+
+#empty-bag:disabled {
+  color: grey;
+}
+#empty-bag:hover:disabled {
+  color: grey;
+}
+
+#buy-now-btn:disabled:hover {
+  color: rgb(117, 117, 117);
+  border-color: rgb(229, 229, 229);;
+  transform: none;
+}

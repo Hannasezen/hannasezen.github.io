@@ -71,6 +71,7 @@ function addToCart(event) {
     productItem.color = color.value;
     productItem.size = size.value;
     bag.push(_.assign({}, productItem));
+    alert('You choosed ' + productItem.color + ' color, and ' + productItem.size + ' size!')
     //bag.push(Object.assign({}, productItem));
     renderBagsPrice();
     saveToLocalStorage();
