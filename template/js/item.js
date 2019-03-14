@@ -71,7 +71,14 @@ function addToCart(event) {
     productItem.color = color.value;
     productItem.size = size.value;
     bag.push(_.assign({}, productItem));
-    alert('You choosed ' + productItem.color + ' color, and ' + productItem.size + ' size!')
+    //alert('You choosed ' + productItem.size.toUpperCase() + ' size, and ' + productItem.color.toUpperCase() + ' color!');
+    let modalWrap = doc.querySelector('#modal_wrap');
+    modalWrap.addEventListener('click', function() {
+      this.style.display = 'none';
+    })
+    let modal = doc.querySelector('#modal');
+    modal.innerHTML = 'You choosed <br><span class="modal-text">' + productItem.size.toUpperCase() + '</span> size, and <br><span class="modal-text">' + productItem.color.toUpperCase() + '</span> color!';
+    modalWrap.style.display = 'block';
     //bag.push(Object.assign({}, productItem));
     renderBagsPrice();
     saveToLocalStorage();
