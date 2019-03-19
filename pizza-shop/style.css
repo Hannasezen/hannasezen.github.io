@@ -394,9 +394,13 @@ li.rotate {
   #aside {
     width: 100%;
     height: auto;
+    padding-top: 64px;
   }
   #main {
     width: 100%;
+  }
+  #controls {
+    display: none;
   }
   .card__img {
     height: 250px;
