@@ -391,7 +391,7 @@ function renderCart() {
     li.classList.add('cart__item');
     li.innerHTML = `<div class="item__text">
                       <div class="item__name">${item.name}</div>
-                      <div class="item__igredients">(<span class="ingr-inner">${item.ingredients}</span>)</div>                      
+                      <div class="item__igredients">(<span class="ingr-inner">${item.ingredients.sort().join(', ')}</span>)</div>                      
                     </div>
                     <div class="item__controls">
                       <div class="item__price">${item.price}</div>
@@ -420,13 +420,13 @@ function emptyCart(event) {
 function changeQuantity(event) {
   event.stopPropagation();
   if (event.target.classList.contains('inc')) {
-    myCart.find(item => item.name === this.querySelector('.item__name').innerHTML && item.ingredients.sort().join('') === this.getElementsByClassName('ingr-inner')[0].innerText.split(',').sort().join('')).quantity -= -1
+    myCart.find(item => item.name === this.querySelector('.item__name').innerHTML && item.ingredients.sort().join('') === this.getElementsByClassName('ingr-inner')[0].innerText.split(', ').sort().join('')).quantity -= -1
   } else if (event.target.classList.contains('dec')) {
     if(parseInt(this.querySelector('.item__quantity').innerHTML) > 1) {
-      myCart.find(item => item.name === this.querySelector('.item__name').innerHTML && item.ingredients.sort().join('') === this.getElementsByClassName('ingr-inner')[0].innerText.split(',').sort().join('')).quantity -= 1;
+      myCart.find(item => item.name === this.querySelector('.item__name').innerHTML && item.ingredients.sort().join('') === this.getElementsByClassName('ingr-inner')[0].innerText.split(', ').sort().join('')).quantity -= 1;
     } else {
       myCart = myCart.filter(item => {
-        return item.name !== this.querySelector('.item__name').innerHTML || item.ingredients.sort().join('') !== this.getElementsByClassName('ingr-inner')[0].innerText.split(',').sort().join('');
+        return item.name !== this.querySelector('.item__name').innerHTML || item.ingredients.sort().join('') !== this.getElementsByClassName('ingr-inner')[0].innerText.split(', ').sort().join('');
       });
       if (myCart.length === 0) {
         cartOpen.classList.toggle('open')
