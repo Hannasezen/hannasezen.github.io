@@ -386,3 +386,26 @@ li.rotate {
   }
 
 }
+
+@media screen and (max-width: 480px) {
+  body {
+    flex-direction: column;
+  }
+  #aside {
+    width: 100%;
+    height: auto;
+  }
+  #main {
+    width: 100%;
+  }
+  .card__img {
+    height: 250px;
+  }
+  .hide {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+}

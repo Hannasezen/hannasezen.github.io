@@ -229,6 +229,8 @@ localStorage.setItem('pizzas', storagePizzas)
 
 function sortPizzas(event) {
   if (event.target.nodeName === "BUTTON") {
+    console.log('sortPizzas');
+    event.stopImmediatePropagation();
     resultArray = pizzas.sort((a, b) => {
       let prop = event.target.id.slice(2).toLowerCase();
       if (a[prop] > b[prop]) {
@@ -244,7 +246,9 @@ function sortPizzas(event) {
 }
 
 function filterPizzas(event) {
-  if(event.target.nodeName === "INPUT") {  
+  if(event.target.nodeName === "INPUT") {
+    console.log('filterPizzas');
+    event.stopImmediatePropagation();
     filteredArray = pizzas.filter(item => item.ingredients.some(ing => ing === event.target.value))
     pizzaCards.innerHTML = '';
     let radios = filters.querySelectorAll('input[type="radio"]');
@@ -269,12 +273,15 @@ function toggleView() {
 
 function removeClassRotate (event) {
   if(!(doc.body.classList.contains('list'))) {
+    event.stopPropagation(); 
     event.currentTarget.classList.toggle('rotate');
   }
 }
 
 function changeIngredientsList (event) {
   if (event.target.classList.contains('ingredient')) {
+    console.log('changeIngredients');
+    event.stopPropagation(); 
     if (event.target.checked === false) {
       this.getElementsByClassName('price')[0].innerHTML -= 10;
       this.getElementsByClassName('callory-number')[0].innerHTML -= 30;
@@ -287,7 +294,9 @@ function changeIngredientsList (event) {
 }
 
 function addAddings (event) {
-  if(event.target.classList.contains('addings')) {     
+  if(event.target.classList.contains('addings')) {
+    console.log('addAddings');
+    event.stopPropagation();   
     this.querySelector('span.price').innerHTML -= -10;
     this.querySelector('span.callory-number').innerHTML -= -30;
     let li = doc.createElement('li');
@@ -300,12 +309,14 @@ function addAddings (event) {
 }
 
 function saveCartToStorage() {
+  console.log('saveCartToStorage');
   let cartJSON = JSON.stringify(myCart);
   localStorage.setItem('pizzasCart', cartJSON);
 }
 
 function buyPizza(event) {
   if(event.target.classList.contains('card__btn')) {
+    console.log('buyPizza')
     event.stopImmediatePropagation();
     let name = this.querySelector('.card__name').innerText.replace(/\'|\"/g, '');
     let ingredients = [];
@@ -338,6 +349,7 @@ function buyPizza(event) {
 }
 
 function createNewPizza(event) {
+  console.log('createNewPizza');
   event.preventDefault();
   let name = this.newtitle.value;
   let ingredients = [];
@@ -426,3 +438,15 @@ function changeQuantity(event) {
   saveCartToStorage();
 }
 
+//open/close menus on mobiles
+doc.querySelector('#filters-wrap').addEventListener('click', addHideClass);
+doc.querySelector('#sorts').addEventListener('click', addHideClass);
+doc.querySelector('#create').addEventListener('click', addHideClass);
+doc.querySelector('#newpizza').addEventListener('click', function(event) {
+  event.stopImmediatePropagation();
+})
+
+function addHideClass(event) {
+  console.log('hide');
+  this.querySelector('.mobile-hide').classList.toggle('hide');
+}
