@@ -2254,3 +2254,31 @@ body {
   font-weight: bold;
   color: rgb(241, 74, 88);
 }
+
+#chat-button {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: #5514b4;
+  background: transparent;
+  border: 1px solid #5514b4;
+  margin-left: 10px;
+  text-align: center;
+  border-radius: 4px;
+}
+
+#chat-button * {
+  color: #5514b4 !important;
+}
+
+#chat-button:hover,
+#chat-button:hover * {
+  background: #5514b4 !important;
+  color: #fff !important;
+  cursor: pointer;
+}
+
+.contacts__socials {
+  display: flex;
+  align-items: center;
+}
