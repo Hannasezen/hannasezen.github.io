@@ -1,149 +1,175 @@
-'use strict';
+"use strict";
 
 const doc = document;
-let listButton = doc.querySelector('#list');
-let pizzaCards = doc.querySelector('#pizzaCards');
-let sorts = doc.querySelector('#sorts');
-let filters = doc.querySelector('#filters');
-let newPizza = doc.getElementById('newpizza');
-let cartQuantity = doc.querySelector('.cart__quantity');
+let listButton = doc.querySelector("#list");
+let pizzaCards = doc.querySelector("#pizzaCards");
+let sorts = doc.querySelector("#sorts");
+let filters = doc.querySelector("#filters");
+let newPizza = doc.getElementById("newpizza");
+let cartQuantity = doc.querySelector(".cart__quantity");
 let resultArray = []; //array for sorting
 let filteredArray = []; // array for filter
-let closeCartCross = doc.querySelector('#close__cross');
-let cartSmall = doc.querySelector('#cart');
-let cartOpen = doc.querySelector('#cart-open');
-let cartList = doc.querySelector('#cart__list');
+let closeCartCross = doc.querySelector("#close__cross");
+let cartSmall = doc.querySelector("#cart");
+let cartOpen = doc.querySelector("#cart-open");
+let cartList = doc.querySelector("#cart__list");
 let pizzas = [
   {
-    img: './img/mashrooms.jpg',
+    img: "./img/mashrooms.jpg",
     id: 1,
-    name: 'Грибная пицца',
-    ingredients: ['основа', 'соус', 'грибы', 'помидоры', 'сыр'],
+    name: "Pizza with mushrooms",
+    ingredients: ["base", "sauce", "mushrooms", "tomatoes", "cheese"],
     callory: 578,
-    price: 129
+    price: 129,
   },
   {
-    img: './img/margarita.jpg',
+    img: "./img/margarita.jpg",
     id: 2,
-    name: 'Маргарита пицца',
-    ingredients: ['основа', 'соус', 'помидоры', 'моцарелла', 'сыр'],
+    name: "Pizza Margarita",
+    ingredients: ["base", "sauce", "tomatoes", "mozzarella", "cheese"],
     callory: 362,
-    price: 119
+    price: 119,
   },
   {
-    img: './img/pepperony.jpeg',
+    img: "./img/pepperony.jpeg",
     id: 3,
-    name: 'Пепперони пицца',
-    ingredients: ['основа', 'соус', 'салями', 'ветчина', 'сыр'],
+    name: "Pepperoni pizza",
+    ingredients: ["base", "sauce", "salami", "ham", "cheese"],
     callory: 486,
-    price: 149
+    price: 149,
   },
   {
-    img: './img/salyami.jpg',
+    img: "./img/salyami.jpg",
     id: 4,
-    name: 'Салями пицца',
-    ingredients: ['основа', 'соус', 'помидоры', 'салями', 'оливки', 'сыр'],
+    name: "Salami pizza",
+    ingredients: ["base", "sauce", "tomatoes", "salami", "olives", "cheese"],
     callory: 379,
-    price: 139
+    price: 139,
   },
   {
-    img: './img/vegetarian.jpeg',
+    img: "./img/vegetarian.jpeg",
     id: 5,
-    name: 'Вегетарианская пицца',
-    ingredients: ['основа', 'cоус', 'помидоры', 'кукуруза', 'сыр'],
+    name: "Vegetarian pizza",
+    ingredients: ["base", "sauce", "tomatoes", "corn", "cheese"],
     callory: 618,
-    price: 79
+    price: 79,
   },
   {
-    img: './img/firmennaya.jpg',
+    img: "./img/firmennaya.jpg",
     id: 6,
-    name: 'Фирменная пицца',
-    ingredients: ['основа', 'соус', 'помидоры', 'салями', 'огурцы', 'грибы', 'сыр'],
+    name: "Chief`s pizza",
+    ingredients: [
+      "base",
+      "sauce",
+      "tomatoes",
+      "salami",
+      "cucumbers",
+      "mushrooms",
+      "cheese",
+    ],
     callory: 519,
-    price: 118
+    price: 118,
   },
   {
-    img: './img/fintess.jpg',
+    img: "./img/fintess.jpg",
     id: 7,
-    name: 'Фитнесс пицца',
-    ingredients: ['основа', 'соус', 'помидоры', 'сыр'],
+    name: "Fitness pizza",
+    ingredients: ["base", "sauce", "tomatoes", "cheese"],
     callory: 295,
-    price: 59
+    price: 59,
   },
   {
-    img: './img/vetchina.jpg',
+    img: "./img/vetchina.jpg",
     id: 8,
-    name: 'Ветчина пицца',
-    ingredients: ['основа', 'соус', 'помидоры', 'ветчина', 'сыр'],
+    name: "Pizza with ham",
+    ingredients: ["base", "sauce", "tomatoes", "ham", "cheese"],
     callory: 356,
-    price: 127
+    price: 127,
   },
   {
-    img: './img/chiken.jpg',
+    img: "./img/chiken.jpg",
     id: 9,
-    name: 'Куриная пицца',
-    ingredients: ['основа', 'соус', 'курица', 'ананасы', 'сыр'],
+    name: "Pizza with chicken",
+    ingredients: ["base", "sauce", "chicken", "pineapples", "cheese"],
     callory: 451,
-    price: 136
+    price: 136,
   },
   {
-    img: './img/family.jpg',
+    img: "./img/family.jpg",
     id: 10,
-    name: 'Семейная пицца',
-    ingredients: ['основа', 'соус', 'огурцы', 'салями', 'курица', 'сыр'],
+    name: "Family pizza",
+    ingredients: ["base", "sauce", "cucumbers", "salami", "chicken", "cheese"],
     callory: 623,
-    price: 189
+    price: 189,
   },
   {
-    img: './img/bavariya.jpg',
+    img: "./img/bavariya.jpg",
     id: 11,
-    name: 'Баварская пицца',
-    ingredients: ['основа', 'соус', 'помидоры', 'баварские колбаски', 'сыр'],
+    name: "Bavarian pizza",
+    ingredients: ["base", "sauce", "tomatoes", "Bavarian sausages", "cheese"],
     callory: 456,
-    price: 148
+    price: 148,
   },
   {
-    img: './img/sea.jpg',
+    img: "./img/sea.jpg",
     id: 12,
-    name: 'Морская пицца',
-    ingredients: ['основа', 'соус', 'помидоры', 'креветки', 'рыба', 'мидии', 'сыр'],
+    name: "Sea life",
+    ingredients: [
+      "base",
+      "sauce",
+      "tomatoes",
+      "shrimps",
+      "fish",
+      "mussels",
+      "cheese",
+    ],
     callory: 519,
-    price: 118
+    price: 118,
   },
   {
-    img: './img/ukrainian.jpg',
+    img: "./img/ukrainian.jpg",
     id: 13,
-    name: 'Украинская пицца',
-    ingredients: ['основа', 'соус', 'помидоры', 'сало', 'чеснок', 'грибы', 'сыр'],
+    name: "Ukrainian pizza",
+    ingredients: [
+      "base",
+      "sauce",
+      "tomatoes",
+      "Salo",
+      "garlic",
+      "mushrooms",
+      "cheese",
+    ],
     callory: 676,
-    price: 99
+    price: 99,
   },
   {
-    img: './img/spring.jpg',
+    img: "./img/spring.jpg",
     id: 14,
-    name: 'Весенняя пицца',
-    ingredients: ['основа', 'соус', 'помидоры', 'кукуруза', 'укроп', 'сыр'],
+    name: "Spring pizza",
+    ingredients: ["base", "sauce", "tomatoes", "corn", "dill", "cheese"],
     callory: 369,
-    price: 159
+    price: 159,
   },
   {
-    img: './img/sweet.jpg',
+    img: "./img/sweet.jpg",
     id: 15,
-    name: 'Сладкая пицца',
-    ingredients: ['основа', 'нутелла', 'бананы', 'орехи', 'зефир'],
+    name: "Sweet pizza",
+    ingredients: ["base", "chocolate", "bananas", "nuts", "marshmallow"],
     callory: 1019,
-    price: 154
-  }
+    price: 154,
+  },
 ];
-let addings = ["грибы", "оливки", "помидоры", "отстрый соус", "майонез"];
-let cards = doc.querySelectorAll('li.pizza'); //collection of pizzas on the screen
+let addings = ["mushrooms", "olives", "tomatoes", "hot sauce", "mayonnaise"];
+let cards = doc.querySelectorAll("li.pizza"); //collection of pizzas on the screen
 let myCart = []; // array for pizzas in cart
-if(window.localStorage.getItem('pizzasCart')) {
-  myCart = JSON.parse(localStorage.getItem('pizzasCart'));
-  cartQuantity.innerHTML = JSON.parse(localStorage.getItem('pizzasCart')).length;
+if (window.localStorage.getItem("pizzasCart")) {
+  myCart = JSON.parse(localStorage.getItem("pizzasCart"));
+  cartQuantity.innerHTML = JSON.parse(
+    localStorage.getItem("pizzasCart")
+  ).length;
 }
 // generate id for pizzas
-function* generator () {
+function* generator() {
   for (let i = 16; i < 1000; i++) {
     yield i;
   }
@@ -154,28 +180,27 @@ let gen = generator();
 window.onload = loadPizzas();
 
 // user events
-newPizza.addEventListener('submit', createNewPizza);
+newPizza.addEventListener("submit", createNewPizza);
 // change pages view
-listButton.addEventListener('click', toggleView);
+listButton.addEventListener("click", toggleView);
 // for sort results on the page
-sorts.addEventListener('click', sortPizzas);
+sorts.addEventListener("click", sortPizzas);
 //for filter pizzas
-filters.addEventListener('click', filterPizzas);
+filters.addEventListener("click", filterPizzas);
 // for clear the cart
-closeCartCross.addEventListener('click', emptyCart);
+closeCartCross.addEventListener("click", emptyCart);
 //for open the cart
-cartSmall.addEventListener('click', openCart);
+cartSmall.addEventListener("click", openCart);
 //close the cart
-cartOpen.addEventListener('click', openCart);
+cartOpen.addEventListener("click", openCart);
 
-
-function loadPizzas (arr) {
+function loadPizzas(arr) {
   arr = arr || pizzas;
   for (let i = 0; i < arr.length; i++) {
-    let li = doc.createElement('li');
-    li.classList.add('pizza');
+    let li = doc.createElement("li");
+    li.classList.add("pizza");
 
-    let str = '';
+    let str = "";
     for (let j = 0; j < arr[i].ingredients.length; j++) {
       str += `<li>
                 <input type="checkbox" checked="true" value="${arr[i].ingredients[j]}"
@@ -184,7 +209,7 @@ function loadPizzas (arr) {
               </li>`;
     }
 
-    let addingsStr = '';
+    let addingsStr = "";
     for (let adding of addings) {
       addingsStr += `<option value="${adding}">${adding}</option>`;
     }
@@ -195,41 +220,46 @@ function loadPizzas (arr) {
                     <div class="card__text">
                       <div class="card__description">
                         <div class="card__name">"${arr[i].name}"</div>
-                        <ul class="card__ingredients"><h3>Ингредиенты: </h3>${str}</ul>
+                        <ul class="card__ingredients"><h3>Ingredients: </h3>${str}</ul>
                         <div class="card__addings">
                           <select name="addings" class="addings">${addingsStr}</select>
                         </div>                          
-                        <div class="card__callory"><span class="callory-number">${arr[i].callory}</span> кКал</div>
+                        <div class="card__callory"><span class="callory-number">${arr[i].callory}</span> kcal</div>
                       </div>
                       <div class="">
-                        <div class="card__price"><span class="price">${arr[i].price}</span> грн</div>
-                        <button class="card__btn" title="Добавить в корзину">Заказать</button>
+                        <div class="card__price"><span class="price">${arr[i].price}</span> UAH</div>
+                        <button class="card__btn" title="Add to the cart">Order</button>
                       </div>
-                    </div>`
-                    
+                    </div>`;
+
     pizzaCards.appendChild(li);
 
-    li.addEventListener('click', removeClassRotate);
-    li.addEventListener('click', function(event) {
-      if (event.target.nodeName === "INPUT"
-          || event.target.nodeName === "LABEL"
-          || event.target.nodeName === "SELECT"
-          ) {
-        event.stopPropagation();
-      }
-    }, true)
-    li.addEventListener('click', changeIngredientsList, true);
-    li.addEventListener('change', addAddings, true);
-    li.addEventListener('click', buyPizza, true);
+    li.addEventListener("click", removeClassRotate);
+    li.addEventListener(
+      "click",
+      function (event) {
+        if (
+          event.target.nodeName === "INPUT" ||
+          event.target.nodeName === "LABEL" ||
+          event.target.nodeName === "SELECT"
+        ) {
+          event.stopPropagation();
+        }
+      },
+      true
+    );
+    li.addEventListener("click", changeIngredientsList, true);
+    li.addEventListener("change", addAddings, true);
+    li.addEventListener("click", buyPizza, true);
   }
 }
 
 let storagePizzas = JSON.stringify(pizzas);
-localStorage.setItem('pizzas', storagePizzas)
+localStorage.setItem("pizzas", storagePizzas);
 
 function sortPizzas(event) {
   if (event.target.nodeName === "BUTTON") {
-    console.log('sortPizzas');
+    console.log("sortPizzas");
     event.stopImmediatePropagation();
     resultArray = pizzas.sort((a, b) => {
       let prop = event.target.id.slice(2).toLowerCase();
@@ -239,159 +269,174 @@ function sortPizzas(event) {
         return -1;
       }
       return 0;
-    })
-    pizzaCards.innerHTML = '';
+    });
+    pizzaCards.innerHTML = "";
     loadPizzas(resultArray);
-  }  
+  }
 }
 
 function filterPizzas(event) {
-  if(event.target.nodeName === "INPUT") {
-    console.log('filterPizzas');
+  if (event.target.nodeName === "INPUT") {
+    console.log("filterPizzas");
     event.stopImmediatePropagation();
-    filteredArray = pizzas.filter(item => item.ingredients.some(ing => ing === event.target.value))
-    pizzaCards.innerHTML = '';
+    filteredArray = pizzas.filter((item) =>
+      item.ingredients.some((ing) => ing === event.target.value)
+    );
+    pizzaCards.innerHTML = "";
     let radios = filters.querySelectorAll('input[type="radio"]');
     for (let i = 0; i < radios.length; i++) {
       if (radios[i].value !== event.target.value) {
         radios[i].checked = false;
       }
     }
-    loadPizzas(filteredArray);    
-  }  
+    loadPizzas(filteredArray);
+  }
 }
 
-function toggleView() {    
-  let listPizzas = pizzaCards.getElementsByTagName('li');
+function toggleView() {
+  let listPizzas = pizzaCards.getElementsByTagName("li");
   for (let i = 0; i < listPizzas.length; i++) {
-    if (listPizzas[i].classList.contains('rotate')) {
-      listPizzas[i].classList.remove('rotate');
+    if (listPizzas[i].classList.contains("rotate")) {
+      listPizzas[i].classList.remove("rotate");
     }
-  };
-  doc.body.classList.toggle('list');
+  }
+  doc.body.classList.toggle("list");
 }
 
-function removeClassRotate (event) {
-  if(!(doc.body.classList.contains('list'))) {
-    event.stopPropagation(); 
-    event.currentTarget.classList.toggle('rotate');
+function removeClassRotate(event) {
+  if (!doc.body.classList.contains("list")) {
+    event.stopPropagation();
+    event.currentTarget.classList.toggle("rotate");
   }
 }
 
-function changeIngredientsList (event) {
-  if (event.target.classList.contains('ingredient')) {
-    console.log('changeIngredients');
-    event.stopPropagation(); 
+function changeIngredientsList(event) {
+  if (event.target.classList.contains("ingredient")) {
+    console.log("changeIngredients");
+    event.stopPropagation();
     if (event.target.checked === false) {
-      this.getElementsByClassName('price')[0].innerHTML -= 10;
-      this.getElementsByClassName('callory-number')[0].innerHTML -= 30;
-      
+      this.getElementsByClassName("price")[0].innerHTML -= 10;
+      this.getElementsByClassName("callory-number")[0].innerHTML -= 30;
     } else {
-      this.getElementsByClassName('price')[0].innerHTML -= -10;
-      this.getElementsByClassName('callory-number')[0].innerHTML -= -30;
-    }      
+      this.getElementsByClassName("price")[0].innerHTML -= -10;
+      this.getElementsByClassName("callory-number")[0].innerHTML -= -30;
+    }
   }
 }
 
-function addAddings (event) {
-  if(event.target.classList.contains('addings')) {
-    console.log('addAddings');
-    event.stopPropagation();   
-    this.querySelector('span.price').innerHTML -= -10;
-    this.querySelector('span.callory-number').innerHTML -= -30;
-    let li = doc.createElement('li');
+function addAddings(event) {
+  if (event.target.classList.contains("addings")) {
+    console.log("addAddings");
+    event.stopPropagation();
+    this.querySelector("span.price").innerHTML -= -10;
+    this.querySelector("span.callory-number").innerHTML -= -30;
+    let li = doc.createElement("li");
     li.innerHTML = `<input type="checkbox" checked="true" value="${event.target.value}"
                       class="ingredient" id="${event.target.value}"></input>
-                    <label for="${event.target.value}">${event.target.value}</label>`
-    this.querySelector(".card__ingredients").appendChild(li)
-
-  }  
+                    <label for="${event.target.value}">${event.target.value}</label>`;
+    this.querySelector(".card__ingredients").appendChild(li);
+  }
 }
 
 function saveCartToStorage() {
-  console.log('saveCartToStorage');
+  console.log("saveCartToStorage");
   let cartJSON = JSON.stringify(myCart);
-  localStorage.setItem('pizzasCart', cartJSON);
+  localStorage.setItem("pizzasCart", cartJSON);
 }
 
 function buyPizza(event) {
-  if(event.target.classList.contains('card__btn')) {
-    console.log('buyPizza')
+  if (event.target.classList.contains("card__btn")) {
+    console.log("buyPizza");
     event.stopImmediatePropagation();
-    let name = this.querySelector('.card__name').innerText.replace(/\'|\"/g, '');
+    let name = this.querySelector(".card__name").innerText.replace(
+      /\'|\"/g,
+      ""
+    );
     let ingredients = [];
-    let p = this.querySelectorAll('.ingredient');
+    let p = this.querySelectorAll(".ingredient");
     for (let i = 0; i < p.length; i++) {
-      if(p[i].checked === true) {
+      if (p[i].checked === true) {
         ingredients[i] = p[i].value;
-      }         
+      }
     }
-    if(myCart.find(item => item.name === name && item.ingredients.sort().join('') === ingredients.sort().join('')))  {
-      myCart.find(item => item.name === name && item.ingredients.sort().join('') === ingredients.sort().join('')).quantity += 1;
+    if (
+      myCart.find(
+        (item) =>
+          item.name === name &&
+          item.ingredients.sort().join("") === ingredients.sort().join("")
+      )
+    ) {
+      myCart.find(
+        (item) =>
+          item.name === name &&
+          item.ingredients.sort().join("") === ingredients.sort().join("")
+      ).quantity += 1;
     } else {
       if (ingredients.length > 0) {
         myCart.push({
           name: name,
-          price: this.querySelector('.card__price').innerText,
-          ingredients: ingredients.filter(item => item !== ''),
-          quantity: 1
+          price: this.querySelector(".card__price").innerText,
+          ingredients: ingredients.filter((item) => item !== ""),
+          quantity: 1,
         });
       } else {
-        alert('Выберите ингредиенты для вашей пиццы');
-      }           
-    };
+        alert("Choose the ingredients for your pizza");
+      }
+    }
     saveCartToStorage();
     cartQuantity.innerHTML = myCart.length;
-    if(cartOpen.classList.contains('open')) {
+    if (cartOpen.classList.contains("open")) {
       renderCart();
     }
-  }   
+  }
 }
 
 function createNewPizza(event) {
-  console.log('createNewPizza');
+  console.log("createNewPizza");
   event.preventDefault();
   let name = this.newtitle.value;
   let ingredients = [];
-  let ingr = event.target.querySelectorAll('.newingredient');
+  let ingr = event.target.querySelectorAll(".newingredient");
   for (let i = 0; i < ingr.length; i++) {
-    if (ingr[i].value !== '') {
+    if (ingr[i].value !== "") {
       ingredients.push(ingr[i].value.toLowerCase());
     }
   }
-  if (name !== '') {
+  if (name !== "") {
     pizzas.push({
       name,
       id: gen.next().value,
       img: "./img/sea.jpg",
       ingredients,
       price: ingredients.length * 10,
-      callory: ingredients.length * 30
+      callory: ingredients.length * 30,
     });
-    this.newtitle.value = '';
+    this.newtitle.value = "";
     for (let i = 0; i < ingr.length; i++) {
-      ingr[i].value = '';
+      ingr[i].value = "";
     }
-    pizzaCards.innerHTML = '';
+    pizzaCards.innerHTML = "";
     loadPizzas();
   } else {
-    alert('Введите название новой пиццы');
-  }  
+    alert("Enter the name of the new pizza");
+  }
 }
 
 function openCart() {
   renderCart();
-  cartOpen.classList.toggle('open');
+  cartOpen.classList.toggle("open");
 }
 
 function renderCart() {
-  cartList.innerHTML = '';
+  cartList.innerHTML = "";
   for (let item of myCart) {
-    let li = doc.createElement('li');
-    li.classList.add('cart__item');
+    let li = doc.createElement("li");
+    li.classList.add("cart__item");
     li.innerHTML = `<div class="item__text">
                       <div class="item__name">${item.name}</div>
-                      <div class="item__igredients">(<span class="ingr-inner">${item.ingredients.sort().join(', ')}</span>)</div>                      
+                      <div class="item__igredients">(<span class="ingr-inner">${item.ingredients
+                        .sort()
+                        .join(", ")}</span>)</div>                      
                     </div>
                     <div class="item__controls">
                       <div class="item__price">${item.price}</div>
@@ -402,34 +447,57 @@ function renderCart() {
                       </div>
                     </div>`;
     cartList.appendChild(li);
-  };
-  let cartItems = doc.querySelectorAll('.cart__item');
+  }
+  let cartItems = doc.querySelectorAll(".cart__item");
   for (let i = 0; i < cartItems.length; i++) {
-    cartItems[i].addEventListener('click', changeQuantity, true);
+    cartItems[i].addEventListener("click", changeQuantity, true);
   }
 }
 
 function emptyCart(event) {
   event.stopPropagation();
   myCart = [];
-  window.localStorage.setItem('pizzasCart', '');
-  cartQuantity.innerHTML = '0';
-  cartOpen.classList.remove('open');
+  window.localStorage.setItem("pizzasCart", "");
+  cartQuantity.innerHTML = "0";
+  cartOpen.classList.remove("open");
 }
 
 function changeQuantity(event) {
   event.stopPropagation();
-  if (event.target.classList.contains('inc')) {
-    myCart.find(item => item.name === this.querySelector('.item__name').innerHTML && item.ingredients.sort().join('') === this.getElementsByClassName('ingr-inner')[0].innerText.split(', ').sort().join('')).quantity -= -1
-  } else if (event.target.classList.contains('dec')) {
-    if(parseInt(this.querySelector('.item__quantity').innerHTML) > 1) {
-      myCart.find(item => item.name === this.querySelector('.item__name').innerHTML && item.ingredients.sort().join('') === this.getElementsByClassName('ingr-inner')[0].innerText.split(', ').sort().join('')).quantity -= 1;
+  if (event.target.classList.contains("inc")) {
+    myCart.find(
+      (item) =>
+        item.name === this.querySelector(".item__name").innerHTML &&
+        item.ingredients.sort().join("") ===
+          this.getElementsByClassName("ingr-inner")[0]
+            .innerText.split(", ")
+            .sort()
+            .join("")
+    ).quantity -= -1;
+  } else if (event.target.classList.contains("dec")) {
+    if (parseInt(this.querySelector(".item__quantity").innerHTML) > 1) {
+      myCart.find(
+        (item) =>
+          item.name === this.querySelector(".item__name").innerHTML &&
+          item.ingredients.sort().join("") ===
+            this.getElementsByClassName("ingr-inner")[0]
+              .innerText.split(", ")
+              .sort()
+              .join("")
+      ).quantity -= 1;
     } else {
-      myCart = myCart.filter(item => {
-        return item.name !== this.querySelector('.item__name').innerHTML || item.ingredients.sort().join('') !== this.getElementsByClassName('ingr-inner')[0].innerText.split(', ').sort().join('');
+      myCart = myCart.filter((item) => {
+        return (
+          item.name !== this.querySelector(".item__name").innerHTML ||
+          item.ingredients.sort().join("") !==
+            this.getElementsByClassName("ingr-inner")[0]
+              .innerText.split(", ")
+              .sort()
+              .join("")
+        );
       });
       if (myCart.length === 0) {
-        cartOpen.classList.toggle('open')
+        cartOpen.classList.toggle("open");
       }
     }
   }
@@ -439,14 +507,14 @@ function changeQuantity(event) {
 }
 
 //open/close menus on mobiles
-doc.querySelector('#filters-wrap').addEventListener('click', addHideClass);
-doc.querySelector('#sorts').addEventListener('click', addHideClass);
-doc.querySelector('#create').addEventListener('click', addHideClass);
-doc.querySelector('#newpizza').addEventListener('click', function(event) {
+doc.querySelector("#filters-wrap").addEventListener("click", addHideClass);
+doc.querySelector("#sorts").addEventListener("click", addHideClass);
+doc.querySelector("#create").addEventListener("click", addHideClass);
+doc.querySelector("#newpizza").addEventListener("click", function (event) {
   event.stopImmediatePropagation();
-})
+});
 
 function addHideClass(event) {
-  console.log('hide');
-  this.querySelector('.mobile-hide').classList.toggle('hide');
+  console.log("hide");
+  this.querySelector(".mobile-hide").classList.toggle("hide");
 }

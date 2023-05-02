@@ -5,7 +5,8 @@
   box-sizing: border-box;
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 
@@ -27,14 +28,15 @@ button {
   font-weight: bold;
   font-size: 1.1em;
   color: white;
-  transition: background-color ease .3s;
+  transition: background-color ease 0.3s;
 }
 
 button:hover {
   background-color: rgba(128, 8, 8, 0.904);
 }
 
-select, input {
+select,
+input {
   outline: none;
 }
 
@@ -54,8 +56,8 @@ body {
   font-family: Arial, sans-serif;
   font-size: 14px;
   text-align: center;
-  background: linear-gradient(rgba(0, 0, 0, 0) 60%, rgba(218, 34, 34, 0.2) 60% ),
-    linear-gradient(90deg, rgba(0, 0, 0, 0) 60%, rgba(218, 34, 34, 0.2) 60% );
+  background: linear-gradient(rgba(0, 0, 0, 0) 60%, rgba(218, 34, 34, 0.2) 60%),
+    linear-gradient(90deg, rgba(0, 0, 0, 0) 60%, rgba(218, 34, 34, 0.2) 60%);
   background-size: 3em 3em;
   background-color: rgb(224, 162, 162);
   background-position: center 1em;
@@ -117,7 +119,6 @@ body {
   margin-bottom: 5px;
 }
 
-
 /* mian section styles */
 #main {
   width: 75%;
@@ -131,6 +132,7 @@ body {
   right: 20px;
   display: flex;
   align-items: flex-end;
+  min-width: 120px;
   padding: 5px;
   border-radius: 5px;
   background: rgba(255, 255, 255, 0.8);
@@ -159,8 +161,8 @@ body {
 #cart-open {
   display: none;
   position: fixed;
-  top: calc(50vh - 400px/2);
-  left: calc(50% - 500px/2);
+  top: calc(50vh - 400px / 2);
+  left: calc(50% - 500px / 2);
   width: 500px;
   height: 400px;
   padding: 10px;
@@ -180,7 +182,7 @@ body {
   justify-content: space-between;
   padding: 10px;
   margin-bottom: 10px;
-  background: rgba(226, 66, 66, 0.589)
+  background: rgba(226, 66, 66, 0.589);
 }
 
 .item__text {
@@ -206,7 +208,8 @@ body {
   align-items: center;
 }
 
-.inc, .dec {
+.inc,
+.dec {
   width: 20px;
   height: 20px;
   text-align: center;
@@ -270,7 +273,7 @@ li.rotate {
   height: 100%;
   padding: 10px;
   border-radius: 10px;
-  background: rgba(255, 255, 255, .8);
+  background: rgba(255, 255, 255, 0.8);
   backface-visibility: hidden;
 }
 
@@ -373,7 +376,7 @@ li.rotate {
   #main {
     width: 70%;
   }
-  
+
   .pizza {
     width: 95%;
   }
@@ -384,7 +387,6 @@ li.rotate {
   .list .card__name {
     font-size: 1em;
   }
-
 }
 
 @media screen and (max-width: 480px) {

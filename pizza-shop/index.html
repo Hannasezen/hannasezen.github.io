@@ -1,89 +1,103 @@
 <!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Pizza market</title>
-  <link rel="shortcut icon" type="image/png" href="./favicon.png"/>
-  <link rel="stylesheet" href="./style.css">
-</head>
-<body>
-  <aside id="aside">
-    <div id="controls">
-        <button id="list" title="Изменить вид страницы">Изменить вид страницы</button>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Pizza market</title>
+    <link rel="shortcut icon" type="image/png" href="./favicon.png" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <aside id="aside">
+      <div id="controls">
+        <button id="list" title="Change the view">Change the view</button>
       </div>
-    <div id="sorts">
-      <div class="sort__title">
-        <h3>Сортировать по ...</h3>
+      <div id="sorts">
+        <div class="sort__title">
+          <h3>Sort by ...</h3>
+        </div>
+        <div class="hide mobile-hide">
+          <button id="byPrice" class="sort" title="sort by price">price</button>
+          <button id="byCallory" class="sort" title="sort by calories">
+            calories
+          </button>
+          <button id="byName" class="sort" title="sort by name">name</button>
+        </div>
       </div>
-      <div class="hide mobile-hide">
-        <button id="byPrice" class="sort" title="сортировать по возрастанию цены">цене</button>
-        <button id="byCallory" class="sort" title="сортировать по каллорийности">каллорийности</button>
-        <button id="byName" class="sort" title="сортировать по названию">названию</button>
-      </div>      
-    </div>
-    <div class="filters" id="filters-wrap">
-      <div class="filter__title">
-        <h3>Фильтр по ...</h3>
+      <div class="filters" id="filters-wrap">
+        <div class="filter__title">
+          <h3>Filter by ...</h3>
+        </div>
+        <ul id="filters" class="hide mobile-hide">
+          <li>
+            <input type="radio" value="tomatoes" class="filter" id="tomatoes" />
+            <label for="tomatoes">Tomatoes</label>
+          </li>
+          <li>
+            <input type="radio" value="cheese" class="filter" id="cheese" />
+            <label for="cheese">Cheese</label>
+          </li>
+          <li>
+            <input type="radio" value="salami" class="filter" id="salami" />
+            <label for="salami">Salami</label>
+          </li>
+          <li>
+            <input type="radio" value="shrimps" class="filter" id="shrimps" />
+            <label for="shrimps">Shrimps</label>
+          </li>
+          <li>
+            <input
+              type="radio"
+              value="mushrooms"
+              class="filter"
+              id="mushrooms"
+            />
+            <label for="mushrooms">Mushrooms</label>
+          </li>
+          <li>
+            <input type="radio" value="chicken" class="filter" id="chicken" />
+            <label for="chicken">Chicken</label>
+          </li>
+        </ul>
       </div>
-      <ul id="filters" class="hide mobile-hide">
-        <li>
-          <input type="radio" value="помидоры" class="filter">
-          <label>Помидоры</label>
-        </li>
-        <li>
-          <input type="radio" value="сыр" class="filter">
-          <label>Сыр</label>
-        </li>
-        <li>
-          <input type="radio" value="салями" class="filter">
-          <label>Салями</label>
-        </li>
-        <li>
-          <input type="radio" value="креветки" class="filter">
-          <label>Креветки</label>
-        </li>
-        <li>
-          <input type="radio" value="грибы" class="filter">
-          <label>Грибы</label>
-        </li>
-        <li>
-          <input type="radio" value="курица" class="filter">
-          <label>Курица</label>
-        </li>
-      </ul>
-    </div>
-    <div id="create">
-      <h3>Создать новую пиццу</h3>
+      <div id="create">
+        <h3>Create a new Pizza</h3>
         <form action="#" id="newpizza" class="hide mobile-hide">
-          <input type="text" placeholder="Название новой пиццы" id="newtitle">
-          <input type="text" placeholder="ингридиент 1" class="newingredient">
-          <input type="text" placeholder="ингридиент 2" class="newingredient">
-          <input type="text" placeholder="ингридиент 3" class="newingredient">
-          <button type="submit" title="Добавить пиццу в список">Добавить</button>
+          <input type="text" placeholder="pizza name" id="newtitle" />
+          <input type="text" placeholder="ingredient 1" class="newingredient" />
+          <input type="text" placeholder="ingredient 2" class="newingredient" />
+          <input type="text" placeholder="ingredient 3" class="newingredient" />
+          <button type="submit" title="Add pizza to the list">Add pizza</button>
         </form>
       </div>
-  </aside>
-  <main id="main">
-    <div id="cart" title="Перейти в корзину">
-      <div class="cart__img">
-        <img src="./img/cart.svg" alt="Cart logo" width="30" height="30">
+    </aside>
+    <main id="main">
+      <div id="cart" title="Go to the cart">
+        <div class="cart__img">
+          <img src="./img/cart.svg" alt="Cart logo" width="30" height="30" />
+        </div>
+        <div class="cart__content">
+          <div class="cart__quantity">0</div>
+          <div class="cart__title">Cart</div>
+        </div>
+        <div class="cart__close">
+          <img
+            src="./img/cross.svg"
+            id="close__cross"
+            alt="Close cart"
+            width="20"
+            height="20"
+            title="Empty the cart"
+          />
+        </div>
       </div>
-      <div class="cart__content">
-        <div class="cart__quantity">0</div>
-        <div class="cart__title">Корзина</div>
+      <div id="cart-open">
+        <h3>Cart:</h3>
+        <ul id="cart__list"></ul>
       </div>
-      <div class="cart__close">
-        <img src="./img/cross.svg" id="close__cross" alt="Close cart" width="20" height="20" title="Очистить корзину">
-      </div>
-    </div>
-    <div id="cart-open">
-      <h3>Корзина: </h3> 
-      <ul id="cart__list"></ul>
-    </div>
-    <ul id="pizzaCards"></ul>
-  </main>
-  <script src="./script.js"></script>
-</body>
+      <ul id="pizzaCards"></ul>
+    </main>
+    <script src="./script.js"></script>
+  </body>
 </html>
